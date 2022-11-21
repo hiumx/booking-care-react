@@ -1,0 +1,104 @@
+.wrapper-login {
+    height: 100vh;
+    background: linear-gradient(135deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+
+    .container-login {
+        width: 400px;
+        height: 450px;
+        margin: auto;
+        background-color: #fff;
+        border-radius: 25px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+    }
+}
+
+.content-login {
+    padding: 32px;
+
+        .btn-login {
+        width: 100%;
+        height: 36px;
+        margin: 16px 0;
+        font-size: 18px;
+        background: linear-gradient(135deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+        color: #fff;
+        border: none;
+        outline: none;
+        border-radius: 25px;
+        }
+
+        .label-login {
+            color: rgba(187,187,187,0.9);
+        }
+
+        .password-login {
+            position: relative;
+
+            .eye-show-password-icon {
+                width: 16px;
+                height: 16px;
+                fill: rgba(127, 119, 119, 0.9);
+                position: absolute;
+                top: 4px;
+                right: 8px;
+                cursor: pointer;
+            }
+        }
+
+        .forgot-password {
+            font-size: 13px;
+        }
+
+        .login-different {
+            margin-top: 32px;
+        }
+
+        .login-different-text {
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .login-different-icon {
+            display: flex;
+            justify-content: center;
+
+            .google-icon {
+                width: 40px;
+                height: 40px;
+                margin-right: 4px;
+                padding: 8px;
+                background-color: #c12727;
+                fill: #fff;
+                border-radius: 50%;
+                cursor: pointer;
+            }
+
+            .twitter-icon {
+                width: 40px;
+                height: 40px;
+                margin: 0 4px;
+                padding: 8px;
+                background-color: #55acee;
+                fill: #fff;
+                border-radius: 50%;
+                cursor: pointer;
+            }
+
+            .facebook-icon {
+                width: 40px;
+                height: 40px;
+                margin-left: 4px;
+                padding: 8px;
+                background-color: #1773ea;
+                fill: #fff;
+                border-radius: 50%;
+                cursor: pointer;
+            }
+            
+        }
+}
+
