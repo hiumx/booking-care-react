@@ -68,10 +68,8 @@ function Login(props) {
                             </div>
                         </div>
                     </div>
-                    <div style={{ width: 100, height: 24 }}>
-                        <div className='col-12' style={{ color: 'red', fontSize: 14, marginTop: 16 }}>
-                            {errorMessage}
-                        </div>
+                    <div className='col-12' style={{ color: 'red', fontSize: 14, marginTop: 16 }}>
+                        {errorMessage}
                     </div>
                     <div className='col-12'>
                         <button className='btn-login' onClick={handleClickLogIn}>Log in</button>
