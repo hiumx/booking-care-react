@@ -1,0 +1,179 @@
+.banner-container {
+    background: url('../../../../../assets/images/background-home-page.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 608px;
+
+    .banner-home {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.25),rgba(255, 255, 255, 0.1));
+        padding: 68px 0 50px;
+        .banner-home-title {
+            text-align: center;
+            text-shadow: 1px 1px 1px #333;
+
+            .title-base {
+                font-size: 32px;
+                font-weight: 400;
+                color: #fff;
+                margin: 0px 478px;
+                padding: 4px;
+                border-radius: 24pc;
+            }
+            .title-care {
+                font-size: 32px;
+                margin: 0 478px;
+                padding: 4px 0;
+                color: #fff;
+                font-weight: 700;
+            }
+        }
+
+        .banner-home-search {
+            width: 456px;
+            height: 50px;
+            border-radius: 1000px;
+            display: flex;
+            margin: 30px auto;
+
+            .banner-search-icon {
+                width: 14px;
+                height: 16px;
+                position: relative;
+                top: 17px;
+                left: 34px;
+                fill: #8d8c8c;
+            }
+
+            .banner-search-input {
+                width: 100%;
+                height: 100%;
+                padding: 0 40px;
+                background-color: #f7d800;
+                border-radius: 1000px;
+                border: none;
+                outline: none;
+            }
+        }
+
+        .banner-contact-download {
+            margin: 90px;
+            text-align: center;
+
+            .google-play-download-image {
+                width: 108px;
+                height: 32px;
+                margin-right: 4px;
+                cursor: pointer;
+            }
+
+            .app-store-download-image {
+                width: 108px;
+                height: 32px;
+                margin-left: 4px;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .banner-choosing-examination {
+
+        .choosing-examination-list {
+            background-image: linear-gradient(rgba(255, 255, 255, 0.1),rgba(255, 255, 255, 0.9),rgba(255, 255, 255, 1));
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .choosing-examination-item {
+                min-width: 150px;
+                font-size: 16px;
+                font-weight: 500;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                padding: 4px 34px;
+                cursor: pointer;
+                
+
+                .examination-image-specialty {
+                    background: url('https://cdn.bookingcare.vn/fo/2021/12/08/133537-khamchuyenkhoa.png'); 
+                }
+
+                .examination-image-remote {
+                    background: url('https://cdn.bookingcare.vn/fo/2021/12/08/133657-khamtuxa.png'); 
+                }
+
+                .examination-image-overview {
+                    background: url('https://cdn.bookingcare.vn/fo/2021/12/08/133744-khamtongquat.png'); 
+                }
+
+                .examination-image-test {
+                    background: url('https://cdn.bookingcare.vn/fo/2021/12/08/133744-dichvuxetnghiem.png'); 
+                }
+                .examination-image-morale {
+                    background: url('https://cdn.bookingcare.vn/fo/2021/12/08/133744-suckhoetinhthan.png'); 
+                }
+                .examination-image-dentistry {
+                    background: url('https://cdn.bookingcare.vn/fo/2022/05/19/104635-khamnhakhoa.png'); 
+                }
+                .examination-image-anatomy {
+                    background: url('https://cdn.bookingcare.vn/fo/2022/05/16/151930-phau-thuat.jpg'); 
+                }
+                .examination-image-medical {
+                    background: url('https://cdn.bookingcare.vn/fo/2021/12/08/133744-khamtainha.png'); 
+                }
+                .examination-image-enterprise {
+                    background: url('https://cdn.bookingcare.vn/fo/2022/07/29/101157-icon-lich-su.jpg'); 
+                }
+
+                .examination-image-specialty,
+                .examination-image-remote,
+                .examination-image-overview,
+                .examination-image-test,
+                .examination-image-morale,
+                .examination-image-dentistry,
+                .examination-image-anatomy,
+                .examination-image-medical,
+                .examination-image-enterprise {
+                  
+                    width: 50px;
+                    height: 50px;
+                    background-size: 32px;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-color: #fff;
+                    border-radius: 50%;
+                    object-fit: cover;
+                    box-shadow: 0px 1px 2px rgba(51, 50, 50, 0.5);
+                }
+
+                .examination-item-title {
+
+                }
+            }
+        }
+        
+    }
+
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

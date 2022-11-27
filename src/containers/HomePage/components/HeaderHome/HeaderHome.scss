@@ -2,7 +2,6 @@
     width: 100%;
     height: 78px;
     background-color: transparent;
-    border-bottom: 1px solid red;
 
     .header-homepage-inner {
         width: 100%;
@@ -21,7 +20,7 @@
                 width: 20px;
                 height: 20px;
                 fill: #969495;
-                margin-right: 6px;
+                margin-right: 10px;
             }
 
             .header-logo {
@@ -43,9 +42,10 @@
             .header-help {
                 display: flex;
                 margin-right: 18px;
+
                 .header-help-icon {
-                    width: 20px;
-                    height: 20px;
+                    width: 16px;
+                    height: 16px;
                     fill: #969495;
                     margin-right: 4px;
                     cursor: pointer;
@@ -86,18 +86,19 @@
 
     .header-desc-item {
         padding: 0 4px;
+        margin: 0 14px;
         cursor: pointer;
     }
 
     h5 {
         margin: 0;
-        font-size: 14px;
+        font-size: 12px;
         font-weight: 700;
     }
     p {
         margin: 0;
         padding: 0;
-        font-size: 12px;
+        font-size: 10px;
     }
 }
 
