@@ -1,4 +1,30 @@
-{
+{   
+    "header-home": {
+        "specialty": "Chuyên khoa",
+        "search-doctor": "Tìm bác sĩ theo chuyên khoa",
+        "health-center": "Cơ sở y tế",
+        "choose-room": "Chọn bệnh viện phòng khám",
+        "doctor": "Bác sĩ",
+        "choose-doctor": "Chọn bác sĩ giỏi",
+        "checkup-package": "Gói khám",
+        "general-health": "Khám sức khỏe tổng quát",
+        "help": "Hỗ trợ",
+        "language": "Ngôn ngữ"
+    },
+    "banner": {
+        "title-base": "NỀN TẢNG Y TẾ",
+        "title-care": "CHĂM SÓC SỨC KHỎE TOÀN DIỆN",
+        "placeholder-input-search": "Tìm bác sĩ",
+        "specialist-examination": "Khám chuyên khoa",
+        "remote-examination": "Khám từ xa",
+        "examination-overview": "Khám Tổng Quát",
+        "medical-test": "Xét nghiệm y học",
+        "mental-health": "Sức khỏe tinh thần",
+        "dental-examination": "Khám nha khoa",
+        "surgery-package": "Gói phẫu thuật",
+        "medical-products": "Sản phẩm y tế",
+        "enterprise-products": "Sản phẩm doanh nghiệp"
+    },
     "common": {
         "add": "Thêm",
         "edit": "Sửa",
