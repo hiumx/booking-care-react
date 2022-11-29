@@ -23,41 +23,42 @@ function Banner() {
                 <ul className='choosing-examination-list'>
 
                     <li className='choosing-examination-item'>
-                        <div className='examination-image-overview'></div>
+                        <div className='examination-image-specialty'></div>
                         <span className='examination-item-title'><FormattedMessage id="banner.specialist-examination" /></span>
                     </li>
                     <li className='choosing-examination-item'>
-                        <div className='examination-image-test'></div>
+                        <div className='examination-image-remote'></div>
                         <span className='examination-item-title'><FormattedMessage id="banner.remote-examination" /></span>
                     </li>
                     <li className='choosing-examination-item'>
-                        <div className='examination-image-morale'></div>
+                        <div className='examination-image-overview'></div>
                         <span className='examination-item-title'><FormattedMessage id="banner.examination-overview" /></span>
                     </li>
                     <li className='choosing-examination-item'>
-                        <div className='examination-image-dentistry'></div>
+                        <div className='examination-image-test'></div>
                         <span className='examination-item-title'><FormattedMessage id="banner.medical-test" /></span>
                     </li>
                     <li className='choosing-examination-item'>
-                        <div className='examination-image-anatomy'></div>
+                        <div className='examination-image-morale'></div>
                         <span className='examination-item-title'><FormattedMessage id="banner.mental-health" /></span>
                     </li>
                     <li className='choosing-examination-item'>
-                        <div className='examination-image-medical'></div>
+                        <div className='examination-image-dentistry'></div>
                         <span className='examination-item-title'><FormattedMessage id="banner.dental-examination" /></span>
                     </li>
                     <li className='choosing-examination-item'>
-                        <div className='examination-image-enterprise'></div>
+                        <div className='examination-image-anatomy'></div>
                         <span className='examination-item-title'><FormattedMessage id="banner.surgery-package" /></span>
                     </li>
                     <li className='choosing-examination-item'>
-                        <div className='examination-image-specialty'></div>
+                        <div className='examination-image-medical'></div>
                         <span className='examination-item-title'><FormattedMessage id="banner.medical-products" /></span>
                     </li>
                     <li className='choosing-examination-item'>
-                        <div className='examination-image-remote'></div>
+                        <div className='examination-image-enterprise'></div>
                         <span className='examination-item-title'><FormattedMessage id="banner.enterprise-products" /></span>
                     </li>
+
 
                 </ul>
             </div>

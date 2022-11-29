@@ -1,7 +1,14 @@
 import './HeaderHome.scss'
-import { FormattedMessage } from 'react-intl'
+import { connect } from 'react-redux';
+import { FormattedMessage } from 'react-intl';
+import { LANGUAGES } from '../../../../utils';
+import { changeLanguagesApp } from '../../../../store/actions'
 
-function HeaderHome() {
+function HeaderHome({ language, changeLanguagesAppRedux }) {
+
+    const handleClickChangeLanguage = (language) => {
+        changeLanguagesAppRedux(language)
+    }
     return (
         <div className="header-homepage-container">
             <div className="header-homepage-inner">
@@ -45,8 +52,8 @@ function HeaderHome() {
                         <p><FormattedMessage id="header-home.language" /></p>
                         <div className='dropdown-language'>
                             <ul className='header-language-list'>
-                                <li className='header-language-item'>Việt Nam</li>
-                                <li className='header-language-item'>English</li>
+                                <li className={language === LANGUAGES.VI ? 'header-language-item active' : 'header-language-item'}><span onClick={() => handleClickChangeLanguage(LANGUAGES.VI)}>Việt Nam</span></li>
+                                <li className={language === LANGUAGES.EN ? 'header-language-item active' : 'header-language-item'}><span onClick={() => handleClickChangeLanguage(LANGUAGES.EN)}>English</span></li>
                             </ul>
                         </div>
                     </div>
@@ -56,4 +63,18 @@ function HeaderHome() {
     );
 }
 
-export default HeaderHome;
+const mapStateToProps = state => {
+    return {
+        isLoggedIn: state.user.isLoggedIn,
+        language: state.app.language,
+    };
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        changeLanguagesAppRedux: (language) => dispatch(changeLanguagesApp(language))
+    };
+};
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(HeaderHome);

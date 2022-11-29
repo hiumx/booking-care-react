@@ -8,7 +8,7 @@
         "choose-doctor": "Chọn bác sĩ giỏi",
         "checkup-package": "Gói khám",
         "general-health": "Khám sức khỏe tổng quát",
-        "help": "Hỗ trợ",
+        "help": "Trung tâm hỗ trợ",
         "language": "Ngôn ngữ"
     },
     "banner": {
@@ -16,7 +16,7 @@
         "title-care": "CHĂM SÓC SỨC KHỎE TOÀN DIỆN",
         "placeholder-input-search": "Tìm bác sĩ",
         "specialist-examination": "Khám chuyên khoa",
-        "remote-examination": "Khám từ xa",
+        "remote-examination": "Khám bệnh từ xa",
         "examination-overview": "Khám Tổng Quát",
         "medical-test": "Xét nghiệm y học",
         "mental-health": "Sức khỏe tinh thần",
