@@ -10,39 +10,16 @@ import { flatMap } from 'lodash';
 function Carousel({ data }) {
     const settings = {
         dots: false,
-        infinite: false,
-        speed: 500,
+        infinite: true,
+        speed: 800,
         slidesToShow: 4,
-        slidesToScroll: 4,
-        initialSlide: 0,
+        slidesToScroll: 2,
+        initialSlide: 4,
         prevArrow: <SamplePrevArrow />,
         nextArrow: <SampleNextArrow />,
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
-                    infinite: true,
-                    dots: true
-                }
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2,
-                    initialSlide: 2
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            }
-        ]
+        autoplay: data.autoPlay,
+        autoplaySpeed: 4000,
+        cssEase: 'linear',
     };
     return (
 
@@ -54,15 +31,27 @@ function Carousel({ data }) {
                 </div>
 
                 <Slider {...settings}>
-                    {data.content.map((item) => (
-                        <div key={item.id} className='carousel-item'>
-                            {item.imgLink
-                                ? <img className='img-carousel-item' src={item.imgLink} alt={item.description} />
-                                : <a className='link-carousel-item' href='/'>{item.textLink}</a>
-                            }
-                            <span className='description'>{item.description}</span>
-                        </div>
-                    ))}
+                    {data.doctorItem
+                        ? data.content.map((item) => (
+                            <div key={item.id} className='carousel-item-doctor'>
+                                <div className='wrapper-img-item-img'>
+                                    <img className='img-carousel-item-doctor' src={item.imgDoctor} alt={item.descriptionDoctor} />
+                                </div>
+                                <p className='description-doctor'>{item.descriptionDoctor}</p>
+                                <p className='description-specialty'>{item.specialty}</p>
+                            </div>
+                        ))
+                        : data.content.map((item) => (
+                            <div key={item.id} className='carousel-item'>
+                                {item.imgLink
+                                    ? <img className='img-carousel-item' src={item.imgLink} alt={item.description} />
+                                    : <a className='link-carousel-item' href='/'>{item.textLink}</a>
+                                }
+                                <span className='description'>{item.description}</span>
+                            </div>
+                        ))
+                    }
+
                 </Slider>
             </div>
         </div>

@@ -1,0 +1,109 @@
+.about-container {
+    width: 100%;
+    height: 466px;
+    padding: 45px 100px;
+    border-bottom: 3px solid #efeef5;
+
+    .about-title {
+        font-weight: 600;
+        margin: 0;
+        padding: 0 0 26px 0;
+    }
+
+    .about-content {
+        .about-video {
+            padding: 0 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .about-media {
+            margin: auto;
+
+            .about-media-list {
+                text-align: center;
+                list-style: none;
+                .about-media-item {
+                    display: inline-block;
+                    border-radius: 5px;
+                    
+                    .img-media-life {
+                        width: 162px;
+                        height: 50px;
+                        display: inline-block;
+                        background-size: 142px 30px !important;
+                        background: url('https://bookingcare.vn/assets/truyenthong/suckhoedoisong.png') center center no-repeat;
+                    }
+
+                    .img-media-vtv1 {
+                        width: 106px;
+                        height: 50px;
+                        display: inline-block;
+                        background-size: 86px 30px !important;
+                        background: url('https://bookingcare.vn/assets/truyenthong/vtv1.png') center center no-repeat;
+                    }
+
+                    .img-media-ictnews {
+                        width: 127px;
+                        height: 50px;
+                        display: inline-block;
+                        background-size: 107px 30px !important;
+                        background: url('https://bookingcare.vn/assets/truyenthong/ictnews.png');
+                        background-position: center center;
+                        background-repeat: no-repeat;
+                        display: inline-block;
+                    }
+
+                    .img-media-vn-express {
+                        width: 183px;
+                        height: 50px;
+                        display: inline-block;
+                        background-size: 163px 30px !important;
+                        background: url('https://bookingcare.vn/assets/truyenthong/vnexpress.png');
+                        background-position: center center;
+                        background-repeat: no-repeat;
+                        display: inline-block;
+                    }
+
+                    .img-media-vtc-news {
+                        width: 151px;
+                        height: 50px;
+                        display: inline-block;
+                        background-color: #a3171e !important;
+                        background-size: 131px 30px !important;
+                        background: url('https://bookingcare.vn/assets/truyenthong/vtcnews.png');
+                        background-position: center center;
+                        background-repeat: no-repeat;
+                        display: inline-block;
+                        border-radius: 5px;
+                    }
+
+                    .img-media-ministry-health {
+                        width: 127px;
+                        height: 50px;
+                        display: inline-block;
+                        background-size: 107px 40px !important;
+                        background: url('https://bookingcare.vn/assets/truyenthong/cuc-cong-nghe-thong-tin-bo-y-te-2.png');
+                        background-position: center center;
+                        background-repeat: no-repeat;
+                        display: inline-block;
+                        border-radius: 5px;
+                    }
+                    
+                }
+            }
+        }
+        
+    }
+    
+}
+
+
+
+
+
+
+
+
+

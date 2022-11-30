@@ -1,0 +1,43 @@
+.footer-container {
+    width: 100%;
+    height: 78px;
+    display: flex;
+    padding: 0 100px;
+    justify-content: space-between;
+    background-color: #64b9e5;
+
+    .footer-title {
+        font-size: 12px;
+        color: #fff;
+        margin: 0;
+        padding: 10px 0;
+    }
+    .footer-contact-icon {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        .footer-facebook-icon {
+            width: 34px;
+            height: 34px;
+            fill: #2553c8;
+            margin-right: 10px;
+
+            &:hover {
+                fill: #1d3676;
+            }
+        }
+
+        .footer-youtube-icon {
+            width: 34px;
+            height: 34px;
+            fill: #cc191e;
+            
+            &:hover {
+                fill: rgb(167, 37, 37);
+            }
+        }
+    }
+
+    
+
+}

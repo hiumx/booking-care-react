@@ -2,6 +2,7 @@ export const dataSpecialty = {
     title: 'Chuyên khoa phổ biến',
     textButton: 'XEM THÊM',
     isBackgroundColor: false,
+    autoPlay: false,
     content: [
         {
             id: 1,
@@ -50,6 +51,7 @@ export const outstandingMedical = {
     title: 'Cơ sở y tế nổi bật',
     textButton: 'TÌM KIẾM',
     isBackgroundColor: true,
+    autoPlay: true,
     content: [
         {
             id: 1,
@@ -98,46 +100,56 @@ export const outstandingDoctor = {
     title: 'Bác sĩ nổi bật tuần qua',
     textButton: 'TÌM KIẾM',
     isBackgroundColor: false,
+    doctorItem: true,
+    autoPlay: true,
     content: [
         {
             id: 1,
-            imgLink: 'https://img1.kienthucvui.vn/uploads/2019/10/10/anh-bia-tinh-yeu-dep_105704407.jpg',
-            description: 'Cơ xương khớp'
+            imgDoctor: 'https://cdn.bookingcare.vn/fr/w200/2020/03/17/114430-bshung.jpg',
+            descriptionDoctor: 'Phó Giáo sư, Tiến sĩ, Bác sĩ cao cấp Nguyễn Duy Hưng',
+            specialty: 'Da liễu'
         },
         {
             id: 2,
-            imgLink: 'https://thuthuatphanmem.vn/uploads/2018/09/11/hinh-anh-dep-6_044127357.jpg',
-            description: 'Thần kinh'
+            imgDoctor: 'https://cdn.bookingcare.vn/fr/w200/2021/01/18/105401-bsckii-tran-minh-khuyen.jpg',
+            descriptionDoctor: 'Bác sĩ Chuyên khoa II Trần Minh Khuyên',
+            specialty: 'Sức khỏe tâm thần Tư vấn, trị liệu Tâm lý'
         },
         {
             id: 3,
-            imgLink: 'https://thuthuatphanmem.vn/uploads/2018/09/11/hinh-anh-dep-6_044127357.jpg',
-            description: 'Tiêu hóa'
+            imgDoctor: 'https://cdn.bookingcare.vn/fr/w200/2020/01/03/090559-pgs-nguyen-thi-hoai-an.jpg',
+            descriptionDoctor: 'Phó Giáo sư, Tiến sĩ, Bác sĩ Nguyễn Thị Hoài An',
+            specialty: 'Tai Mũi Họng Nhi khoa'
         },
         {
             id: 4,
-            imgLink: 'https://thuthuatphanmem.vn/uploads/2018/09/11/hinh-anh-dep-6_044127357.jpg',
-            description: 'Tim mạch'
+            imgDoctor: 'https://cdn.bookingcare.vn/fr/w200/2019/11/14/103848anh-dai-dien-bs.jpg',
+            descriptionDoctor: 'Khám Nam học, Bệnh viện Nam học và Hiếm muộn Hà Nội',
+            specialty: 'Nam học'
         },
         {
             id: 5,
-            imgLink: 'https://img1.kienthucvui.vn/uploads/2019/10/10/anh-bia-tinh-yeu-dep_105704407.jpg',
-            description: 'Cơ xương khớp'
+            imgDoctor: 'https://img1.kienthucvui.vn/uploads/2019/10/10/anh-bia-tinh-yeu-dep_105704407.jpg',
+            descriptionDoctor: 'Cơ xương khớp',
+            specialty: 'Da liễu'
         },
         {
             id: 6,
-            imgLink: 'https://thuthuatphanmem.vn/uploads/2018/09/11/hinh-anh-dep-6_044127357.jpg',
-            description: 'Thần kinh'
+            imgDoctor: 'https://img1.kienthucvui.vn/uploads/2019/10/10/anh-bia-tinh-yeu-dep_105704407.jpg',
+            descriptionDoctor: 'Cơ xương khớp',
+            specialty: 'Da liễu'
         },
         {
             id: 7,
-            imgLink: 'https://thuthuatphanmem.vn/uploads/2018/09/11/hinh-anh-dep-6_044127357.jpg',
-            description: 'Tiêu hóa'
+            imgDoctor: 'https://img1.kienthucvui.vn/uploads/2019/10/10/anh-bia-tinh-yeu-dep_105704407.jpg',
+            descriptionDoctor: 'Cơ xương khớp',
+            specialty: 'Da liễu'
         },
         {
             id: 8,
-            imgLink: 'https://thuthuatphanmem.vn/uploads/2018/09/11/hinh-anh-dep-6_044127357.jpg',
-            description: 'Tim mạch'
+            imgDoctor: 'https://img1.kienthucvui.vn/uploads/2019/10/10/anh-bia-tinh-yeu-dep_105704407.jpg',
+            descriptionDoctor: 'Cơ xương khớp',
+            specialty: 'Da liễu'
         },
     ]
 }
@@ -146,6 +158,7 @@ export const handbook = {
     title: 'Cẩm nang',
     textButton: 'TẤT CẢ BÀI VIẾT',
     isBackgroundColor: true,
+    autoPlay: true,
     content: [
         {
             id: 1,
@@ -180,7 +193,7 @@ export const handbook = {
         {
             id: 7,
             imgLink: 'https://thuthuatphanmem.vn/uploads/2018/09/11/hinh-anh-dep-6_044127357.jpg',
-            description: 'Tiêu hóa'
+            description: ''
         },
         {
             id: 8,
@@ -193,7 +206,8 @@ export const handbook = {
 export const doctorsAndMedicalFacilities = {
     title: 'Dành cho bác sĩ và cơ sở y tế',
     textButton: 'BÀI VIẾT',
-    isBackgroundColor: false,
+    isBackgroundColor: true,
+    autoPlay: true,
     content: [
         {
             id: 1,
@@ -213,7 +227,7 @@ export const doctorsAndMedicalFacilities = {
         {
             id: 4,
             textLink: 'Review khám tổng quát tại Phòng khám Vigor Health: Bảng giá chi tiết',
-            description: 'Tim mạch'
+            description: ''
         },
         {
             id: 5,
@@ -223,17 +237,17 @@ export const doctorsAndMedicalFacilities = {
         {
             id: 6,
             imgLink: 'https://thuthuatphanmem.vn/uploads/2018/09/11/hinh-anh-dep-6_044127357.jpg',
-            description: 'Thần kinh'
+            description: ''
         },
         {
             id: 7,
             imgLink: 'https://thuthuatphanmem.vn/uploads/2018/09/11/hinh-anh-dep-6_044127357.jpg',
-            description: 'Tiêu hóa'
+            description: ''
         },
         {
             id: 8,
             imgLink: 'https://thuthuatphanmem.vn/uploads/2018/09/11/hinh-anh-dep-6_044127357.jpg',
-            description: 'Tim mạch'
+            description: ''
         },
     ]
 }

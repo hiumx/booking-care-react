@@ -1,5 +1,6 @@
 import './Banner.scss'
-import { FormattedMessage } from 'react-intl'
+import { FormattedMessage } from 'react-intl';
+import { connect } from 'react-redux';
 function Banner() {
     return (
         <div className='banner-container'>
@@ -66,4 +67,18 @@ function Banner() {
     );
 }
 
-export default Banner;
+
+const mapStateToProps = state => {
+    return {
+        isLoggedIn: state.user.isLoggedIn,
+        language: state.app.language,
+    };
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+    };
+};
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Banner);
