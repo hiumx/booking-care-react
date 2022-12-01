@@ -40,14 +40,18 @@
                 font-weight: 600;
             }
     
-            .carousel-more-btn {
+            .carousel-more-btn,
+            .carousel-more-btn-2,
+            .carousel-more-btn-3 {
                 min-width: 80px;
                 border: none;
                 outline: none;
                 font-size: 12px;
                 padding: 6px;
+                margin: 0 4px;
                 background-color: #ebebeb;
-                border-radius: 1px; 
+                border-radius: 2px; 
+                
     
                 &:hover {
                     background-color: rgb(217, 210, 210);

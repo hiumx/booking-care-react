@@ -205,7 +205,10 @@ export const handbook = {
 
 export const doctorsAndMedicalFacilities = {
     title: 'Dành cho bác sĩ và cơ sở y tế',
+    multipleBtn: true,
     textButton: 'BÀI VIẾT',
+    textButton2: 'HỢP TÁC',
+    textButton3: 'LIÊN HỆ',
     isBackgroundColor: true,
     autoPlay: true,
     content: [

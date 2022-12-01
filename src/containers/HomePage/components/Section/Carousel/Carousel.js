@@ -27,7 +27,17 @@ function Carousel({ data }) {
             <div className='carousel-wrapper'>
                 <div className='carousel-header'>
                     <h3 className='carousel-title'>{data.title}</h3>
-                    <button className='carousel-more-btn'>{data.textButton}</button>
+                    {data.multipleBtn
+                        ?
+                        <div>
+                            <button className='carousel-more-btn'>{data.textButton}</button>
+                            <button className='carousel-more-btn-2'>{data.textButton2}</button>
+                            <button className='carousel-more-btn-3'>{data.textButton3}</button>
+                        </div>
+                        :
+                        <button className='carousel-more-btn'>{data.textButton}</button>
+                    }
+
                 </div>
 
                 <Slider {...settings}>

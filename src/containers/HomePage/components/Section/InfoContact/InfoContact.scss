@@ -1,0 +1,96 @@
+.info-contact-wrapper {
+    background-color: #efefef;
+    
+    .info-contact-container {
+        width: 100%;
+        height: 300px;
+        padding: 30px 100px;
+
+    
+        .copyright {
+    
+            h6 {
+                font-weight: 600;
+                margin: 0;
+                padding: 10px 0;
+            }
+    
+            p {
+                margin: 0;
+                padding: 2px 0;
+            }
+    
+            .img-booking-care {
+                width: 200px;
+                height: 44px;
+                cursor: pointer;
+            }
+        
+            .info-contact-local-icon {
+                width: 16px;
+                height: 16px;
+                padding-right: 4px;
+            }
+        
+            .info-contact-check-icon {
+                width: 16px;
+                height: 16px;
+                padding-right: 4px;
+            }
+    
+            .wrapper-img-copyright {
+    
+                padding: 8px 0;
+    
+                .img-copyright-bo-cong-thuong {
+                    width: 78px;
+                    height: 40px;
+                    cursor: pointer;
+                }
+            }
+    
+        }
+    
+        .faq {
+            a {
+                display: block;
+                color: #45c3d2;
+                font-size: 14px;
+                text-decoration: none;
+                padding: 2px 0;
+                margin: 2px 0;
+            }
+        }
+    
+        .headquarters {
+            .about-headquarter {
+                margin: 6px 0;
+                h6 {
+                    font-weight: 600;
+                }
+            }
+        }
+    
+    }
+
+    .separate {
+        border-top: 1px solid #ccc;
+        margin: 10px 100px;
+    }
+
+    .info-contact-download-app {
+        padding: 10px 100px 30px;
+        font-size: 14px;
+
+        .info-contact-phone-icon {
+            width: 16px;
+            height: 16px;
+            margin-right: 4px;
+        }
+
+        a {
+            padding-left: 4px;
+            text-decoration: none;
+        }
+    }
+}
