@@ -24,6 +24,10 @@ export const deleteUser = (userId) => {
     return axios.delete('api/users/delete', { data: { id: userId } })
 }
 
+export const getAllCode = (inputType) => {
+    return axios.get(`/api/allcode?type=${inputType}`)
+}
+
 
 
 

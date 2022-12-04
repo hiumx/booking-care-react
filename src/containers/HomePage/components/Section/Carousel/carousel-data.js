@@ -2,7 +2,7 @@ export const dataSpecialty = {
     title: 'Chuyên khoa phổ biến',
     textButton: 'XEM THÊM',
     isBackgroundColor: false,
-    autoPlay: false,
+    autoPlay: true,
     content: [
         {
             id: 1,

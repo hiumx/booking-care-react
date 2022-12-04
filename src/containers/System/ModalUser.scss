@@ -6,3 +6,45 @@
     border: none;
     outline: none;
 }
+
+.gender-user-redux {
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 35px;
+        right: 20px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #000 transparent transparent transparent;
+    }
+}
+
+.position-user-redux {
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 35px;
+        right: 20px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #000 transparent transparent transparent;
+    }
+}
+
+.roleId-user-redux {
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 35px;
+        right: 20px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #000 transparent transparent transparent;
+    }
+}

@@ -38,7 +38,7 @@ class DatePicker extends Component {
         }
     }
 
-    componentWillUnmount() {
+    UN_SAFEcomponentWillUnmount() {
         if (this.flatpickrNode) {
             this.flatpickrNode.removeEventListener('blur', this.handleBlur);
             this.flatpickrNode.removeEventListener('keydown', this.handlerKeyDown);

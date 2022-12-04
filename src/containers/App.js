@@ -12,12 +12,12 @@ import { path } from '../utils'
 
 import Home from '../routes/Home';
 import Login from './Auth/Login';
-import Header from './Header/Header';
 import System from '../routes/System';
 import HomePage from './HomePage';
 import { CustomToastCloseButton } from '../components/CustomToast';
 import CustomScrollbars from '../components/CustomScrollbars';
 
+console.warn = () => { }
 class App extends Component {
 
     handlePersistorState = () => {
@@ -43,7 +43,6 @@ class App extends Component {
             <Fragment>
                 <Router history={history}>
                     <div className="main-container">
-                        {this.props.isLoggedIn && <Header />}
                         <span className="content-container">
                             <CustomScrollbars style={{ width: '100%', height: '100vh' }}>
                                 <Switch>
@@ -71,7 +70,6 @@ class App extends Component {
 const mapStateToProps = state => {
     return {
         started: state.app.started,
-        isLoggedIn: state.user.isLoggedIn
     };
 };
 

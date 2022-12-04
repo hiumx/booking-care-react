@@ -77,7 +77,7 @@ function UserManage() {
     return (
 
         <div className='users-container'>
-            <h3 className="title-users text-center mt-3">Manage users</h3>
+            <h3 className="title-users text-center mt-3 title">Manage User</h3>
             <button type="button" className="btn btn-primary mx-3 px-3" onClick={toggleShowModal}>Create a new user</button>
             <ModalUser showModal={showModal} toggleShowModal={toggleShowModal} createNewUser={createNewUser} />
             {showEditModal && <ModalEditUser showModal={showEditModal} toggleShowModal={toggleShowEditModal} currentUser={dataUser} updateUser={updateUser} />}

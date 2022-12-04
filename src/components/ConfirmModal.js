@@ -25,7 +25,7 @@ class ConfirmModal extends Component {
         document.addEventListener('keydown', this.handlerKeyDown);
     }
 
-    componentWillUnmount() {
+    UNSAFE_componentWillUnmount() {
         document.removeEventListener('keydown', this.handlerKeyDown);
     }
 
