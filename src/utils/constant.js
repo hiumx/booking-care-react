@@ -3,7 +3,8 @@ export const path = {
     HOMEPAGE: '/home',
     LOGIN: '/login',
     LOG_OUT: '/logout',
-    SYSTEM: '/system'
+    SYSTEM: '/system',
+    DETAIL_DOCTOR: '/detail-doctor/:id'
 };
 
 export const LANGUAGES = {
@@ -11,10 +12,11 @@ export const LANGUAGES = {
     EN: 'en'
 };
 
-export const manageActions = {
-    ADD: "ADD",
-    EDIT: "EDIT",
-    DELETE: "DELETE"
+export const CRUD_USER = {
+    CREATE: 'CREATE',
+    READ: 'READ',
+    UPDATE: 'UPDATE',
+    DELETE: "DELETE",
 };
 
 export const dateFormat = {

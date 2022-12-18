@@ -1,0 +1,36 @@
+.manage-doctor-wrapper {
+    padding-bottom: 100px;
+    .manage-doctor-title {
+        padding: 24px 0;
+    }
+
+    .manage-doctor-description {
+        display: flex;
+        padding: 10px 0;
+
+        .manage-doctor-select-doctor {
+            .manage-doctor-select-doctor-label {
+                font-size: 14px;
+                font-weight: 500;
+                margin-bottom: 4px;
+            }
+        }
+
+        .manage-doctor-description-content {
+            .manage-doctor-description-content-label {
+                font-size: 14px;
+                font-weight: 500;
+                margin-bottom: 4px;
+            }
+            .manage-doctor-description-textarea {
+                width: 100%;
+            }
+        }
+    }
+
+    .save-info-doctor-btn {
+        margin-top: 16px;
+        padding: 0 8px;
+        border-radius: 6px;
+    }
+}

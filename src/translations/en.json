@@ -49,7 +49,8 @@
     },
     "manage-user": {
         "title": "User management with Redux",
-        "add": "Add a new user",
+        "add-title": "Add a new user",
+        "update-title": "Update user",
         "email": "Email",
         "password": "Password",
         "first-name": "First Name",
@@ -63,6 +64,17 @@
         "others": "Others",
         "position": "Position",
         "role-id": "Role",
-        "btn-save": "Save user"
+        "btn-save": "Save user",
+        "btn-edit": "Update user"
+    },
+    "manage-doctor": {
+        "title": "Edit doctor information",
+        "choose-doctor": "Choosing doctor",
+        "detail-doctor": "Detail information about doctor",
+        "save-doctor-btn": "Save information"
+    },
+    "home-page": {
+        "doctor-outstanding": "Outstanding doctor of the past week",
+        "view-more-btn": "More information"
     }
 }

@@ -1,9 +1,11 @@
 import actionTypes from "../actions/actionTypes";
 
 const initState = {
-    gender: [],
-    position: [],
-    role: [],
+    genders: [],
+    positions: [],
+    roles: [],
+    users: [],
+    topDoctors: []
 }
 
 const adminReducer = (state = initState, action) => {
@@ -14,7 +16,7 @@ const adminReducer = (state = initState, action) => {
             }
         case actionTypes.GET_GENDER_SUCCESS:
             const copyStateGender = { ...state }
-            copyStateGender.gender = action.data;
+            copyStateGender.genders = action.data;
             return {
                 ...copyStateGender
             }
@@ -28,7 +30,7 @@ const adminReducer = (state = initState, action) => {
             }
         case actionTypes.GET_POSITION_SUCCESS:
             const copyStatePosition = { ...state }
-            copyStatePosition.position = action.data
+            copyStatePosition.positions = action.data
             return {
                 ...copyStatePosition
             }
@@ -42,11 +44,30 @@ const adminReducer = (state = initState, action) => {
             }
         case actionTypes.GET_ROLE_SUCCESS:
             const copyStateRole = { ...state }
-            copyStateRole.role = action.data
+            copyStateRole.roles = action.data
             return {
                 ...copyStateRole
             }
         case actionTypes.GET_ROLE_FAILED:
+            return {
+                ...state
+            }
+        case actionTypes.FETCH_ALL_USERS_SUCCESS:
+            state.users = action.usersData
+            return {
+                ...state
+            }
+        case actionTypes.FETCH_ALL_USERS_FAILED:
+            return {
+                ...state
+            }
+        case actionTypes.FETCH_TOP_DOCTORS_SUCCESS:
+            state.topDoctors = action.dataDoctors
+            return {
+                ...state
+            }
+        case actionTypes.FETCH_TOP_DOCTORS_FAILED:
+            state.topDoctors = []
             return {
                 ...state
             }

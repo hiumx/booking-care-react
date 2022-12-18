@@ -49,7 +49,8 @@
     },
     "manage-user": {
         "title": "Quản lí người dùng với Redux",
-        "add": "Thêm mới người dùng",
+        "add-title": "Thêm mới người dùng",
+        "update-title": "Cập nhật người dùng",
         "email": "Email",
         "password": "Mật khẩu",
         "first-name": "Tên",
@@ -63,6 +64,17 @@
         "others": "Khác",
         "position": "Chức danh",
         "role-id": "Vai trò",
-        "btn-save": "Lưu người dùng"
+        "btn-save": "Lưu người dùng",
+        "btn-edit": "Cập nhật người dùng"
+    },
+    "manage-doctor": {
+        "title": "Chỉnh sửa thông tin bác sĩ",
+        "choose-doctor": "Chọn bác sĩ",
+        "detail-doctor": "Thông tin chi tiết về bác sĩ",
+        "save-doctor-btn": "Lưu thông tin"
+    },
+    "home-page": {
+        "doctor-outstanding": "Bác sĩ nổi bật một tuần qua",
+        "view-more-btn": "Xem thêm"
     }
 }

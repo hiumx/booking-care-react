@@ -1,21 +1,23 @@
-import HeaderHome from "./components/HeaderHome";
+import HeaderHome from "./components/header/HeaderHome";
 import Banner from "./components/Section/Banner";
-import Carousel from "./components/Section/Carousel";
 import About from "./components/Section/About";
 import FooterHome from "./components/FooterHome";
 import InfoContact from "./components/Section/InfoContact";
-import { dataSpecialty, outstandingMedical, outstandingDoctor, handbook, doctorsAndMedicalFacilities } from '../../containers/HomePage/components/Section/Carousel/carousel-data'
+import { CarouselOutstandingDoctor } from '../../containers/HomePage/components/Section/Carousel'
+
+// import { dataSpecialty, outstandingMedical, outstandingDoctor, handbook, doctorsAndMedicalFacilities } from '../../containers/HomePage/components/Section/Carousel/carousel-data'
 function HomePage() {
     return (
         <>
             <HeaderHome />
             <Banner />
-            <Carousel data={dataSpecialty} />
+            <CarouselOutstandingDoctor />
+            {/* <Carousel data={dataSpecialty} />
             <Carousel data={outstandingMedical} />
             <Carousel data={outstandingDoctor} />
-            <Carousel data={handbook} />
+            <Carousel data={handbook} /> */}
             <About />
-            <Carousel data={doctorsAndMedicalFacilities} />
+            {/* <Carousel data={doctorsAndMedicalFacilities} /> */}
             <InfoContact />
             <FooterHome />
         </>

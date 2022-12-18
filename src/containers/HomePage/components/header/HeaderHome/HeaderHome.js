@@ -1,8 +1,8 @@
 import './HeaderHome.scss'
 import { connect } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
-import { LANGUAGES } from '../../../../utils';
-import { changeLanguagesApp } from '../../../../store/actions'
+import { LANGUAGES } from '../../../../../utils';
+import { changeLanguagesApp } from '../../../../../store/actions'
 
 function HeaderHome({ language, changeLanguagesAppRedux }) {
 
