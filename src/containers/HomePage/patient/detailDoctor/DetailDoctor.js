@@ -31,7 +31,7 @@ function DetailDoctor({ getInfoDoctorById, language, dataDoctor, match }) {
 
         <>
             <HeaderDetailPage />
-            <div className='detail-doctor-container container'>
+            <div className='detail-doctor-container'>
                 <div className='detail-doctor-information'>
                     <div className='row'>
                         <div className='col col-2'>
@@ -49,7 +49,7 @@ function DetailDoctor({ getInfoDoctorById, language, dataDoctor, match }) {
                         </div>
                     </div>
                 </div>
-                <div className='detail-doctor-schedule '>
+                <div className='detail-doctor-schedule'>
 
                 </div>
                 <div

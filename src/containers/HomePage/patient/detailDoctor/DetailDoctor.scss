@@ -1,16 +1,20 @@
 .detail-doctor-container  {
-    margin-top: 58px;
-    padding: 26px 34px 30px;
+    
 
     .detail-doctor-information {
-        padding-bottom: 40px;
+        margin: 58px 142px 0;
+        padding: 26px 0 22px;
 
         .detail-doctor-position {
-            margin-left: -75px;
+            margin: auto 0 auto -75px;
             font-size: 13px;
 
             .detail-doctor-intro {
                 font-weight: 600;
+            }
+
+            .detail-doctor-description {
+                margin: 0;
             }
         }
 
@@ -20,5 +24,11 @@
             border-radius: 50%;
             object-fit: cover;
         }
+    }
+
+    .detail-doctor-overview {
+        padding: 14px 142px;
+        border-top: 1px solid #ccc;
+        background-color: #f9f9f9;
     }
 }
