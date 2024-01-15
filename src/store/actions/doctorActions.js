@@ -1,6 +1,6 @@
 import actionTypes from "./actionTypes";
 import { toast } from 'react-toastify';
-import { getTopDoctorsService, getAllDoctorsService, saveDetailDoctorService, getInfoDoctorByIdService } from '../../services/doctorService'
+import { getTopDoctorsService, getAllDoctorsService, createDetailDoctorService, getInfoDoctorByIdService, updateDetailDoctorService } from '../../services/doctorService'
 
 export const fetchTopDoctorsHomeStart = () => {
     return async (dispatch) => {
@@ -51,7 +51,9 @@ export const getAllDoctors = () => {
 export const saveDetailDoctor = (data) => {
     return async (dispatch) => {
         try {
-            const res = await saveDetailDoctorService(data)
+            const action = data.actionSubmit;
+
+            const res = action === 'CREATE' ? await createDetailDoctorService(data) : await updateDetailDoctorService(data);
             if (res && res.errorCode === 0) {
                 toast.success('Save information doctor success')
                 dispatch({

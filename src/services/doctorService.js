@@ -8,8 +8,12 @@ export const getAllDoctorsService = () => {
     return axios.get('/doctor/get-all-doctor')
 }
 
-export const saveDetailDoctorService = (data) => {
+export const createDetailDoctorService = (data) => {
     return axios.post('/doctor/save-detail-doctor', data)
+}
+
+export const updateDetailDoctorService = (data) => {
+    return axios.put('/doctor/save-detail-doctor', data)
 }
 
 export const getInfoDoctorByIdService = (inputId) => {

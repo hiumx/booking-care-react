@@ -9,6 +9,7 @@ import './ManageDoctor.scss'
 import MarkdownIt from 'markdown-it';
 import MdEditor from 'react-markdown-editor-lite';
 import 'react-markdown-editor-lite/lib/index.css';
+import { getInfoMarkDownFromDoctorId } from '../../services/markdownService';
 
 const options = [
     { value: 'chocolate', label: 'Chocolate' },
@@ -27,6 +28,7 @@ function ManageDoctor({ getAllDoctors, saveDetailDoctorRedux, language, listDoct
     const [contentMarkdown, setContentMarkdown] = useState('')
     const [contentHTML, setContentHTML] = useState('')
     const [arrDoctors, setArrDoctors] = useState([])
+    const [actionSubmit, setActionSubmit] = useState('CREATE');
 
     useEffect(() => {
         getAllDoctors()
@@ -43,8 +45,20 @@ function ManageDoctor({ getAllDoctors, saveDetailDoctorRedux, language, listDoct
     }, [language])
 
 
-    const handleChange = (selectDoctor) => {
-        setSelectDoctor(selectDoctor)
+    const handleChange = async (selectDoctor) => {
+        setSelectDoctor(selectDoctor);
+        setContentHTML('');
+        setContentMarkdown('');
+        setValueDescDoctor('');
+        const res = await getInfoMarkDownFromDoctorId(selectDoctor.value);
+        if(res && res.data) {
+            setContentHTML(res.data.contentHTML);
+            setContentMarkdown(res.data.contentMarkdown);
+            setValueDescDoctor(res.data.description);
+            setActionSubmit('UPDATE');
+        } else if (res && !res.data) {
+            setActionSubmit('CREATE');
+        }
     }
 
 
@@ -59,10 +73,11 @@ function ManageDoctor({ getAllDoctors, saveDetailDoctorRedux, language, listDoct
 
     const handleSaveInfoDoctor = () => {
         saveDetailDoctorRedux({
-            contentMarkdown: contentMarkdown,
-            contentHTML: contentHTML,
+            contentMarkdown,
+            contentHTML,
             description: valueDescDoctor,
-            doctorId: selectDoctor.value
+            doctorId: selectDoctor.value,
+            actionSubmit
         })
     }
 
@@ -105,13 +120,18 @@ function ManageDoctor({ getAllDoctors, saveDetailDoctorRedux, language, listDoct
                 </div>
             </div>
             <div>
-                <MdEditor style={{ height: '500px' }} renderHTML={text => mdParser.render(text)} onChange={handleEditorChange} />
+                <MdEditor 
+                style={{ height: '500px' }} 
+                renderHTML={text => mdParser.render(text)} 
+                onChange={handleEditorChange} 
+                value={contentMarkdown}
+            />
             </div>
             <button
                 className='btn btn-primary save-info-doctor-btn'
                 onClick={handleSaveInfoDoctor}
             >
-                <FormattedMessage id='manage-doctor.save-doctor-btn' />
+                <FormattedMessage id={actionSubmit === 'CREATE' ? 'manage-doctor.create-doctor-btn' : 'manage-doctor.update-doctor-btn' }/>
             </button>
         </div>
     );

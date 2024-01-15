@@ -71,7 +71,8 @@
         "title": "Chỉnh sửa thông tin bác sĩ",
         "choose-doctor": "Chọn bác sĩ",
         "detail-doctor": "Thông tin chi tiết về bác sĩ",
-        "save-doctor-btn": "Lưu thông tin"
+        "create-doctor-btn": "Tạo mới",
+        "update-doctor-btn": "Cập nhật"
     },
     "home-page": {
         "doctor-outstanding": "Bác sĩ nổi bật một tuần qua",

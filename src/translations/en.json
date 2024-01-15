@@ -71,7 +71,8 @@
         "title": "Edit doctor information",
         "choose-doctor": "Choosing doctor",
         "detail-doctor": "Detail information about doctor",
-        "save-doctor-btn": "Save information"
+        "create-doctor-btn": "Create",
+        "update-doctor-btn": "Update"
     },
     "home-page": {
         "doctor-outstanding": "Outstanding doctor of the past week",
