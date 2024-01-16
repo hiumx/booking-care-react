@@ -39,12 +39,16 @@
             "manage-doctor": "Manage doctors",
             "crud-user": "CRUD users",
             "user-redux": "CRUD Redux",
+            "doctor-schedule": "Schedule management",
             "clinic": "Clinics",
             "manage-clinic": "Manage clinics",
             "specialty": "Specialties",
             "manage-specialty": "Manage specialties",
             "handbook": "Handbooks",
             "manage-handbook": "Manage handbooks"
+        },
+        "doctor": {
+            "doctor-schedule": "Schedule management"
         }
     },
     "manage-user": {
@@ -77,5 +81,10 @@
     "home-page": {
         "doctor-outstanding": "Outstanding doctor of the past week",
         "view-more-btn": "More information"
+},
+    "schedule-examines": {
+        "title": "doctor schedule",
+        "select-doctor": "Select doctor",
+        "choose-date-examines": "Choose examines date"
     }
 }

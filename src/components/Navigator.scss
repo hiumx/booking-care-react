@@ -36,6 +36,8 @@
                 line-height: 35px;
                 text-transform: none;
                 .menu-link {
+                    width: 100%;
+                    display: block;
                     text-decoration: none;
                     color: $text-in-light;
                 }

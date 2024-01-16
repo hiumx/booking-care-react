@@ -5,7 +5,8 @@ const initState = {
     positions: [],
     roles: [],
     users: [],
-    topDoctors: []
+    topDoctors: [],
+    doctorScheduleTimes: []
 }
 
 const adminReducer = (state = initState, action) => {
@@ -68,6 +69,16 @@ const adminReducer = (state = initState, action) => {
             }
         case actionTypes.FETCH_TOP_DOCTORS_FAILED:
             state.topDoctors = []
+            return {
+                ...state
+            }
+        case actionTypes.FETCH_SCHEDULE_TIME_SUCCESS:
+            state.doctorScheduleTimes = action.payload;
+            return {
+                ...state
+            }
+        case actionTypes.FETCH_SCHEDULE_TIME_FAILED:
+            state.doctorScheduleTimes = []
             return {
                 ...state
             }

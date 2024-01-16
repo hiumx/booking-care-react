@@ -1,6 +1,7 @@
 import actionTypes from "./actionTypes";
 import { getAllCode, createNewUserService, getAllUsers, EditUserService, deleteUser } from "../../services/userService";
 import { toast } from 'react-toastify';
+import _ from "lodash";
 // get gender
 export const getGenderStart = () => {
     return async (dispatch) => {
@@ -192,4 +193,27 @@ export const fetchAllUsersFailed = () => ({
     type: actionTypes.FETCH_ALL_USERS_FAILED
 })
 
-
+export const getAllScheduleTime = async () => {
+    return async (dispatch) => {
+        try {
+            const res = await getAllCode('TIME');
+            if (res && res.errorCode === 0) {
+                dispatch({
+                    type: actionTypes.FETCH_SCHEDULE_TIME_SUCCESS,
+                    payload: res
+                })
+            } else {
+                toast.error("Get users failed");
+                dispatch({
+                    type: actionTypes.FETCH_SCHEDULE_TIME_FAILED
+                })
+            }
+        } catch (error) {
+            toast.error("Get users failed");
+            dispatch({
+                type: actionTypes.FETCH_SCHEDULE_TIME_FAILED
+            })
+            console.log(error);
+        }
+    }
+}

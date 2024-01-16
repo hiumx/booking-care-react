@@ -39,12 +39,16 @@
             "manage-doctor": "Quản lí bác sĩ",
             "crud-user": "CRUD người dùng",
             "user-redux": "CRUD Redux",
+            "doctor-schedule": "Quản lí lịch khám",
             "clinic": "Phòng khám",
             "manage-clinic": "Quản lí phòng khám",
             "specialty": "Chuyên khoa",
             "manage-specialty": "Quản lí chuyên khoa",
             "handbook": "Cẩm nang",
             "manage-handbook": "Quản lí cẩm nang"
+        },
+        "doctor": {
+            "doctor-schedule": "Quản lí lịch khám"
         }
     },
     "manage-user": {
@@ -77,5 +81,10 @@
     "home-page": {
         "doctor-outstanding": "Bác sĩ nổi bật một tuần qua",
         "view-more-btn": "Xem thêm"
+    },
+    "schedule-examines": {
+        "title": "Lịch khám bác sĩ",
+        "select-doctor": "Chọn bác sĩ",
+        "choose-date-examines": "Chọn ngày khám bệnh"
     }
 }

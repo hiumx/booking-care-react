@@ -1,48 +1,57 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
+import { FormattedMessage } from 'react-intl';
 
 import * as actions from "../../store/actions";
 import Navigator from '../../components/Navigator';
 import { LANGUAGES } from '../../utils';
-import { adminMenu } from './menuApp';
+import { adminMenu, doctorMenu } from './menuApp';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import './Header.scss';
-import { FormattedMessage } from 'react-intl'
 
-class Header extends Component {
+function Header({ processLogout, changeLanguagesAppRedux, language, userInfo }) {
 
-    render() {
-        const { processLogout, changeLanguagesAppRedux, language, userInfo } = this.props;
+    const [menu, setMenu] = useState([]);
+    const history = useHistory();
 
-        const handleChangeLanguage = (language) => {
-            changeLanguagesAppRedux(language)
+    useEffect(() => {
+        if(userInfo.roleId === 'R1') {
+            setMenu(adminMenu);
+        } else if (userInfo.roleId === 'R2') {
+            setMenu(doctorMenu);
+        } else {
+            setMenu([]);
+            history.push('/home');
         }
+    }, [userInfo]);
 
-
-        return (
-            <div className="header-container">
-                {/* thanh navigator */}
-                <div className="header-tabs-container">
-                    <Navigator menus={adminMenu} />
-                </div>
-
-                {/* nút logout */}
-                <div className='welcome-languages-logout'>
-                    <span className='text-welcome'>
-                        <FormattedMessage id="header-home.welcome" />
-                        {userInfo && userInfo.firstName ? userInfo.firstName : ''}
-                    </span>
-                    <div className='languages'>
-                        <span className={language === LANGUAGES.VI ? 'language-vi active' : 'language-vi'} onClick={() => handleChangeLanguage(LANGUAGES.VI)}>VN</span>
-                        <span className={language === LANGUAGES.EN ? 'language-en active' : 'language-en'} onClick={() => handleChangeLanguage(LANGUAGES.EN)}>EN</span>
-                    </div>
-                    <div className="btn btn-logout" title='logout' onClick={processLogout}>
-                        <i className="fas fa-sign-out-alt"></i>
-                    </div>
-                </div>
-            </div>
-        );
+    const handleChangeLanguage = (language) => {
+        changeLanguagesAppRedux(language)
     }
 
+
+    return (
+        <div className="header-container">
+            
+            <div className="header-tabs-container">
+                <Navigator menus={menu} />
+            </div>
+
+            <div className='welcome-languages-logout'>
+                <span className='text-welcome'>
+                    <FormattedMessage id="header-home.welcome" />
+                    {userInfo && userInfo.firstName ? userInfo.firstName : ''}
+                </span>
+                <div className='languages'>
+                    <span className={language === LANGUAGES.VI ? 'language-vi active' : 'language-vi'} onClick={() => handleChangeLanguage(LANGUAGES.VI)}>VN</span>
+                    <span className={language === LANGUAGES.EN ? 'language-en active' : 'language-en'} onClick={() => handleChangeLanguage(LANGUAGES.EN)}>EN</span>
+                </div>
+                <div className="btn btn-logout" title='logout' onClick={processLogout}>
+                    <i className="fas fa-sign-out-alt"></i>
+                </div>
+            </div>
+        </div>
+    );
 }
 
 const mapStateToProps = state => {

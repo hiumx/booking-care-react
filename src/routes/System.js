@@ -5,6 +5,7 @@ import UserManage from '../containers/System/UserManage';
 import UserRedux from '../containers/System/UserRedux';
 import Header from '../containers/Header/Header';
 import ManageDoctor from '../containers/System/ManageDoctor';
+import DoctorSchedule from '../containers/System/DoctorSchedule/DoctorSchedule';
 
 function System({ systemMenuPath, isLoggedIn }) {
     return (
@@ -16,6 +17,7 @@ function System({ systemMenuPath, isLoggedIn }) {
                         <Route path="/system/user-manage" component={UserManage} />
                         <Route path="/system/manage-doctor" component={ManageDoctor} />
                         <Route path="/system/user-redux" component={UserRedux} />
+                        <Route path="/system/doctor-schedule" component={DoctorSchedule} />
                         <Route component={() => { return (<Redirect to={systemMenuPath} />) }} />
                     </Switch>
                 </div>
