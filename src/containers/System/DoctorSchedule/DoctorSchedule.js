@@ -8,6 +8,8 @@ import { getAllCode } from '../../../services/userService';
 import { connect } from 'react-redux';
 import * as actions from '../../../store/actions';
 import { FormattedMessage } from 'react-intl';
+import { createDoctorSchedule } from '../../../services/doctorService';
+import { toast } from 'react-toastify';
 
 function DoctorSchedule({ getAllDoctors, listDoctors, getAllScheduleTime, doctorScheduleTimes, language }) {
 
@@ -15,10 +17,6 @@ function DoctorSchedule({ getAllDoctors, listDoctors, getAllScheduleTime, doctor
     const [doctor, setDoctor] = useState(null);
     const [listTimes, setListTimes] = useState([]);
     const [listTimesActive, setListTimeActive] = useState([]);
-    console.log(listTimesActive);
-
-    console.log(listTimes);
-
     const options = listDoctors.map(doctor => (
         {
             value: doctor.id,
@@ -36,12 +34,33 @@ function DoctorSchedule({ getAllDoctors, listDoctors, getAllScheduleTime, doctor
         getAllDoctors();
     }, []);
 
-    const handleClickItemTimeExamines = (timeId) => {
-        if(!listTimesActive.includes(timeId)) {
-            setListTimeActive([...listTimesActive, timeId]);
+    const handleClickItemTimeExamines = (timeId, keyMap) => {
+        
+        const isExit = listTimesActive.some(time => time.timeId === timeId);
+        if(!isExit) {
+            setListTimeActive([...listTimesActive, {timeId, keyMap}]);
         } else {
-            const restList = listTimesActive.filter(time => time != timeId);
+            const restList = listTimesActive.filter(time => time.timeId !== timeId);
             setListTimeActive(restList);
+        }
+    }
+    
+    const handleClickCreateSchedule = async () => {
+        if(doctor === null || doctor.value === null) {
+            toast.error('Please choose doctor!');
+        } else if(listTimesActive.length === 0) {
+            toast.error('Please choose least one period!')
+        } else{
+            const res = await createDoctorSchedule({
+                doctorId: doctor.value,
+                date,
+                listTimeSelected: listTimesActive
+            });
+            if(res && res.errorCode === 0) {
+                toast.success(res.message);
+            } else {
+                toast.error(res?.message);
+            }
         }
     }
 
@@ -79,14 +98,21 @@ function DoctorSchedule({ getAllDoctors, listDoctors, getAllScheduleTime, doctor
                         {
                             listTimes.map((time, index) =>
                                 <li
-                                    onClick={() => handleClickItemTimeExamines(time.id)}
-                                    className={listTimesActive.includes(time.id) ? 'time-examines-item active' : 'time-examines-item'}
+                                    onClick={() => handleClickItemTimeExamines(time.id, time.keyMap)}
+                                    className={listTimesActive.some(item => item.timeId === time.id) ? 'time-examines-item active' : 'time-examines-item'}
                                     key={index}>{language === 'en' ? time.valueEn : time.valueVi}
                                 </li>
                             )
                         }
                     </ul>
                 </div>
+                <button 
+                    className='create-schedule-btn'
+                    onClick={handleClickCreateSchedule}
+                    
+                >
+                    <FormattedMessage id="schedule-examines.create-schedule-btn" />
+                </button>
             </div>
 
         </div>

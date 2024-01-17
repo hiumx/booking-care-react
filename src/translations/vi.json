@@ -85,6 +85,7 @@
     "schedule-examines": {
         "title": "Lịch khám bác sĩ",
         "select-doctor": "Chọn bác sĩ",
-        "choose-date-examines": "Chọn ngày khám bệnh"
+        "choose-date-examines": "Chọn ngày khám bệnh",
+        "create-schedule-btn": "Tạo lịch khám"
     }
 }

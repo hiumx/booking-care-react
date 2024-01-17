@@ -85,6 +85,7 @@
     "schedule-examines": {
         "title": "doctor schedule",
         "select-doctor": "Select doctor",
-        "choose-date-examines": "Choose examines date"
+        "choose-date-examines": "Choose examines date",
+        "create-schedule-btn": "Create schedule"
     }
 }

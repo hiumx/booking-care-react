@@ -34,4 +34,17 @@
         }
 
     }
+
+    .create-schedule-btn {
+        color: #fff;
+        background: #0071ba;
+        padding: 6px;
+        border: none;
+        outline: none;
+        border-radius: 6px;
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
 }

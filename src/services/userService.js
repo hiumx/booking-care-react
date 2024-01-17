@@ -25,9 +25,7 @@ export const deleteUser = (userId) => {
 }
 
 export const getAllCode = (inputType) => {
-    const res = axios.get(`/api/allcode?type=${inputType}`)
-    console.log(res);
-    return res;
+    return axios.get(`/api/allcode?type=${inputType}`);
 
 }
 
