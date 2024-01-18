@@ -8,6 +8,10 @@ export const getUser = (user) => {
     return axios.get(`/api/users/?id=${user.id}`)
 }
 
+export const getUserByEmail = (userEmail) => {
+    return axios.get(`/api/users/?email=${userEmail}`)
+}
+
 export const getAllUsers = (userId) => {
     return axios.get(`/api/users?id=${userId}`)
 }

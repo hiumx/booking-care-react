@@ -40,7 +40,7 @@ function Header({ processLogout, changeLanguagesAppRedux, language, userInfo }) 
             <div className='welcome-languages-logout'>
                 <span className='text-welcome'>
                     <FormattedMessage id="header-home.welcome" />
-                    {userInfo && userInfo.firstName ? userInfo.firstName : ''}
+                    {userInfo && userInfo.firstName && userInfo.lastName ? `${userInfo.firstName} ${userInfo.lastName}`: ''}
                 </span>
                 <div className='languages'>
                     <span className={language === LANGUAGES.VI ? 'language-vi active' : 'language-vi'} onClick={() => handleChangeLanguage(LANGUAGES.VI)}>VN</span>

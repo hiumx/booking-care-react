@@ -17,9 +17,13 @@ export const updateDetailDoctorService = (data) => {
 }
 
 export const getInfoDoctorByIdService = (inputId) => {
-    return axios.get(`/doctor/get-info-doctor-by-id?id=${inputId}`)
+    return axios.get(`/doctor/info-doctor?id=${inputId}`)
 }
 
 export const createDoctorSchedule = (dataSchedule) => {
-    return axios.post('doctor/create-doctor-schedule', dataSchedule);
+    return axios.post('doctor/doctor-schedule', dataSchedule);
+}
+
+export const getDoctorSchedule = ({ doctorId, date }) => {
+    return axios.get(`doctor/doctor-schedule/?doctorId=${doctorId}&date=${date}`);
 }

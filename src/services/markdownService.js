@@ -1,5 +1,5 @@
 import axios from '../axios';
 
 export const getInfoMarkDownFromDoctorId = (doctorId) => {
-    return axios.get(`/api/get-info-doctor/${doctorId}`);
+    return axios.get(`/api/info-doctor-markdown/${doctorId}`);
 }
