@@ -8,6 +8,7 @@ import InfoContact from '../../components/Section/InfoContact';
 import FooterHome from '../../components/FooterHome';
 import { LANGUAGES } from '../../../../utils';
 import HeaderDetailPage from '../../components/header/HeaderDetailPage';
+import DoctorScheduleHomePage from './DoctorScheduleHomePage/DoctorScheduleHomePage';
 
 
 function DetailDoctor({ getInfoDoctorById, language, dataDoctor, match }) {
@@ -50,7 +51,10 @@ function DetailDoctor({ getInfoDoctorById, language, dataDoctor, match }) {
                     </div>
                 </div>
                 <div className='detail-doctor-schedule'>
-
+                    <div className='doctor-schedule-time'>
+                        <DoctorScheduleHomePage />
+                    </div>
+                    <div className='doctor-schedule-detail'></div>
                 </div>
                 <div
                     className='detail-doctor-overview'

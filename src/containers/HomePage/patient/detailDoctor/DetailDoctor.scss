@@ -1,9 +1,10 @@
-.detail-doctor-container  {
-    
+.detail-doctor-container {
+
+    margin-top: 58px;
 
     .detail-doctor-information {
-        margin: 58px 142px 0;
-        padding: 26px 0 22px;
+        padding: 26px 142px 0;
+
 
         .detail-doctor-position {
             margin: auto 0 auto -75px;
@@ -27,8 +28,30 @@
     }
 
     .detail-doctor-overview {
-        padding: 14px 142px;
+        padding: 30px 142px 0;
         border-top: 1px solid #ccc;
         background-color: #f9f9f9;
+
+        ul {
+            margin: 0;
+            padding-bottom: 14px;
+        }
     }
+
+    .detail-doctor-schedule {
+        padding: 58px 142px 0;
+
+        width: 100%;
+        min-height: 240px;
+        display: flex;
+
+        .doctor-schedule-time {
+            flex: 1;
+        }
+
+        .doctor-schedule-detail {
+            flex: 1;
+        }
+    }
+
 }

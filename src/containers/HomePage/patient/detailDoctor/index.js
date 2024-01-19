@@ -1,1 +1,1 @@
-export { default } from './DetailDoctor'
+export { default } from './DetailDoctor';

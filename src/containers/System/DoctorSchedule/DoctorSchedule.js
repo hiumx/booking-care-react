@@ -84,7 +84,6 @@ function DoctorSchedule({ getAllDoctors, listDoctors, getAllScheduleTime, doctor
             setListTimeActive(restList);
         }
     }
-    console.log(listTimesActive);
 
     const handleClickCreateSchedule = async () => {
         if (doctor === null || doctor.value === null) {
@@ -92,7 +91,6 @@ function DoctorSchedule({ getAllDoctors, listDoctors, getAllScheduleTime, doctor
         } else if (listTimesActive.length === 0) {
             toast.error('Please choose least one period!')
         } else {
-            console.log(doctor.value);
             const res = await createDoctorSchedule({
                 doctorId: doctor.value,
                 date,
