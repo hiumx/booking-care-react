@@ -1,15 +1,15 @@
 import { useEffect, useRef, useState } from 'react';
 import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
 import Select from 'react-select';
+import { toast } from 'react-toastify';
+import { connect } from 'react-redux';
+import { FormattedMessage } from 'react-intl';
+import "react-datepicker/dist/react-datepicker.css";
 
 import './DoctorSchedule.scss';
 import { getAllCode, getUser, getUserByEmail } from '../../../services/userService';
-import { connect } from 'react-redux';
 import * as actions from '../../../store/actions';
-import { FormattedMessage } from 'react-intl';
 import { createDoctorSchedule, getDoctorSchedule } from '../../../services/doctorService';
-import { toast } from 'react-toastify';
 
 function DoctorSchedule({ getAllDoctors, listDoctors, getAllScheduleTime, doctorScheduleTimes, language, userInfo }) {
 
@@ -17,6 +17,8 @@ function DoctorSchedule({ getAllDoctors, listDoctors, getAllScheduleTime, doctor
     const [doctor, setDoctor] = useState(null);
     const [listTimes, setListTimes] = useState([]);
     const [listTimesActive, setListTimeActive] = useState([]);
+
+    const selectDoctorRef = useRef();
 
 
     const { roleId } = userInfo;
@@ -75,13 +77,17 @@ function DoctorSchedule({ getAllDoctors, listDoctors, getAllScheduleTime, doctor
     }, [doctor, date]);
 
     const handleClickItemTimeExamines = (timeId, keyMap) => {
-
-        const isExit = listTimesActive.some(time => time.timeId === timeId);
-        if (!isExit) {
-            setListTimeActive([...listTimesActive, { timeId, keyMap }]);
+        if(doctor === null) {
+            toast.error('Please choose doctor first!');
+            selectDoctorRef.current.focus();
         } else {
-            const restList = listTimesActive.filter(time => time.timeId !== timeId);
-            setListTimeActive(restList);
+            const isExit = listTimesActive.some(time => time.timeId === timeId);
+            if (!isExit) {
+                setListTimeActive([...listTimesActive, { timeId, keyMap }]);
+            } else {
+                const restList = listTimesActive.filter(time => time.timeId !== timeId);
+                setListTimeActive(restList);
+            }
         }
     }
 
@@ -120,6 +126,7 @@ function DoctorSchedule({ getAllDoctors, listDoctors, getAllScheduleTime, doctor
                                 defaultValue={doctor}
                                 onChange={setDoctor}
                                 options={options}
+                                ref={selectDoctorRef}
                             />
                         </div>
                     }

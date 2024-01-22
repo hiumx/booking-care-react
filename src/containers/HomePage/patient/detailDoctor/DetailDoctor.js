@@ -9,6 +9,7 @@ import FooterHome from '../../components/FooterHome';
 import { LANGUAGES } from '../../../../utils';
 import HeaderDetailPage from '../../components/header/HeaderDetailPage';
 import DoctorScheduleHomePage from './DoctorScheduleHomePage/DoctorScheduleHomePage';
+import DoctorScheduleRelated from './DoctorScheduleRelated/DoctorScheduleRelated';
 
 
 function DetailDoctor({ getInfoDoctorById, language, dataDoctor, match }) {
@@ -54,7 +55,9 @@ function DetailDoctor({ getInfoDoctorById, language, dataDoctor, match }) {
                     <div className='doctor-schedule-time'>
                         <DoctorScheduleHomePage />
                     </div>
-                    <div className='doctor-schedule-detail'></div>
+                    <div className='doctor-schedule-related'>
+                        <DoctorScheduleRelated />
+                    </div>
                 </div>
                 <div
                     className='detail-doctor-overview'

@@ -27,3 +27,7 @@ export const createDoctorSchedule = (dataSchedule) => {
 export const getDoctorSchedule = ({ doctorId, date }) => {
     return axios.get(`doctor/doctor-schedule/?doctorId=${doctorId}&date=${date}`);
 }
+
+export const getTimeDetailById = (listTimeIds) => {
+    return axios.get(`api/schedule-time-detail?listTimeIds=${listTimeIds}`);
+}

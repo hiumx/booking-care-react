@@ -6,10 +6,15 @@ import localization from 'moment/locale/vi';
 
 import './DoctorScheduleHomePage.scss';
 import * as actions from '../../../../../store/actions';
+import { getDoctorSchedule, getTimeDetailById } from '../../../../../services/doctorService';
+import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 
 function DoctorSchedule({ language }) {
 
     const [listDate, setListDate] = useState([]);
+    const [listTimes, setListTimes] = useState([]);
+    const [date, setDate] = useState(new Date());
+    const { id } = useParams();
 
 
     useEffect(() => {
@@ -21,18 +26,42 @@ function DoctorSchedule({ language }) {
             } else if (language === 'en') {
                 date.label = moment(new Date()).locale('en').add(i, 'days').format('dddd - MM/DD');
             }
-            date.value = moment(new Date()).add(i, 'days').format();
+            date.value = moment(new Date()).add(i, 'days').toDate();
             arrDate.push(date);
         }
         setListDate(arrDate);
     }, []);
 
-    console.log(listDate);
+    useEffect(() => {
+        const fetchDoctorSchedule = async () => {
+
+            const res = await getDoctorSchedule({
+                doctorId: id,
+                date
+            });
+            if (res && res.code === 0) {
+                const listTimeIds = res?.data?.map(time => time.timeTypeId);
+
+                const response = await getTimeDetailById(listTimeIds);
+                if (response && response.code === 0) {
+                    const listTimeDetail = response.data.map(timeDetail => language === 'vi' ? timeDetail.valueVi : timeDetail.valueEn);
+                    setListTimes(listTimeDetail);
+                }
+
+            }
+        }
+        fetchDoctorSchedule();
+
+    }, [date]);
+
+    const handleChangeDate = (e) => {
+        setDate(e.target.value);
+    }
 
     return (
         <div className='doctor-schedule-container'>
             <div className='schedule-date'>
-                <select className='schedule-date-select'>
+                <select className='schedule-date-select' onChange={e => handleChangeDate(e)}>
                     {
                         listDate.map((date, index) =>
                             <option
@@ -41,7 +70,8 @@ function DoctorSchedule({ language }) {
                                 value={date.value}
                             >
                                 {date.label}
-                            </option>)
+                            </option>
+                        )
                     }
                 </select>
             </div>
@@ -52,61 +82,20 @@ function DoctorSchedule({ language }) {
                 <span>LỊCH KHÁM</span>
             </div>
             <ul className='schedule-specific-time-list'>
-                <li className='schedule-specific-time-item'>
-                    <a href='#' className='schedule-specific-item-link'>
-                        <span>14:00 - 15:00</span>
-                    </a>
-                </li>
-                <li className='schedule-specific-time-item'>
-                    <a href='#' className='schedule-specific-item-link'>
-                        <span>14:00 - 15:00</span>
-                    </a>
-                </li>
-                <li className='schedule-specific-time-item'>
-                    <a href='#' className='schedule-specific-item-link'>
-                        <span>14:00 - 15:00</span>
-                    </a>
-                </li>
-                <li className='schedule-specific-time-item'>
-                    <a href='#' className='schedule-specific-item-link'>
-                        <span>14:00 - 15:00</span>
-                    </a>
-                </li>
-                <li className='schedule-specific-time-item'>
-                    <a href='#' className='schedule-specific-item-link'>
-                        <span>14:00 - 15:00</span>
-                    </a>
-                </li>
-                <li className='schedule-specific-time-item'>
-                    <a href='#' className='schedule-specific-item-link'>
-                        <span>14:00 - 15:00</span>
-                    </a>
-                </li>
-                <li className='schedule-specific-time-item'>
-                    <a href='#' className='schedule-specific-item-link'>
-                        <span>14:00 - 15:00</span>
-                    </a>
-                </li>
-                <li className='schedule-specific-time-item'>
-                    <a href='#' className='schedule-specific-item-link'>
-                        <span>14:00 - 15:00</span>
-                    </a>
-                </li>
-                <li className='schedule-specific-time-item'>
-                    <a href='#' className='schedule-specific-item-link'>
-                        <span>14:00 - 15:00</span>
-                    </a>
-                </li>
-                <li className='schedule-specific-time-item'>
-                    <a href='#' className='schedule-specific-item-link'>
-                        <span>14:00 - 15:00</span>
-                    </a>
-                </li>
-                <li className='schedule-specific-time-item'>
-                    <a href='#' className='schedule-specific-item-link'>
-                        <span>14:00 - 15:00</span>
-                    </a>
-                </li>
+                {
+                    listTimes && listTimes.length > 0 
+                    ?
+                    listTimes.map((time, index) =>
+                        <li className='schedule-specific-time-item' key={index}>
+                            <a href='#' className='schedule-specific-item-link'>
+                                <span>{time}</span>
+                            </a>
+                        </li>
+                    )
+                    :
+                    <p>There is no doctor's appointment scheduled for this day.</p>
+                }
+
             </ul>
             <div className='schedule-subtitle'>
                 <span>Chọn
