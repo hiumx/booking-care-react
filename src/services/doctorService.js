@@ -13,7 +13,7 @@ export const createDetailDoctorService = (data) => {
 }
 
 export const updateDetailDoctorService = (data) => {
-    return axios.put('/doctor/save-detail-doctor', data)
+    return axios.patch('/doctor/save-detail-doctor', data)
 }
 
 export const getInfoDoctorByIdService = (inputId) => {
@@ -30,4 +30,8 @@ export const getDoctorSchedule = ({ doctorId, date }) => {
 
 export const getTimeDetailById = (listTimeIds) => {
     return axios.get(`api/schedule-time-detail?listTimeIds=${listTimeIds}`);
+}
+
+export const getInfoDoctorClinic = (doctorId) => {
+    return axios.get(`api/doctor-clinic/${doctorId}`);
 }

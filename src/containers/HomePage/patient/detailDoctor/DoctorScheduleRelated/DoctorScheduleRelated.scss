@@ -1,0 +1,41 @@
+.schedule__related__container {
+    .schedule__address {
+
+
+
+        .schedule__address__desc {
+            margin-bottom: 7px;
+            font-weight: 700;
+            font-size: 13px;
+        }
+
+    }
+
+    .schedule__address__title,
+    .schedule__insurance__title,
+    .schedule__price__title {
+        color: #666666;
+        font-weight: 700;
+    }
+
+    .schedule__price__desc--link,
+    .schedule__insurance--link {
+        text-decoration: none;
+        color: rgba(72, 196, 211, 1.00);
+        font-weight: 500;
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+
+    .schedule__price {
+        padding: 24px 0 12px 0;
+        border-top: 1px solid rgba(238,238,238,1.00);
+    }
+
+    .schedule__insurance {
+        padding: 12px 0;
+        border-top: 1px solid rgba(238,238,238,1.00);
+    }
+}
