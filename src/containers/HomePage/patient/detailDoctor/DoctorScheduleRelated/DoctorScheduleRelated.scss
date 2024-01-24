@@ -1,28 +1,36 @@
 .schedule__related__container {
+    border-left: 1px solid #eeeeee;
+    margin-top: 22px;
+    padding-left: 20px;
+
     .schedule__address {
 
-
-
-        .schedule__address__desc {
-            margin-bottom: 7px;
+        .schedule__name__desc {
+            margin-bottom: 2px;
             font-weight: 700;
             font-size: 13px;
         }
 
+        .schedule__address__desc {
+            font-size: 13px;
+            font-weight: 400;
+        }
+
     }
 
-    .schedule__address__title,
-    .schedule__insurance__title,
-    .schedule__price__title {
+    .schedule__title {
         color: #666666;
         font-weight: 700;
+        margin-bottom: 2px;
+        display: block;
     }
 
-    .schedule__price__desc--link,
-    .schedule__insurance--link {
+    .schedule__desc--link {
         text-decoration: none;
         color: rgba(72, 196, 211, 1.00);
         font-weight: 500;
+        cursor: pointer;
+        padding-left: 4px;
 
         &:hover {
             opacity: 0.7;
@@ -30,12 +38,98 @@
     }
 
     .schedule__price {
-        padding: 24px 0 12px 0;
-        border-top: 1px solid rgba(238,238,238,1.00);
+        padding-top: 24px;
+        border-top: 1px solid rgba(238, 238, 238, 1.00);
+
+        .schedule__price__desc {
+            margin-left: 4px;
+        }
+
+        .price__detail__wrapper {
+
+            .price__detail {
+                margin-bottom: 14px;
+            }
+
+
+
+            .price__detail__payment {
+                padding: 4px;
+                border: 1px solid rgba(221, 221, 221, 1.00);
+                background-color: rgba(238, 238, 238, 1.00);
+
+            }
+
+            .price__detail__block__wrapper {
+
+
+                &:last-child {
+                    border-bottom: 1px solid rgba(221, 221, 221, 1.00);
+                }
+            }
+
+        }
     }
 
     .schedule__insurance {
         padding: 12px 0;
-        border-top: 1px solid rgba(238,238,238,1.00);
+        border-top: 1px solid rgba(238, 238, 238, 1.00);
+
+        .insurance__apply {
+            .insurance__detail__block {
+                border-top: 1px solid rgba(221, 221, 221, 1.00);
+                border-right: 1px solid rgba(221, 221, 221, 1.00);
+                border-left: 1px solid rgba(221, 221, 221, 1.00);
+                padding: 4px;
+                background-color: rgba(248, 248, 248, 1.00);
+
+                .insurance__detail__block__title {
+                    margin-bottom: 4px;
+                    font-size: 13px;
+                    font-weight: 500;
+                }
+
+                .insurance__detail--desc {
+                    font-size: 12px;
+                    margin-bottom: 4px;
+                }
+            }
+        }
     }
+
+
+}
+
+.price__detail__block {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid rgba(221, 221, 221, 1.00);
+    border-right: 1px solid rgba(221, 221, 221, 1.00);
+    border-left: 1px solid rgba(221, 221, 221, 1.00);
+    padding: 4px;
+    background-color: rgba(248, 248, 248, 1.00);
+
+    .price__detail__desc {
+        flex: 1;
+
+        .price__detail__number__title {
+            margin-bottom: 4px;
+            font-size: 13px;
+            font-weight: 500;
+            display: block;
+        }
+
+        .price__detail__desc__para {
+            font-size: 12px;
+
+        }
+    }
+
+    .price__detail__number__desc {
+        margin-left: 10px;
+    }
+}
+
+.cursor-pointer {
+    cursor: pointer;
 }

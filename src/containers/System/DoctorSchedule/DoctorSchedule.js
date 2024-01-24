@@ -97,6 +97,7 @@ function DoctorSchedule({ getAllDoctors, listDoctors, getAllScheduleTime, doctor
         } else if (listTimesActive.length === 0) {
             toast.error('Please choose least one period!')
         } else {
+            console.log(listTimesActive);
             const res = await createDoctorSchedule({
                 doctorId: doctor.value,
                 date,

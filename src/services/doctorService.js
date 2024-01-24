@@ -35,3 +35,7 @@ export const getTimeDetailById = (listTimeIds) => {
 export const getInfoDoctorClinic = (doctorId) => {
     return axios.get(`api/doctor-clinic/${doctorId}`);
 }
+
+export const getDoctorClinicDetail = (doctorId) => {
+    return axios.get(`api/doctor-clinic-detail/${doctorId}`);
+}
