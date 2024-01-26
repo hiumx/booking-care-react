@@ -15,6 +15,7 @@ import Home from '../routes/Home';
 import Login from './Auth/Login';
 import System from '../routes/System';
 import HomePage from './HomePage';
+import BookingSchedule from './HomePage/patient/detailDoctor/BookingSchedule/BookingSchedule';
 
 console.warn = () => { }
 class App extends Component {
@@ -50,6 +51,7 @@ class App extends Component {
                                     <Route path={path.HOMEPAGE} component={(HomePage)} />
                                     <Route path={path.SYSTEM} component={userIsAuthenticated(System)} />
                                     <Route path={path.DETAIL_DOCTOR} component={DetailDoctor} />
+                                    <Route path={path.BOOKING_SCHEDULE} component={BookingSchedule} />
                                 </Switch>
                             </CustomScrollbars>
                         </span>

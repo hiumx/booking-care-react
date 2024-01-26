@@ -13,6 +13,7 @@
     "markdown-it": "^13.0.1",
     "moment": "^2.29.0",
     "node-sass": "^6.0.0",
+    "query-string": "^6.14.1",
     "react": "^17.0.2",
     "react-auth-wrapper": "^1.0.0",
     "react-autosuggest": "^10.1.0",

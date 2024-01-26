@@ -6,7 +6,7 @@
     left: 0;
     background-color: #fff;
     z-index: 3;
-    border: 1px solid #bebebe;
+    // border: 1px solid #bebebe;
 
     .header-homepage-inner {
         width: 100%;
@@ -124,7 +124,7 @@
                         cursor: pointer;
                         
                         &:hover {
-                            background-color: rgb(226, 222, 222);
+                            background-color: rgb(253, 242, 242);
                         }
                     }
                     .active {

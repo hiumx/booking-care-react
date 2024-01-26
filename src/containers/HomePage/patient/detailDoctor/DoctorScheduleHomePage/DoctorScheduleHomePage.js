@@ -7,7 +7,7 @@ import localization from 'moment/locale/vi';
 import './DoctorScheduleHomePage.scss';
 import * as actions from '../../../../../store/actions';
 import { getDoctorSchedule, getTimeDetailById } from '../../../../../services/doctorService';
-import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
+import { useHistory, useParams } from 'react-router-dom/cjs/react-router-dom.min';
 
 function DoctorSchedule({ language }) {
 
@@ -15,6 +15,7 @@ function DoctorSchedule({ language }) {
     const [listTimes, setListTimes] = useState([]);
     const [date, setDate] = useState(new Date());
     const { id } = useParams();
+    const history = useHistory();
 
 
     useEffect(() => {
@@ -44,8 +45,16 @@ function DoctorSchedule({ language }) {
 
                 const response = await getTimeDetailById(listTimeIds);
                 if (response && response.code === 0) {
-                    const listTimeDetail = response.data.map(timeDetail => language === 'vi' ? timeDetail.valueVi : timeDetail.valueEn);
-                    setListTimes(listTimeDetail);
+                    const listTimeDetail = response.data.map(timeDetail => language === 'vi'
+                        ? {
+                            timeKey: timeDetail.keyMap,
+                            timeValue: timeDetail.valueVi
+                        }
+                        : {
+                            timeKey: timeDetail.keyMap,
+                            timeValue: timeDetail.valueEn
+                        });
+                    setListTimes(listTimeDetail);  
                 }
 
             }
@@ -56,6 +65,11 @@ function DoctorSchedule({ language }) {
 
     const handleChangeDate = (e) => {
         setDate(e.target.value);
+    }
+
+    const handleClinkSpecificTime = ({ doctorId, time, date }) => {
+        console.log(doctorId, time, date);
+        history.push(`/booking-schedule?doctorId=${doctorId}&time=${time.timeValue}&date=${date}`);
     }
 
     return (
@@ -83,17 +97,19 @@ function DoctorSchedule({ language }) {
             </div>
             <ul className='schedule-specific-time-list'>
                 {
-                    listTimes && listTimes.length > 0 
-                    ?
-                    listTimes.map((time, index) =>
-                        <li className='schedule-specific-time-item' key={index}>
-                            <a href='#' className='schedule-specific-item-link'>
-                                <span>{time}</span>
-                            </a>
-                        </li>
-                    )
-                    :
-                    <p>There is no doctor's appointment scheduled for this day.</p>
+                    listTimes && listTimes.length > 0
+                        ?
+                        listTimes.map((time, index) =>
+                            <li className='schedule-specific-time-item' key={index}>
+                                <div className='schedule-specific-item-link' onClick={() => handleClinkSpecificTime({
+                                    doctorId: id, time, date
+                                })}>
+                                    <span>{time.timeValue}</span>
+                                </div>
+                            </li>
+                        )
+                        :
+                        <p>There is no doctor's appointment scheduled for this day.</p>
                 }
 
             </ul>

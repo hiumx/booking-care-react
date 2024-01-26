@@ -1,0 +1,233 @@
+.booking__schedule__container {
+    margin-top: 78px;
+
+    .booking__doctor__info__wrapper {
+        background-color: #f6f6f6;
+
+        .booking__doctor__info {
+            height: 128px;
+            width: 670px;
+            display: flex;
+            align-items: center;
+            margin: 0 auto;
+
+
+            .booking__doctor__info--img {
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+            }
+
+            .booking__doctor__info--desc {
+                margin-left: 16px;
+
+                .doctor__name {
+                    margin-bottom: 4px;
+                    font-size: 16px;
+                    font-weight: 700;
+                    color: #337ab7;
+                }
+
+                .doctor__title {
+                    font-weight: 400;
+                    margin-bottom: 4px;
+                }
+
+                .doctor__time {
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+
+    .form__register__examine__wrapper {
+        color: #666666;
+
+        .form__register__examine__content {
+            width: 670px;
+            margin: 8px auto;
+
+            .price__suggest {
+                display: flex;
+                align-items: center;
+                padding-bottom: 10px;
+
+                .active {
+                    outline: 1px solid #f89008;
+                }
+
+                .price__suggest__item {
+                    margin-right: 20px;
+                    border: 1px solid #eee;
+                    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, .15);
+                    padding: 8px 28px;
+                    border-radius: 3px;
+                    cursor: pointer;
+
+                    .price__suggest__detail {
+                        text-align: center;
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+
+        .booking__for--list {
+            margin: 10px 0;
+
+            .booking__for--item+.booking__for--item {
+                margin-left: 16px;
+            }
+        }
+
+        .form__patient__wrapper {
+
+            margin: 10px 0;
+
+            .form__patient__wrapper__input {
+                display: flex;
+
+                &:focus-within {
+                    border: 1px solid #45c3d2;
+                }
+            }
+
+            .form__patient__icon {
+                width: 12px;
+                margin-right: 10px;
+                fill: #666666;
+            }
+
+            .form__patient__input {
+                border: none;
+                outline: none;
+                width: 100%;
+                padding: 2px 0;
+            }
+
+            .form__patient__input--desc {
+                margin-top: 3px;
+                font-size: 13px;
+            }
+
+        }
+
+        .form__patient__checkbox__wrapper {
+            margin: 10px 0;
+
+            .form__patient__checkbox__item {
+                margin-right: 20px;
+
+                .form__patient__checkbox__input {
+                    margin-right: 4px;
+                }
+            }
+        }
+
+        .form__patient__select__wrapper {
+            display: flex;
+
+            &:focus-within {
+                border: 1px solid #45c3d2;
+            }
+
+            .form__patient__select {
+                width: 100%;
+                padding: 3px 0;
+                border: none;
+                outline: none;
+
+            }
+        }
+
+        .form__patient__textarea_wrapper {
+            display: flex;
+
+            &:focus-within {
+                border: 1px solid #45c3d2;
+            }
+
+            .form__patient__textarea {
+                width: 100%;
+                border: none;
+                outline: none;
+            }
+        }
+
+        .form__patient__method__payment {
+            .form__patient__method__payment__title {
+                font-size: 12px;
+                font-weight: bold;
+                color: #337ab7;
+                margin-bottom: -4px;
+            }
+        }
+
+        .form__patient__price__wrapper {
+            background-color: #f6f6f6;
+            border-radius: 4px;
+            padding: 16px 10px;
+            color: #000;
+
+            .form__patient__price__item {
+                display: flex;
+                justify-content: space-between;
+
+                .form__patient__price__total {
+                    color: red;
+                }
+
+                p {
+                    margin: 0;
+                }
+            }
+        }
+
+        .form__patient__sub__note {
+            text-align: center;
+            p {
+                font-size: 13px;
+                margin: 8px 0;
+
+            }
+        }
+
+        .form__patient__note {
+            // margin: 8px 0;
+            background-color: #D4EFFC;
+            border-radius: 4px;
+            padding: 16px 10px;
+            color: #000;
+
+            h6 {
+                font-weight: bold;
+            }
+        }
+        .form__patient__btn__wrapper {
+            margin: 18px 0 10px;
+            .form__patient__btn {
+                width: 100%;
+                background-color: #ffc419;
+                color: #fff;
+                border: none;
+                outline: none;
+                padding: 8px 0;
+                border-radius: 4px; 
+
+                &:hover {
+                    opacity: 0.9;
+                }
+            }
+        }
+        .form__patient__confirm {
+            font-size: 13px;
+
+            a {
+                margin-left: 3px;
+                text-decoration: none;
+                color: #45c3d2;
+            }
+        }
+    }
+
+}
