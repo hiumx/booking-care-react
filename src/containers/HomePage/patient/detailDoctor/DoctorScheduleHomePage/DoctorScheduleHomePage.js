@@ -68,8 +68,7 @@ function DoctorSchedule({ language }) {
     }
 
     const handleClinkSpecificTime = ({ doctorId, time, date }) => {
-        console.log(doctorId, time, date);
-        history.push(`/booking-schedule?doctorId=${doctorId}&time=${time.timeValue}&date=${date}`);
+        history.push(`/booking-schedule?doctorId=${doctorId}&time=${time.timeValue}&timeType=${time.timeKey}&date=${date}`);
     }
 
     return (

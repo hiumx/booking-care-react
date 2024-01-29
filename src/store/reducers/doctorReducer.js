@@ -3,7 +3,9 @@ import actionTypes from "../actions/actionTypes";
 const initState = {
     topDoctors: [],
     allDoctors: [],
-    dataDoctor: {}
+    dataDoctor: {},
+    dataClinicByDoctor: {},
+    priceExamine: 0
 }
 
 const doctorReducer = (state = initState, action) => {
@@ -35,6 +37,15 @@ const doctorReducer = (state = initState, action) => {
             }
         case actionTypes.GET_INFO_DOCTOR_BY_ID_FAILED:
             state.dataDoctor = {}
+            return {
+                ...state
+            }
+        case actionTypes.FETCH_DOCTOR_CLINIC_DETAIL_SUCCESS:
+            state.dataClinicByDoctor = action.payload;
+            return {
+                ...state
+            }
+        case actionTypes.FETCH_DOCTOR_CLINIC_DETAIL_FAILED:
             return {
                 ...state
             }

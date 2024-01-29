@@ -204,7 +204,7 @@
             }
         }
         .form__patient__btn__wrapper {
-            margin: 18px 0 10px;
+            margin-top: 18px;
             .form__patient__btn {
                 width: 100%;
                 background-color: #ffc419;
@@ -226,6 +226,19 @@
                 margin-left: 3px;
                 text-decoration: none;
                 color: #45c3d2;
+            }
+        }
+
+        .form__patient__message__wrapper {
+            text-align: center;
+            margin: 8px 0;
+            .form__patient__error__message {
+                font-size: 13px;
+                color: red;
+            }
+            .form__patient__success__message {
+                font-size: 13px;
+                color: green;
             }
         }
     }

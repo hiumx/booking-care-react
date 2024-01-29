@@ -1,6 +1,6 @@
 import actionTypes from "./actionTypes";
 import { toast } from 'react-toastify';
-import { getTopDoctorsService, getAllDoctorsService, createDetailDoctorService, getInfoDoctorByIdService, updateDetailDoctorService } from '../../services/doctorService'
+import { getTopDoctorsService, getAllDoctorsService, createDetailDoctorService, getInfoDoctorByIdService, updateDetailDoctorService, getDoctorClinicDetail } from '../../services/doctorService'
 
 export const fetchTopDoctorsHomeStart = () => {
     return async (dispatch) => {
@@ -97,5 +97,28 @@ export const getInfoDoctorById = (inputId) => {
             })
         }
 
+    }
+}
+
+export const fetchDoctorClinicDetailAction = (id) => {
+    return async (dispatch) => {
+        try {
+            const res = await getDoctorClinicDetail(id);
+            if(res && res.code === 0) {
+                dispatch({
+                    type: actionTypes.FETCH_DOCTOR_CLINIC_DETAIL_SUCCESS,
+                    payload: res.data
+                })
+            } else {
+                dispatch({
+                    type: actionTypes.FETCH_DOCTOR_CLINIC_DETAIL_FAILED
+                })
+            }
+        } catch (error) {
+            console.log(error);
+            dispatch({
+                type: actionTypes.FETCH_DOCTOR_CLINIC_DETAIL_FAILED
+            })
+        }
     }
 }

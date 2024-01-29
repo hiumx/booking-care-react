@@ -3,9 +3,9 @@ import { useEffect, useState } from 'react';
 import './DoctorScheduleRelated.scss';
 import { getDoctorClinicDetail } from '../../../../../services/doctorService';
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 
-function DoctorScheduleRelated({ language }) {
+function DoctorScheduleRelated() {
     const [isDetail, setIsDetail] = useState(false);
     const [isShowInsurance, setIsShowInsurance] = useState(false);
     const [nameClinic, setNameClinic] = useState('');
@@ -15,6 +15,7 @@ function DoctorScheduleRelated({ language }) {
     const [methodPayment, setMethodPayment] = useState('');
     const [moreInfo, setMoreInfo] = useState('');
 
+    const language = useSelector(state => state.app.language);
     const { id } = useParams();
 
     useEffect(() => {
@@ -63,7 +64,7 @@ function DoctorScheduleRelated({ language }) {
                                     <span className='price__detail__desc__para'>Chưa bao gồm chi phí chụp chiếu, xét nghiệm</span>
                                 </div>
                                 <p className='price__detail__number__desc'>
-                                    150000đ
+                                    {`${price}đ`}
                                 </p>
                             </div>
                             <div className='price__detail__payment'>
@@ -153,16 +154,4 @@ function DoctorScheduleRelated({ language }) {
     )
 }
 
-
-const mapStateToProps = state => {
-    return {
-        language: state.app.language
-    }
-}
-
-const mapDispatchToProps = dispatch => {
-    return {
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(DoctorScheduleRelated);
+export default DoctorScheduleRelated;
