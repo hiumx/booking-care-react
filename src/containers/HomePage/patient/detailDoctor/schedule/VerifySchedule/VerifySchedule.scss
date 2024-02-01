@@ -1,0 +1,16 @@
+.verify__schedule__wrapper {
+    margin-top: 50px;
+    text-align: center;
+
+    .verify__schedule__loading {
+        margin-top: 14px;
+        display: flex;
+        justify-content: center;
+    } 
+    .verify__success__message {
+        color: green;
+    }
+    .verify__failed__message {
+        color: red;
+    }
+}

@@ -1,0 +1,138 @@
+.navigation__wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 254px;
+    height: 100vh;
+    background-color: #fff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease-in-out, opacity 0.3s linear;
+
+    .navigation__header {
+        width: 100%;
+
+        .navigation__header__content {
+            padding: 20px 16px;
+            display: flex;
+            border-bottom: 0.5px solid rgba(238, 238, 238, 1.00);
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        h5 {
+            color: rgba(69, 195, 210, 1.00);
+        }
+
+        .navigation__header__icon__wrapper {
+            padding-left: 8px;
+            cursor: pointer;
+
+            :hover {
+                opacity: 0.8;
+            }
+
+            .navigation__header__icon {
+                width: 20px;
+                fill: rgba(69, 195, 210, 1.00);
+                ;
+            }
+
+        }
+    }
+
+    .navigation__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        cursor: pointer;
+
+        .navigation__item {
+            padding: 10px 16px;
+            font-size: 16px;
+            border-bottom: 0.5px solid rgba(238, 238, 238, 1.00);
+
+            &:hover {
+                background-color: #eee;
+            }
+
+            .navigation__item--link {
+                text-decoration: none;
+                color: rgba(69, 195, 210, 1.00);
+            }
+        }
+    }
+
+    .navigation__title {
+        width: 100%;
+        height: 28px;
+        background-color: rgba(241, 241, 241, 1.00);
+
+        .navigation__title--detail {
+            line-height: 28px;
+            padding-left: 16px;
+            text-transform: uppercase;
+        }
+    }
+
+    .navigation__footer {
+        
+        display: flex;
+
+        .navigation__footer__icon__wrapper {
+            padding: 20px 0 0 16px;
+            cursor: pointer;
+            .navigation__footer__icon {
+                width: 24px;
+            }
+            .navigation__footer__tiktok__icon {
+                width: 19px;
+            }
+
+            .fill-black {
+                fill: #000
+            }
+
+            .fill-blue {
+                fill: rgb(60, 87, 158);
+            }
+            .fill-red {
+                fill: red;
+            }
+
+            &:hover {
+                opacity: 0.9;
+            }
+        }
+       
+    }
+
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 254px;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    cursor: pointer;
+    animation: fadeIn 0.3s linear forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        background-color: rgba(0, 0, 0, 0);
+    } to {
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+}
+
+.open {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.close {
+    transform: translateX(-100%);
+    opacity: 0;
+}

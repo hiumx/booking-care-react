@@ -6,43 +6,43 @@ export const dataSpecialty = {
     content: [
         {
             id: 1,
-            imgLink: 'https://cdn.bookingcare.vn/fr/w300/2019/12/13/120331-co-xuong-khop.jpg',
+            imgLink: 'https://cdn.bookingcare.vn/fo/w750/2023/12/26/101627-co-xuong-khop.png',
             description: 'Cơ xương khớp'
         },
         {
             id: 2,
-            imgLink: 'https://cdn.bookingcare.vn/fr/w300/2019/12/13/121042-than-kinh.jpg',
+            imgLink: 'https://cdn.bookingcare.vn/fo/w750/2023/12/26/101739-than-kinh.png',
             description: 'Thần kinh'
         },
         {
             id: 3,
-            imgLink: 'https://cdn.bookingcare.vn/fr/w300/2019/12/13/120933-tieu-hoa.jpg',
+            imgLink: '	https://cdn.bookingcare.vn/fo/w750/2023/12/26/101713-tieu-hoa.png',
             description: 'Tiêu hóa'
         },
         {
             id: 4,
-            imgLink: 'https://cdn.bookingcare.vn/fr/w300/2019/12/13/120741-tim-mach.jpg',
+            imgLink: '	https://cdn.bookingcare.vn/fo/w750/2023/12/26/101713-tim-mach.png',
             description: 'Tim mạch'
         },
         {
             id: 5,
-            imgLink: 'https://img1.kienthucvui.vn/uploads/2019/10/10/anh-bia-tinh-yeu-dep_105704407.jpg',
-            description: 'Cơ xương khớp'
+            imgLink: 'https://cdn.bookingcare.vn/fo/w750/2023/12/26/101713-tai-mui-hong.png',
+            description: 'Tay mũi họng'
         },
         {
             id: 6,
-            imgLink: 'https://thuthuatphanmem.vn/uploads/2018/09/11/hinh-anh-dep-6_044127357.jpg',
-            description: 'Thần kinh'
+            imgLink: 'https://cdn.bookingcare.vn/fo/w750/2023/12/26/101627-cot-song.png',
+            description: 'Cột sống'
         },
         {
             id: 7,
-            imgLink: 'https://thuthuatphanmem.vn/uploads/2018/09/11/hinh-anh-dep-6_044127357.jpg',
-            description: 'Tiêu hóa'
+            imgLink: 'https://cdn.bookingcare.vn/fo/w750/2023/12/26/101739-y-hoc-co-truyen.png',
+            description: 'Y học Cổ truyền'
         },
         {
             id: 8,
-            imgLink: 'https://thuthuatphanmem.vn/uploads/2018/09/11/hinh-anh-dep-6_044127357.jpg',
-            description: 'Tim mạch'
+            imgLink: '	https://cdn.bookingcare.vn/fo/w750/2023/12/26/101627-cham-cuu.png',
+            description: 'Châm cứu'
         },
     ]
 }

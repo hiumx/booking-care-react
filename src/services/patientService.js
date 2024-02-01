@@ -5,3 +5,7 @@ export const bookingSchedule = (dataBookingPatient) => {
         dataBookingPatient
     });
 }
+
+export const verifySchedule = ({ token, doctorId }) => {
+    return axios.post(`api/patient/verify-schedule?token=${token}&doctorId=${doctorId}`);
+}
