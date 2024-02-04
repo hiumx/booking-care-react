@@ -2,14 +2,16 @@ import './Carousel.scss'
 import { FormattedMessage } from 'react-intl';
 import Slider from "react-slick";
 import { useState, useEffect } from 'react'
-import { connect } from 'react-redux'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import * as actions from '../../../../../store/actions'
 
 import { SampleNextArrow, SamplePrevArrow } from './Custom-arrow'
 import { flatMap } from 'lodash';
-function CarouselSpecialty({ data, fetchTopDoctorsHomeStart, topDoctors }) {
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchAllSpecialties } from '../../../../../store/actions/specialtyActions';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+function CarouselSpecialty() {
     const settings = {
         dots: false,
         infinite: true,
@@ -24,26 +26,32 @@ function CarouselSpecialty({ data, fetchTopDoctorsHomeStart, topDoctors }) {
         cssEase: 'linear',
     };
 
-    // const [arrTopDoctors, setArrTopDoctors] = useState([])
-    // useEffect(() => {
+    const dispatch = useDispatch();
+    const allSpecialties = useSelector(state => state.specialty.allSpecialties);
+    const history = useHistory();
 
-    //     fetchTopDoctorsHomeStart()
-    //     setArrTopDoctors(topDoctors)
-    // }, [])
+    useEffect(() => {
+        dispatch(fetchAllSpecialties());
+    }, []);
+
+    const handleClickSpecialtyDetail = (id) => {
+        history.push(`/specialty/${id}`);
+    }
+
     return (
-        <div className={data.isBackgroundColor ? 'carousel-container background-color' : 'carousel-container'} >
+        <div className={'carousel-container'} >
             <div className='carousel-wrapper'>
                 <div className='carousel-header'>
                     <h3 className='carousel-title'>Chuyên khoa phổ biến</h3>
-                    <button className='carousel-more-btn'>{data.textButton}</button>
+                    <button className='carousel-more-btn'>Xem thêm</button>
                 </div>
 
                 <Slider {...settings}>
                     {
-                        data.content.map(item =>
-                            <div key={item.id} className='carousel-item'>
-                                <img className='img-carousel-item' src={item.imgLink} alt={item.description} />
-                                <span className='description'>{item.description}</span>
+                        allSpecialties.map(item =>
+                            <div key={item.id} className='carousel-item' onClick={() => handleClickSpecialtyDetail(item.id)}>
+                                <img className='img-carousel-item' src={item.image} alt={item.image} />
+                                <span className='description'>{item.name}</span>
                             </div>
                         )
                     }
@@ -53,20 +61,8 @@ function CarouselSpecialty({ data, fetchTopDoctorsHomeStart, topDoctors }) {
     );
 }
 
-const mapStateToProps = state => {
-    return {
-        topDoctors: state.admin.topDoctors
-    }
-}
 
-const mapDispatchToProps = dispatch => {
-    return {
-        fetchTopDoctorsHomeStart: () => dispatch(actions.fetchTopDoctorsHomeStart())
-
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(CarouselSpecialty);
+export default CarouselSpecialty;
 
 
 

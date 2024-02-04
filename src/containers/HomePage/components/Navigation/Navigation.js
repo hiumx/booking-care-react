@@ -3,9 +3,7 @@ import './Navigation.scss';
 import { memo } from 'react';
 
 function Navigation({ isOpenNav, setIsOpenNav }) {
-
-    console.log(isOpenNav);
-
+    
     return (
         <>
 

@@ -16,7 +16,8 @@ import Login from './Auth/Login';
 import System from '../routes/System';
 import HomePage from './HomePage';
 import BookingSchedule from './HomePage/patient/detailDoctor/BookingSchedule/BookingSchedule';
-import VerifySchedule from './HomePage/patient/schedule/VerifySchedule/VerifySchedule';
+import { verifySchedule } from '../services/patientService';
+import SpecialtyDetail from './HomePage/specialty/SpecialtyDetail';
 
 console.warn = () => { }
 class App extends Component {
@@ -53,7 +54,8 @@ class App extends Component {
                                     <Route path={path.SYSTEM} component={userIsAuthenticated(System)} />
                                     <Route path={path.DETAIL_DOCTOR} component={DetailDoctor} />
                                     <Route path={path.BOOKING_SCHEDULE} component={BookingSchedule} />
-                                    <Route path={path.VERIFY_SCHEDULE} component={VerifySchedule} />
+                                    <Route path={path.VERIFY_SCHEDULE} component={verifySchedule} />
+                                    <Route path={path.DETAIL_SPECIALTY} component={SpecialtyDetail} />
                                 </Switch>
                             </CustomScrollbars>
                         </span>

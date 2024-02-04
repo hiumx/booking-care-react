@@ -1,0 +1,19 @@
+.manage__specialty__wrapper {
+    .manage__specialty__title {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .manage__specialty__action__btn {
+        .active {
+            button {
+                outline: 2px solid #124668;
+            }
+        }
+    }
+
+    .btn-custom {
+        padding: 0 8px;
+        margin: 8px 8px 8px 0;
+    }
+}

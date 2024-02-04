@@ -10,6 +10,7 @@ import { LANGUAGES } from '../../../../utils';
 import HeaderDetailPage from '../../components/header/HeaderDetailPage';
 import DoctorScheduleHomePage from './DoctorScheduleHomePage/DoctorScheduleHomePage';
 import DoctorScheduleRelated from './DoctorScheduleRelated/DoctorScheduleRelated';
+import MoreInfo from '../../components/MoreInfo/MoreInfo';
 
 
 function DetailDoctor({ getInfoDoctorById, language, dataDoctor, match }) {
@@ -68,6 +69,7 @@ function DetailDoctor({ getInfoDoctorById, language, dataDoctor, match }) {
 
                 </div>
             </div>
+            <MoreInfo />
             <InfoContact />
             <FooterHome />
         </>

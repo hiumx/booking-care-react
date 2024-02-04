@@ -4,7 +4,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #fff;
+    background-color: rgb(237, 255, 250);
     z-index: 3;
     // border: 1px solid #bebebe;
 
@@ -13,17 +13,17 @@
         height: 100%;
         display: flex;
         align-items: center;
-        padding: 0 100px;
+        padding: 0 96px;
 
 
         .header__navigation__logo {
             position: relative;
             cursor: pointer;
+            padding: 0 6px;
 
             .header-bars-icon {
                 width: 20px;
                 fill: #969495;
-                margin-right: 10px;
                 cursor: pointer;
             }
 

@@ -8,7 +8,6 @@ import { useEffect, useState } from 'react';
 
 function HeaderHome({ language, changeLanguagesAppRedux }) {
 
-
     const [isOpenNav, setIsOpenNav] = useState(false);
 
     const handleClickChangeLanguage = (language) => {

@@ -79,7 +79,7 @@
         "update-doctor-btn": "Update"
     },
     "home-page": {
-        "doctor-outstanding": "Outstanding doctor of the past week",
+        "doctor-outstanding": "Outstanding doctor the last week",
         "view-more-btn": "More information"
 },
     "schedule-examines": {
