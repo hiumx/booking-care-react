@@ -5,7 +5,8 @@ const initState = {
     allDoctors: [],
     dataDoctor: {},
     dataClinicByDoctor: {},
-    priceExamine: 0
+    priceExamine: 0,
+    listDoctorsIdBySpecialty: []
 }
 
 const doctorReducer = (state = initState, action) => {
@@ -46,6 +47,14 @@ const doctorReducer = (state = initState, action) => {
                 ...state
             }
         case actionTypes.FETCH_DOCTOR_CLINIC_DETAIL_FAILED:
+            return {
+                ...state
+            }
+        case actionTypes.FETCH_ALL_DOCTOR_BY_SPECIALTY_ID_SUCCESS:
+            return {
+                ...state, listDoctorsIdBySpecialty: action.payload
+            }
+        case actionTypes.FETCH_ALL_DOCTOR_BY_SPECIALTY_ID_FAILURE:
             return {
                 ...state
             }

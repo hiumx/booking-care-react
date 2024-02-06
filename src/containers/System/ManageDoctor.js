@@ -1,22 +1,23 @@
 import { FormattedMessage } from 'react-intl';
-import { connect } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Select from 'react-select';
 import MarkdownIt from 'markdown-it';
 import MdEditor from 'react-markdown-editor-lite';
 import 'react-markdown-editor-lite/lib/index.css';
 
 import { LANGUAGES } from '../../utils/constant';
-import * as actions from '../../store/actions';
 import { useEffect, useState } from 'react';
 import './ManageDoctor.scss';
 import { getInfoMarkDownFromDoctorId } from '../../services/markdownService';
 import { getAllCode } from '../../services/userService';
 import { getInfoDoctorClinic } from '../../services/doctorService';
+import { getAllDoctors, saveDetailDoctor } from '../../store/actions';
+import { fetchAllSpecialties } from '../../store/actions/specialtyActions';
 
 const mdParser = new MarkdownIt(/* Markdown-it options */);
 
 
-function ManageDoctor({ getAllDoctors, saveDetailDoctorRedux, language, listDoctors }) {
+function ManageDoctor() {
     const [selectDoctor, setSelectDoctor] = useState('');
     const [nameClinic, setNameClinic] = useState('');
     const [addressClinic, setAddressClinic] = useState('');
@@ -31,10 +32,17 @@ function ManageDoctor({ getAllDoctors, saveDetailDoctorRedux, language, listDoct
     const [provinces, setProvinces] = useState([]);
     const [prices, setPrices] = useState([]);
     const [methodPayments, setMethodPayments] = useState([]);
+    const [specialty, setSpecialty] = useState('');
     const [actionSubmit, setActionSubmit] = useState('CREATE');
 
+    const dispatch = useDispatch();
+    const language = useSelector(state => state.app.language);
+    const listDoctors = useSelector(state => state.doctor.allDoctors);
+    const listSpecialties = useSelector(state => state.specialty.allSpecialties);
+
     useEffect(() => {
-        getAllDoctors();
+        dispatch(getAllDoctors());
+        dispatch(fetchAllSpecialties());
         const fetchAllCode = async () => {
             try {
                 const resProvince = await getAllCode('PROVINCE');
@@ -84,7 +92,7 @@ function ManageDoctor({ getAllDoctors, saveDetailDoctorRedux, language, listDoct
             }
         }
         fetchAllCode();
-    }, [language])
+    }, [language]);
 
     useEffect(() => {
         const dataSelect = buildOptionsSelect(listDoctors)
@@ -102,24 +110,30 @@ function ManageDoctor({ getAllDoctors, saveDetailDoctorRedux, language, listDoct
         const resMarkdown = await getInfoMarkDownFromDoctorId(selectDoctor.value);
         const resDoctorClinic = await getInfoDoctorClinic(selectDoctor.value);
 
-        if (resMarkdown && resMarkdown.data && resDoctorClinic && resDoctorClinic.data) {
-            const { priceId, provinceId, paymentId, nameClinic, addressClinic, note } = resDoctorClinic.data;
+        console.log(resMarkdown?.data);
+        console.log(resDoctorClinic?.data);
 
-            const priceData = prices.find(price => price.value === +priceId);
-            const provinceData = provinces.find(province => province.value === +provinceId);
-            const paymentData = methodPayments.find(payment => payment.value === +paymentId);
+        setContentHTML(resMarkdown?.data?.contentHTML);
+        setContentMarkdown(resMarkdown?.data?.contentMarkdown);
+        setValueDescDoctor(resMarkdown?.data?.description);
+        const specialtyData = specialties.find(specialty => specialty.value === +resMarkdown?.data?.specialtyId);
+        setSpecialty(specialtyData);
+        setActionSubmit('UPDATE');
 
-            setPrice(priceData);
-            setProvince(provinceData);
-            setMethodPayment(paymentData);
-            setNameClinic(nameClinic);
-            setAddressClinic(addressClinic);
-            setNoteClinic(note ? note : '');
-
-            setContentHTML(resMarkdown.data.contentHTML);
-            setContentMarkdown(resMarkdown.data.contentMarkdown);
-            setValueDescDoctor(resMarkdown.data.description);
-            setActionSubmit('UPDATE');
+        if (resMarkdown?.data && resDoctorClinic?.data) {
+            if (resDoctorClinic?.data) {
+                const { priceId, provinceId, paymentId, nameClinic, addressClinic, note } = resDoctorClinic.data;
+                
+                const priceData = prices.find(price => price.value === +priceId);
+                const provinceData = provinces.find(province => province.value === +provinceId);
+                const paymentData = methodPayments.find(payment => payment.value === +paymentId);
+                setPrice(priceData);
+                setProvince(provinceData);
+                setMethodPayment(paymentData);
+                setNameClinic(nameClinic);
+                setAddressClinic(addressClinic);
+                setNoteClinic(note ? note : '');
+            }
         } else if (resMarkdown && !resMarkdown.data && resDoctorClinic && !resDoctorClinic.data) {
             setActionSubmit('CREATE');
         }
@@ -148,7 +162,7 @@ function ManageDoctor({ getAllDoctors, saveDetailDoctorRedux, language, listDoct
     }
 
     const handleSaveInfoDoctor = () => {
-        saveDetailDoctorRedux({
+        dispatch(saveDetailDoctor({
             contentMarkdown,
             contentHTML,
             description: valueDescDoctor,
@@ -158,9 +172,10 @@ function ManageDoctor({ getAllDoctors, saveDetailDoctorRedux, language, listDoct
             addressClinic,
             nameClinic,
             noteClinic,
+            specialtyId: specialty.value,
             doctorId: selectDoctor.value,
             actionSubmit
-        });
+        }));
     }
 
     const buildOptionsSelect = (arrDoctors) => {
@@ -177,6 +192,10 @@ function ManageDoctor({ getAllDoctors, saveDetailDoctorRedux, language, listDoct
         }
         return result
     }
+
+    const specialties = listSpecialties?.map(specialty => ({
+        value: specialty.id, label: specialty.name
+    }));
 
     return (
         <div className='container manage-doctor-wrapper'>
@@ -261,6 +280,17 @@ function ManageDoctor({ getAllDoctors, saveDetailDoctorRedux, language, listDoct
                     </textarea>
                 </div>
             </div>
+            <div className='row'>
+                <div className='col-md-6 mb-3'>
+                    <label htmlFor="clinic-address" className="form-label">Choose specialty</label>
+                    <Select
+                        value={specialty}
+                        placeholder='Select specialty'
+                        onChange={specialtySelect => setSpecialty(specialtySelect)}
+                        options={specialties}
+                    />
+                </div>
+            </div>
             <div>
                 <MdEditor
                     style={{ height: '500px' }}
@@ -280,18 +310,4 @@ function ManageDoctor({ getAllDoctors, saveDetailDoctorRedux, language, listDoct
     );
 }
 
-const mapStateToProps = state => {
-    return {
-        language: state.app.language,
-        listDoctors: state.doctor.allDoctors
-    }
-}
-
-const mapDispatchToProps = dispatch => {
-    return {
-        getAllDoctors: () => dispatch(actions.getAllDoctors()),
-        saveDetailDoctorRedux: (data) => dispatch(actions.saveDetailDoctor(data))
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(ManageDoctor);
+export default ManageDoctor;

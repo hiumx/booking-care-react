@@ -1,21 +1,21 @@
 
 import { useEffect, useState } from 'react';
 import moment from 'moment';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 import localization from 'moment/locale/vi';
 
 import './DoctorScheduleHomePage.scss';
-import * as actions from '../../../../../store/actions';
 import { getDoctorSchedule, getTimeDetailById } from '../../../../../services/doctorService';
 import { useHistory, useParams } from 'react-router-dom/cjs/react-router-dom.min';
 
-function DoctorSchedule({ language }) {
+function DoctorSchedule({ id }) {
 
     const [listDate, setListDate] = useState([]);
     const [listTimes, setListTimes] = useState([]);
     const [date, setDate] = useState(new Date());
-    const { id } = useParams();
     const history = useHistory();
+
+    const language = useSelector(state => state.app.language);
 
 
     useEffect(() => {
@@ -61,7 +61,7 @@ function DoctorSchedule({ language }) {
         }
         fetchDoctorSchedule();
 
-    }, [date]);
+    }, [date, id]);
 
     const handleChangeDate = (e) => {
         setDate(e.target.value);
@@ -122,18 +122,4 @@ function DoctorSchedule({ language }) {
         </div>
     )
 }
-
-const mapStateToProps = state => {
-    return {
-        language: state.app.language,
-        dataDoctor: state.doctor.dataDoctor
-    }
-}
-
-const mapDispatchToProps = dispatch => {
-    return {
-        getInfoDoctorById: (doctorId) => dispatch(actions.getInfoDoctorById(doctorId))
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(DoctorSchedule);
+export default DoctorSchedule;

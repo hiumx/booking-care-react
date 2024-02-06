@@ -1,4 +1,4 @@
-import { getAllSpecialties } from "../../services/specialty.service";
+import { getAllSpecialties, getSpecialty } from "../../services/specialty.service";
 import actionTypes from "./actionTypes";
 
 export const fetchAllSpecialties = () => {
@@ -23,3 +23,27 @@ export const fetchAllSpecialties = () => {
         }
     }
 }
+
+export const getSpecialtyById = (id) => {
+    return async (dispatch) => {
+        try {
+            const res = await getSpecialty(id);
+            if(res?.code === 0) {
+                dispatch({
+                    type: actionTypes.GET_SPECIALTY_BY_ID_SUCCESS,
+                    payload: res.data
+                })
+            } else {
+                dispatch({
+                    type: actionTypes.GET_SPECIALTY_BY_ID_FAILURE
+                })
+            }
+        } catch (error) {
+            console.log(error);
+            dispatch({
+                type: actionTypes.GET_SPECIALTY_BY_ID_FAILURE
+            })
+        }
+    }
+}
+

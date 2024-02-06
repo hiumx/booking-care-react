@@ -1,0 +1,41 @@
+.doctor__info__wrapper {
+    display: flex;
+    padding: 20px 0;
+
+
+    .doctor__info__img__wrapper {
+        .doctor__info__img {
+            margin: 0 16px 8px 16px;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+        }
+
+        .doctor__more__info--link {
+            text-align: center;
+            display: block;
+            text-decoration: none;
+            color: #46c3d1;
+        }
+    }
+
+
+    .doctor__info__desc {
+        .doctor__info__name {
+            color: #46c3d1;
+            font-weight: 600;
+        }
+
+        .doctor__info__detail {
+            margin-bottom: 8px;
+        }
+
+        .doctor__info__location {
+            display: flex;
+            .doctor__info__location--img {
+                width: 10px;
+                margin-right: 4px;
+            }
+        }
+    }
+}

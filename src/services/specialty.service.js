@@ -7,3 +7,8 @@ export const createSpecialty = (data) => {
 export const getAllSpecialties = () => {
     return axios.get('/api/specialty');
 }
+
+export const getSpecialty = (id) => {
+    return axios.get(`/api/specialty/${id}`);
+}
+

@@ -82,9 +82,9 @@ function ModalUser({ showModal, toggleShowModal, createNewUser }) {
                         <div className="col-md-3">
                             <label htmlFor="roleId" className="form-label">Role</label>
                             <select id="roleId" name="roleId" className="form-select" value={state.roleId} onChange={e => handleChangeInput(e, 'roleId')}>
-                                <option value="1">Admin</option>
-                                <option value="2">Doctor</option>
-                                <option value="3">Patient</option>
+                                <option value="R1">Admin</option>
+                                <option value="R2">Doctor</option>
+                                <option value="R3">Patient</option>
                             </select>
                         </div>
                     </form>

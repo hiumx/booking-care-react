@@ -11,18 +11,20 @@ import HeaderDetailPage from '../../components/header/HeaderDetailPage';
 import DoctorScheduleHomePage from './DoctorScheduleHomePage/DoctorScheduleHomePage';
 import DoctorScheduleRelated from './DoctorScheduleRelated/DoctorScheduleRelated';
 import MoreInfo from '../../components/MoreInfo/MoreInfo';
+import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 
 
 function DetailDoctor({ getInfoDoctorById, language, dataDoctor, match }) {
-    const [infoDoctor, setInfoDoctor] = useState({})
+    const [infoDoctor, setInfoDoctor] = useState({});
+    const { id } = useParams();
 
     useEffect(() => {
         getInfoDoctorById(match.params.id)
-    }, [])
+    }, []);
 
     useEffect(() => {
         setInfoDoctor(dataDoctor)
-    }, [dataDoctor])
+    }, [dataDoctor]);
 
     let nameVi, nameEn = '';
     if (infoDoctor && infoDoctor.positionData) {
@@ -57,7 +59,7 @@ function DetailDoctor({ getInfoDoctorById, language, dataDoctor, match }) {
                         <DoctorScheduleHomePage />
                     </div>
                     <div className='doctor-schedule-related'>
-                        <DoctorScheduleRelated />
+                        <DoctorScheduleRelated id={id} />
                     </div>
                 </div>
                 <div

@@ -6,6 +6,8 @@ import { useLocation } from 'react-router-dom/cjs/react-router-dom.min';
 import { createSpecialty } from '../../../../services/specialty.service';
 import { CommonUtils } from '../../../../utils';
 import { toast } from 'react-toastify';
+import { useDispatch, useSelector } from 'react-redux';
+import { getAllDoctors } from '../../../../store/actions';
 
 const mdParser = new MarkdownIt(/* Markdown-it options */);
 
@@ -16,6 +18,7 @@ function CreateUpdateSpecialty() {
     const [descriptionMarkdown, setDescriptionMarkdown] = useState('');
     const [image, setImage] = useState('');
     const [action, setAction] = useState('CREATE');
+    const [listDoctor, setListDoctor] = useState([]);
 
     const location = useLocation();
 
@@ -30,12 +33,11 @@ function CreateUpdateSpecialty() {
     const handleEditorChange = ({ html, text }) => {
         setDescriptionHtml(html);
         setDescriptionMarkdown(text);
-
     }
 
     const handleChangeImage = async e => {
         const file = e.target.files[0];
-        if(file) {
+        if (file) {
             const base64Img = await CommonUtils.getBase64(file);
             setImage(base64Img);
         }
@@ -49,7 +51,7 @@ function CreateUpdateSpecialty() {
                 descriptionMarkdown,
                 image
             });
-            if(res?.code === 0) {
+            if (res?.code === 0) {
                 toast.success(res.message);
                 setNameSpecialty('');
                 setDescriptionHtml('');
@@ -81,10 +83,10 @@ function CreateUpdateSpecialty() {
             <div className="col-md-6">
                 <div className="mb-3">
                     <label htmlFor="specialty-image" className="form-label">Image specialty</label>
-                    <input 
-                        type="file" 
-                        className="form-control" 
-                        id="specialty-image" 
+                    <input
+                        type="file"
+                        className="form-control"
+                        id="specialty-image"
                         onChange={e => handleChangeImage(e)}
                     />
                 </div>

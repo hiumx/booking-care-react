@@ -5,7 +5,7 @@ import { getDoctorClinicDetail } from '../../../../../services/doctorService';
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import { useSelector } from 'react-redux';
 
-function DoctorScheduleRelated() {
+function DoctorScheduleRelated({ id }) {
     const [isDetail, setIsDetail] = useState(false);
     const [isShowInsurance, setIsShowInsurance] = useState(false);
     const [nameClinic, setNameClinic] = useState('');
@@ -16,13 +16,12 @@ function DoctorScheduleRelated() {
     const [moreInfo, setMoreInfo] = useState('');
 
     const language = useSelector(state => state.app.language);
-    const { id } = useParams();
 
     useEffect(() => {
         const fetchClinicData = async () => {
-            const res = await getDoctorClinicDetail(id);
+            const res = await getDoctorClinicDetail(+id);
             if (res && res.code === 0) {
-                const { nameClinic, addressClinic, note, paymentData, provinceData, priceData } = res.data;
+                const { nameClinic, addressClinic, note, paymentData, provinceData, priceData } = res?.data;
                 setNameClinic(nameClinic);
                 setAddressClinic(addressClinic);
                 setMoreInfo(note);
@@ -38,14 +37,14 @@ function DoctorScheduleRelated() {
             }
         }
         fetchClinicData();
-    }, []);
+    }, [id]);
 
     return (
         <div className='schedule__related__container'>
             <div className='schedule__address'>
                 <h6 className='schedule__title'>ĐỊA CHỈ PHÒNG KHÁM</h6>
                 <p className='schedule__name__desc'>{nameClinic}</p>
-                <p className='schedule__address__desc'>{`${addressClinic} - ${province}`}</p>
+                <p className='schedule__address__desc'>{`${addressClinic}, ${province}`}</p>
             </div>
             <div className={!isDetail ? 'schedule__price d-flex' : 'schedule__price'}>
                 <p className='schedule__title'>GIÁ KHÁM:</p>

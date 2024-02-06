@@ -28,6 +28,10 @@ export const getDoctorSchedule = ({ doctorId, date }) => {
     return axios.get(`doctor/doctor-schedule/?doctorId=${doctorId}&date=${date}`);
 }
 
+export const getListDoctorsIdBySpecialtyId = (id) => {
+    return axios.get(`/doctor?specialtyId=${id}`);
+}
+
 export const getTimeDetailById = (listTimeIds) => {
     return axios.get(`api/schedule-time-detail?listTimeIds=${listTimeIds}`);
 }
@@ -39,3 +43,4 @@ export const getInfoDoctorClinic = (doctorId) => {
 export const getDoctorClinicDetail = (doctorId) => {
     return axios.get(`api/doctor-clinic-detail/${doctorId}`);
 }
+
