@@ -1,0 +1,32 @@
+.specialties__wrapper {
+    .specialties__item__wrapper {
+        margin: 20px 12% 0 12%;
+    
+        .specialties__title {
+            font-weight: 600;
+        }
+
+        .specialties__list {
+            margin-bottom: 0;
+            
+            .specialties__item {
+                list-style: none;
+                border-bottom: 1px solid #eee;
+                padding: 16px;
+
+                .specialties__content {
+                    display: flex;
+            }
+        
+                .specialties__specialty__name {
+                    margin-left: 10px;
+                }
+            }
+
+            li:last-child {
+                border: none;
+            }
+        }
+    
+    }
+}

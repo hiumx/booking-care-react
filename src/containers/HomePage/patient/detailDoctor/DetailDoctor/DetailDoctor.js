@@ -2,15 +2,15 @@ import './DetailDoctor.scss';
 import { connect } from 'react-redux'
 import { useEffect, useState } from 'react';
 
-import * as actions from '../../../../store/actions'
-import HeaderHome from '../../components/header/HeaderHome';
-import InfoContact from '../../components/Section/InfoContact';
-import FooterHome from '../../components/FooterHome';
-import { LANGUAGES } from '../../../../utils';
-import HeaderDetailPage from '../../components/header/HeaderDetailPage';
-import DoctorScheduleHomePage from './DoctorScheduleHomePage/DoctorScheduleHomePage';
-import DoctorScheduleRelated from './DoctorScheduleRelated/DoctorScheduleRelated';
-import MoreInfo from '../../components/MoreInfo/MoreInfo';
+import * as actions from '../../../../../store/actions'
+import HeaderHome from '../../../components/header/HeaderHome';
+import InfoContact from '../../../components/Section/InfoContact';
+import FooterHome from '../../../components/FooterHome';
+import { LANGUAGES } from '../../../../../utils';
+import HeaderDetailPage from '../../../components/header/HeaderDetailPage';
+import DoctorScheduleHomePage from '../DoctorScheduleHomePage/DoctorScheduleHomePage';
+import DoctorScheduleRelated from '../DoctorScheduleRelated/DoctorScheduleRelated';
+import MoreInfo from '../../../components/MoreInfo/MoreInfo';
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 
 

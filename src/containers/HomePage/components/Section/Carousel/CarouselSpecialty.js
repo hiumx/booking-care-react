@@ -4,13 +4,14 @@ import Slider from "react-slick";
 import { useState, useEffect } from 'react'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import * as actions from '../../../../../store/actions'
 
 import { SampleNextArrow, SamplePrevArrow } from './Custom-arrow'
 import { flatMap } from 'lodash';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAllSpecialties } from '../../../../../store/actions/specialtyActions';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+
 function CarouselSpecialty() {
     const settings = {
         dots: false,
@@ -50,7 +51,7 @@ function CarouselSpecialty() {
                     {
                         allSpecialties.map(item =>
                             <div key={item.id} className='carousel-item' onClick={() => handleClickSpecialtyDetail(item.id)}>
-                                <img className='img-carousel-item' src={item.image} alt={item.image} />
+                                <LazyLoadImage className='img-carousel-item' src={item.image} alt={item.image} loading='lazy'/>
                                 <span className='description'>{item.name}</span>
                             </div>
                         )

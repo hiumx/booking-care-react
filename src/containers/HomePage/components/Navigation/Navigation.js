@@ -1,4 +1,5 @@
 
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import './Navigation.scss';
 import { memo } from 'react';
 
@@ -20,22 +21,22 @@ function Navigation({ isOpenNav, setIsOpenNav }) {
                 </div>
                 <ul className='navigation__list'>
                     <li className='navigation__item'>
-                        <a href='#' className='navigation__item--link'>Trang chủ</a>
+                        <Link to='/home' className='navigation__item--link'>Trang chủ</Link>
                     </li>
                     <li className='navigation__item'>
-                        <a href='#' className='navigation__item--link'>Cẩm nang</a>
+                        <Link to='#' className='navigation__item--link'>Cẩm nang</Link>
                     </li>
                     <li className='navigation__item'>
-                        <a href='#' className='navigation__item--link'>Liên hệ hợp tác</a>
+                        <Link to='/cooperate' className='navigation__item--link'>Liên hệ hợp tác</Link>
                     </li>
                     <li className='navigation__item'>
-                        <a href='#' className='navigation__item--link'>Chuyển đổi doanh nghiệp</a>
+                        <Link to='#' className='navigation__item--link'>Chuyển đổi doanh nghiệp</Link>
                     </li>
                     <li className='navigation__item'>
-                        <a href='#' className='navigation__item--link'>Gói chuyển đổi số doanh nghiệp</a>
+                        <Link to='#' className='navigation__item--link'>Gói chuyển đổi số doanh nghiệp</Link>
                     </li>
                     <li className='navigation__item'>
-                        <a href='#' className='navigation__item--link'>Tuyển dụng</a>
+                        <Link to='#' className='navigation__item--link'>Tuyển dụng</Link>
                     </li>
                 </ul>
                 <div className='navigation__title'>

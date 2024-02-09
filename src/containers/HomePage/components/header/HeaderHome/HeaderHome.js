@@ -5,6 +5,7 @@ import { LANGUAGES } from '../../../../../utils';
 import { changeLanguagesApp } from '../../../../../store/actions'
 import Navigation from '../../Navigation/Navigation';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 function HeaderHome({ language, changeLanguagesAppRedux }) {
 
@@ -31,22 +32,22 @@ function HeaderHome({ language, changeLanguagesAppRedux }) {
                     </div>
                 </div>
                 <div className='header-desc'>
-                    <div className='header-desc-item'>
+                    <Link to='/specialty' className='header-desc-item'>
                         <h5><FormattedMessage id="header-home.specialty" /></h5>
                         <p><FormattedMessage id="header-home.search-doctor" /></p>
-                    </div>
-                    <div className='header-desc-item'>
+                    </Link>
+                    <Link className='header-desc-item'>
                         <h5><FormattedMessage id="header-home.health-center" /></h5>
                         <p><FormattedMessage id="header-home.choose-room" /></p>
-                    </div>
-                    <div className='header-desc-item'>
+                    </Link>
+                    <Link className='header-desc-item'>
                         <h5><FormattedMessage id="header-home.doctor" /></h5>
                         <p><FormattedMessage id="header-home.choose-doctor" /></p>
-                    </div>
-                    <div className='header-desc-item'>
+                    </Link>
+                    <Link className='header-desc-item'>
                         <h5><FormattedMessage id="header-home.checkup-package" /></h5>
                         <p><FormattedMessage id="header-home.general-health" /></p>
-                    </div>
+                    </Link>
                 </div>
                 <div className='header-help-language'>
                     <div className='header-help'>

@@ -10,7 +10,7 @@ import './CarouselOutstandingDoctor.scss'
 import * as actions from '../../../../../store/actions'
 import { SampleNextArrow, SamplePrevArrow } from './Custom-arrow'
 import { LANGUAGES } from '../../../../../utils';
-
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 
 
@@ -62,7 +62,7 @@ function CarouselOutstandingDoctor({ fetchTopDoctorsHomeStart, topDoctorsRedux, 
                             const nameEn = `${item.positionData.valueEn}, ${item.firstName} ${item.lastName}`
                             return (<div key={item.id} className='carousel-item-doctor' onClick={() => handleClickDetailDoctor(item)}>
                                 <div className='wrapper-img-item-img'>
-                                    <img className='img-carousel-item-doctor' src={imageBase64} alt='hinh anh' />
+                                    <LazyLoadImage className='img-carousel-item-doctor' src={imageBase64} alt='hinh anh' />
                                 </div>
                                 <p className='description-doctor'>{language === LANGUAGES.VI ? nameVi : nameEn}</p>
                                 <p className='description-specialty'>Cơ xương khớp</p>

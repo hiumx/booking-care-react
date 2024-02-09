@@ -1,0 +1,38 @@
+.cooperate__wrapper {
+    margin-top: 118px;
+
+    .cooperate__content {
+        margin: 0 26%;
+
+        .cooperate__content__title {
+            font-weight: 600;
+            color: #555555;
+        }
+
+        .cooperate__content__desc {
+            color: #666666;
+        }
+
+        .cooperate__form {
+            margin: 16px 0 70px 0;
+
+            label {
+                color: #333333;
+            }
+
+            .send__btn {
+                color: #fff;
+                border: none;
+                outline: none;
+                border-radius: 20px;
+                padding: 8px 16px;
+                background-color: #FFC419;
+                font-weight: 600;
+
+                &:hover {
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
+}

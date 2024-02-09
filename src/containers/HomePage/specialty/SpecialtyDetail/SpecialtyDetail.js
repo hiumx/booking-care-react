@@ -1,19 +1,19 @@
 
 import { useDispatch, useSelector } from 'react-redux';
-import HeaderHome from '../components/header/HeaderHome';
+import HeaderHome from '../../components/header/HeaderHome';
 import './SpecialtyDetail.scss';
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import { useEffect, useState } from 'react';
-import MoreInfo from '../components/MoreInfo/MoreInfo';
-import InfoContact from '../components/Section/InfoContact';
-import FooterHome from '../components/FooterHome';
+import MoreInfo from '../../components/MoreInfo/MoreInfo';
+import InfoContact from '../../components/Section/InfoContact';
+import FooterHome from '../../components/FooterHome';
 import Select from 'react-select';
-import DoctorInfo from '../doctor/DoctorInfo';
-import DoctorScheduleRelated from '../patient/detailDoctor/DoctorScheduleRelated/DoctorScheduleRelated';
-import DoctorScheduleHomePage from '../patient/detailDoctor/DoctorScheduleHomePage/DoctorScheduleHomePage';
-import { getListDoctorsBySpecialtyId } from '../../../services/specialty.service';
-import { fetchListDoctorsBySpecialtyId } from '../../../store/actions/doctorActions';
-import { getSpecialtyById } from '../../../store/actions/specialtyActions';
+import DoctorInfo from '../../doctor/DoctorInfo';
+import DoctorScheduleRelated from '../../patient/detailDoctor/DoctorScheduleRelated/DoctorScheduleRelated';
+import DoctorScheduleHomePage from '../../patient/detailDoctor/DoctorScheduleHomePage/DoctorScheduleHomePage';
+import { getListDoctorsBySpecialtyId } from '../../../../services/specialty.service';
+import { fetchListDoctorsBySpecialtyId } from '../../../../store/actions/doctorActions';
+import { getSpecialtyById } from '../../../../store/actions/specialtyActions';
 
 function SpecialtyDetail() {
 
@@ -34,13 +34,16 @@ function SpecialtyDetail() {
         } else {
             console.log(specialties);
             const specialty = specialties.find(specialty => specialty.id === +id);
+            console.log(specialty);
             setSpecialty(specialty);
         }
         dispatch(fetchListDoctorsBySpecialtyId(id));
     }, []);
 
     useEffect(() => {
-        setSpecialty(specialtyById);
+        if(specialties.length === 0) {
+            setSpecialty(specialtyById);
+        }
     }, [specialtyById]);
 
     const options = [

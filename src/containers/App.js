@@ -17,7 +17,9 @@ import System from '../routes/System';
 import HomePage from './HomePage';
 import BookingSchedule from './HomePage/patient/detailDoctor/BookingSchedule/BookingSchedule';
 import { verifySchedule } from '../services/patientService';
-import SpecialtyDetail from './HomePage/specialty/SpecialtyDetail';
+import SpecialtyDetail from './HomePage/specialty/SpecialtyDetail/SpecialtyDetail';
+import Cooperate from './HomePage/patient/medical/Cooperate';
+import Specialties from './HomePage/specialty/Specialties/Specialties';
 
 console.warn = () => { }
 class App extends Component {
@@ -55,7 +57,9 @@ class App extends Component {
                                     <Route path={path.DETAIL_DOCTOR} component={DetailDoctor} />
                                     <Route path={path.BOOKING_SCHEDULE} component={BookingSchedule} />
                                     <Route path={path.VERIFY_SCHEDULE} component={verifySchedule} />
+                                    <Route path={path.SPECIALTY} exact component={Specialties} />
                                     <Route path={path.DETAIL_SPECIALTY} component={SpecialtyDetail} />
+                                    <Route path={path.COOPERATE} component={Cooperate} />
                                 </Switch>
                             </CustomScrollbars>
                         </span>

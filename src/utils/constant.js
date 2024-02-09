@@ -8,6 +8,8 @@ export const path = {
     BOOKING_SCHEDULE: '/booking-schedule',
     VERIFY_SCHEDULE: '/verify-schedule',
     DETAIL_SPECIALTY: '/specialty/:id',
+    SPECIALTY: '/specialty',
+    COOPERATE: '/cooperate',
 };
 
 export const LANGUAGES = {
