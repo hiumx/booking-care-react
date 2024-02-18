@@ -1,7 +1,7 @@
 
 import './DoctorInfo.scss';
 import { useEffect, useState } from 'react';
-import { getInfoDoctorByIdService } from '../../../services/doctorService';
+import { getInfoDoctorByIdService } from '../../../../services/doctorService';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
@@ -22,7 +22,7 @@ function DoctorInfo({ id }) {
         <div className='doctor__info__wrapper'>
             <div className='doctor__info__img__wrapper'>
                 <LazyLoadImage className='doctor__info__img' src={dataDoctor?.image} alt={dataDoctor?.image} loading='lazy' />
-                <Link to={`/detail-doctor/${id}`} className='doctor__more__info--link'>Xêm thêm</Link>
+                <Link to={`/doctor/detail-doctor/${id}`} className='doctor__more__info--link'>Xêm thêm</Link>
             </div>
             <div className='doctor__info__desc'>
                 <h5 className='doctor__info__name'>

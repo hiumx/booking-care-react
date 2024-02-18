@@ -1,0 +1,42 @@
+.doctors__container {
+
+    .doctors__content {
+        margin: 100px 100px 10px 100px;
+
+        .doctors__title {
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .doctors__list {
+            list-style: none;
+            padding: 0;
+
+            .doctors__item {
+                padding: 10px 0;
+                border-bottom: 1px solid rgba(204, 204, 204, 1.00);
+
+                .doctors__item--link {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    text-decoration: none;
+                    color: #000;
+                }
+            }
+
+            .doctors__item__img {
+                width: 104px;
+                height: 104px;
+            }
+
+            .doctors__item__desc {
+                margin-left: 16px;
+            }
+
+            &:last-child {
+                border: none;
+            }
+        }
+    }
+}

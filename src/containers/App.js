@@ -20,6 +20,7 @@ import { verifySchedule } from '../services/patientService';
 import SpecialtyDetail from './HomePage/specialty/SpecialtyDetail/SpecialtyDetail';
 import Cooperate from './HomePage/patient/medical/Cooperate';
 import Specialties from './HomePage/specialty/Specialties/Specialties';
+import DoctorOutstanding from './HomePage/doctor/DoctorOutstanding/DoctorOutstanding';
 
 console.warn = () => { }
 class App extends Component {
@@ -46,7 +47,7 @@ class App extends Component {
         return (
             <Fragment>
                 <Router history={history}>
-                    <div className="main-container">
+                    <div className="main-container" onScroll={e => console.log(e)}>
                         <span className="content-container">
                             <CustomScrollbars style={{ width: '100%', height: '100vh' }}>
                                 <Switch>
@@ -54,6 +55,7 @@ class App extends Component {
                                     <Route path={path.LOGIN} component={userIsNotAuthenticated(Login)} />
                                     <Route path={path.HOMEPAGE} component={(HomePage)} />
                                     <Route path={path.SYSTEM} component={userIsAuthenticated(System)} />
+                                    <Route path={path.DOCTOR} exact component={DoctorOutstanding} />
                                     <Route path={path.DETAIL_DOCTOR} component={DetailDoctor} />
                                     <Route path={path.BOOKING_SCHEDULE} component={BookingSchedule} />
                                     <Route path={path.VERIFY_SCHEDULE} component={verifySchedule} />

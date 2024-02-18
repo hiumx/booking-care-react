@@ -11,13 +11,26 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        .header-detail-icon-back {
-            width: 24px;
-            height: 24px;
+        .header-detail-back {
             padding: 4px;
-            display: flex;
             fill: #fff;
             cursor: pointer;
+            display: flex;
+            align-items: center;
+
+
+            .header-detail-back-icon {
+                width: 20px;
+                margin-right: 16px;
+            }
+
+            .header-detail-page-context {
+                margin: 0;
+                color: #fff;
+                font-weight: 600;
+                font-size: 15px;
+                
+            }
 
             &:hover {
                 opacity: 0.8;

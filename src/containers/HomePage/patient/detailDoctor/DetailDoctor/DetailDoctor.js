@@ -33,9 +33,8 @@ function DetailDoctor({ getInfoDoctorById, language, dataDoctor, match }) {
     }
 
     return (
-
         <>
-            <HeaderDetailPage />
+            <HeaderDetailPage textDetail={`Bác sĩ ${infoDoctor.lastName} ${infoDoctor.firstName}`} />
             <div className='detail-doctor-container'>
                 <div className='detail-doctor-information'>
                     <div className='row'>

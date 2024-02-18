@@ -8,7 +8,7 @@ import MoreInfo from '../../components/MoreInfo/MoreInfo';
 import InfoContact from '../../components/Section/InfoContact';
 import FooterHome from '../../components/FooterHome';
 import Select from 'react-select';
-import DoctorInfo from '../../doctor/DoctorInfo';
+import DoctorInfo from '../../doctor/DoctorInfo/DoctorInfo';
 import DoctorScheduleRelated from '../../patient/detailDoctor/DoctorScheduleRelated/DoctorScheduleRelated';
 import DoctorScheduleHomePage from '../../patient/detailDoctor/DoctorScheduleHomePage/DoctorScheduleHomePage';
 import { getListDoctorsBySpecialtyId } from '../../../../services/specialty.service';
@@ -32,9 +32,7 @@ function SpecialtyDetail() {
         if (specialties.length === 0) {
             dispatch(getSpecialtyById(id));
         } else {
-            console.log(specialties);
             const specialty = specialties.find(specialty => specialty.id === +id);
-            console.log(specialty);
             setSpecialty(specialty);
         }
         dispatch(fetchListDoctorsBySpecialtyId(id));

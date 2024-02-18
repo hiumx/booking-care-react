@@ -4,11 +4,12 @@ export const path = {
     LOGIN: '/login',
     LOG_OUT: '/logout',
     SYSTEM: '/system',
-    DETAIL_DOCTOR: '/detail-doctor/:id',
+    DOCTOR: '/doctor',
+    DETAIL_DOCTOR: '/doctor/detail-doctor/:id',
     BOOKING_SCHEDULE: '/booking-schedule',
     VERIFY_SCHEDULE: '/verify-schedule',
-    DETAIL_SPECIALTY: '/specialty/:id',
     SPECIALTY: '/specialty',
+    DETAIL_SPECIALTY: '/specialty/:id',
     COOPERATE: '/cooperate',
 };
 

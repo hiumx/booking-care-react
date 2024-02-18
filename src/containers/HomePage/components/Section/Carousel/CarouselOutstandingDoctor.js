@@ -2,19 +2,16 @@ import { FormattedMessage } from 'react-intl';
 import Slider from "react-slick";
 import { useState, useEffect } from 'react'
 import { useHistory } from "react-router-dom";
-import { connect } from 'react-redux'
+import { connect, useDispatch, useSelector } from 'react-redux'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import './CarouselOutstandingDoctor.scss'
-import * as actions from '../../../../../store/actions'
+import './CarouselOutstandingDoctor.scss';
 import { SampleNextArrow, SamplePrevArrow } from './Custom-arrow'
 import { LANGUAGES } from '../../../../../utils';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { fetchTopDoctorsHomeStart } from '../../../../../store/actions';
 
-
-
-function CarouselOutstandingDoctor({ fetchTopDoctorsHomeStart, topDoctorsRedux, language }) {
+function CarouselOutstandingDoctor() {
     const settings = {
         dots: false,
         infinite: false,
@@ -30,17 +27,22 @@ function CarouselOutstandingDoctor({ fetchTopDoctorsHomeStart, topDoctorsRedux, 
     };
 
     const history = useHistory();
-    const [arrTopDoctors, setArrTopDoctors] = useState([])
+    const [arrTopDoctors, setArrTopDoctors] = useState([]);
+
+    const language = useSelector(state => state.app.language);
+    const topDoctorsRedux = useSelector(state => state.doctor.topDoctors);
+    const dispatch = useDispatch();
+
     useEffect(() => {
-        fetchTopDoctorsHomeStart()
-    }, [])
+        dispatch(fetchTopDoctorsHomeStart());
+    }, []);
 
     useEffect(() => {
         setArrTopDoctors(topDoctorsRedux)
     }, [topDoctorsRedux])
 
     const handleClickDetailDoctor = (doctorData) => {
-        history.push(`/detail-doctor/${doctorData.id}`);
+        history.push(`doctor/detail-doctor/${doctorData.id}`);
     }
 
     return (
@@ -54,19 +56,16 @@ function CarouselOutstandingDoctor({ fetchTopDoctorsHomeStart, topDoctorsRedux, 
                 <Slider {...settings}>
                     {arrTopDoctors && arrTopDoctors.length > 0 &&
                         arrTopDoctors.map((item, index) => {
-                            let imageBase64;
-                            if (item.image) {
-                                imageBase64 = Buffer.from(item.image, 'base64').toString('binary');
-                            }
                             const nameVi = `${item.positionData.valueVi}, ${item.lastName} ${item.firstName}`
                             const nameEn = `${item.positionData.valueEn}, ${item.firstName} ${item.lastName}`
-                            return (<div key={item.id} className='carousel-item-doctor' onClick={() => handleClickDetailDoctor(item)}>
-                                <div className='wrapper-img-item-img'>
-                                    <LazyLoadImage className='img-carousel-item-doctor' src={imageBase64} alt='hinh anh' />
-                                </div>
-                                <p className='description-doctor'>{language === LANGUAGES.VI ? nameVi : nameEn}</p>
-                                <p className='description-specialty'>Cơ xương khớp</p>
-                            </div>)
+                            return (
+                                <div key={item.id} className='carousel-item-doctor' onClick={() => handleClickDetailDoctor(item)}>
+                                    <div className='wrapper-img-item-img'>
+                                        <img className='img-carousel-item-doctor' src={item.image} alt='hinh anh' />
+                                    </div>
+                                    <p className='description-doctor'>{language === LANGUAGES.VI ? nameVi : nameEn}</p>
+                                    <p className='description-specialty'>Cơ xương khớp</p>
+                                </div>)
                         })
                     }
                 </Slider>
@@ -75,20 +74,7 @@ function CarouselOutstandingDoctor({ fetchTopDoctorsHomeStart, topDoctorsRedux, 
     );
 }
 
-const mapStateToProps = state => {
-    return {
-        language: state.app.language,
-        topDoctorsRedux: state.doctor.topDoctors
-    }
-}
-
-const mapDispatchToProps = dispatch => {
-    return {
-        fetchTopDoctorsHomeStart: () => dispatch(actions.fetchTopDoctorsHomeStart())
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(CarouselOutstandingDoctor);
+export default CarouselOutstandingDoctor;
 
 
 

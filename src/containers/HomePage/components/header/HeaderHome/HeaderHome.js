@@ -40,7 +40,7 @@ function HeaderHome({ language, changeLanguagesAppRedux }) {
                         <h5><FormattedMessage id="header-home.health-center" /></h5>
                         <p><FormattedMessage id="header-home.choose-room" /></p>
                     </Link>
-                    <Link className='header-desc-item'>
+                    <Link to='/doctor' className='header-desc-item'>
                         <h5><FormattedMessage id="header-home.doctor" /></h5>
                         <p><FormattedMessage id="header-home.choose-doctor" /></p>
                     </Link>
