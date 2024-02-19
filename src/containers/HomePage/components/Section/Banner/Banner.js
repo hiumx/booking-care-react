@@ -1,6 +1,7 @@
 import './Banner.scss'
 import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 function Banner() {
     return (
         <div className='banner-container'>
@@ -24,40 +25,58 @@ function Banner() {
                 <ul className='choosing-examination-list'>
 
                     <li className='choosing-examination-item'>
-                        <div className='examination-image-specialty'></div>
-                        <span className='examination-item-title'><FormattedMessage id="banner.specialist-examination" /></span>
+                        <Link to='/specialty' className='choosing-examination-item-link'>
+                            <div className='examination-image-specialty'></div>
+                            <span className='examination-item-title'><FormattedMessage id="banner.specialist-examination" /></span>
+                        </Link>
                     </li>
                     <li className='choosing-examination-item'>
-                        <div className='examination-image-remote'></div>
-                        <span className='examination-item-title'><FormattedMessage id="banner.remote-examination" /></span>
+                        <Link to='/specialty' className='choosing-examination-item-link'>
+                            <div className='examination-image-remote'></div>
+                            <span className='examination-item-title'><FormattedMessage id="banner.remote-examination" /></span>
+                        </Link>
                     </li>
                     <li className='choosing-examination-item'>
-                        <div className='examination-image-overview'></div>
-                        <span className='examination-item-title'><FormattedMessage id="banner.examination-overview" /></span>
+                        <Link to='/specialty' className='choosing-examination-item-link'>
+                            <div className='examination-image-overview'></div>
+                            <span className='examination-item-title'><FormattedMessage id="banner.examination-overview" /></span>
+                        </Link>
                     </li>
                     <li className='choosing-examination-item'>
-                        <div className='examination-image-test'></div>
-                        <span className='examination-item-title'><FormattedMessage id="banner.medical-test" /></span>
+                        <Link to='/specialty' className='choosing-examination-item-link'>
+                            <div className='examination-image-test'></div>
+                            <span className='examination-item-title'><FormattedMessage id="banner.medical-test" /></span>
+                        </Link>
                     </li>
                     <li className='choosing-examination-item'>
-                        <div className='examination-image-morale'></div>
-                        <span className='examination-item-title'><FormattedMessage id="banner.mental-health" /></span>
+                        <Link to='/specialty' className='choosing-examination-item-link'>
+                            <div className='examination-image-morale'></div>
+                            <span className='examination-item-title'><FormattedMessage id="banner.mental-health" /></span>
+                        </Link>
                     </li>
                     <li className='choosing-examination-item'>
-                        <div className='examination-image-dentistry'></div>
-                        <span className='examination-item-title'><FormattedMessage id="banner.dental-examination" /></span>
+                        <Link to='/specialty' className='choosing-examination-item-link'>
+                            <div className='examination-image-dentistry'></div>
+                            <span className='examination-item-title'><FormattedMessage id="banner.dental-examination" /></span>
+                        </Link>
                     </li>
                     <li className='choosing-examination-item'>
-                        <div className='examination-image-anatomy'></div>
-                        <span className='examination-item-title'><FormattedMessage id="banner.surgery-package" /></span>
+                        <Link to='/specialty' className='choosing-examination-item-link'>
+                            <div className='examination-image-anatomy'></div>
+                            <span className='examination-item-title'><FormattedMessage id="banner.surgery-package" /></span>
+                        </Link>
                     </li>
                     <li className='choosing-examination-item'>
-                        <div className='examination-image-medical'></div>
-                        <span className='examination-item-title'><FormattedMessage id="banner.medical-products" /></span>
+                        <Link to='/specialty' className='choosing-examination-item-link'>
+                            <div className='examination-image-medical'></div>
+                            <span className='examination-item-title'><FormattedMessage id="banner.medical-products" /></span>
+                        </Link>
                     </li>
                     <li className='choosing-examination-item'>
-                        <div className='examination-image-enterprise'></div>
-                        <span className='examination-item-title'><FormattedMessage id="banner.enterprise-products" /></span>
+                        <Link to='/specialty' className='choosing-examination-item-link'>
+                            <div className='examination-image-enterprise'></div>
+                            <span className='examination-item-title'><FormattedMessage id="banner.enterprise-products" /></span>
+                        </Link>
                     </li>
 
 

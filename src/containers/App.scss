@@ -1,1 +1,24 @@
 @import "../styles/common.scss";
+
+.main-container {
+    .content-container {
+    }
+}
+.go__to__top__btn__wrapper {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgb(69, 190, 229);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 60px;
+    right: 20px;
+
+    cursor: pointer;
+    .go__to__top__btn {
+        width: 14px;
+        fill: #fff;
+    }
+}

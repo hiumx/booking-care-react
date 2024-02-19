@@ -23,7 +23,7 @@ function Cooperate() {
                 <p className='ç'>BookingCare rất hân hạnh được hợp tác với bác sĩ và cơ sở y tế. Vui lòng gửi thông tin, chúng tôi sẽ liên hệ lại trong thời gian sớm nhất.</p>
                 <div className='cooperate__form'>
                     <div className="mb-3">
-                        <label for="people-contact" className="form-label">Người liên hệ</label>
+                        <label htmlFor="people-contact" className="form-label">Người liên hệ</label>
                         <input
                             type="text"
                             className="form-control"
@@ -34,7 +34,7 @@ function Cooperate() {
                         />
                     </div>
                     <div className="mb-3">
-                        <label for="phone" className="form-label">Số điện thoại</label>
+                        <label htmlFor="phone" className="form-label">Số điện thoại</label>
                         <input
                             type="text"
                             className="form-control"
@@ -45,7 +45,7 @@ function Cooperate() {
                         />
                     </div>
                     <div className="mb-3">
-                        <label for="email" className="form-label">Địa chỉ email</label>
+                        <label htmlFor="email" className="form-label">Địa chỉ email</label>
                         <input
                             type="email"
                             className="form-control"
@@ -55,7 +55,7 @@ function Cooperate() {
                         />
                     </div>
                     <div className="mb-3">
-                        <label for="base-medial" className="form-label">Tên cở sở y tế</label>
+                        <label htmlFor="base-medial" className="form-label">Tên cở sở y tế</label>
                         <input
                             type="text"
                             className="form-control"
@@ -65,7 +65,7 @@ function Cooperate() {
                         />
                     </div>
                     <div className="mb-3">
-                        <label for="address" className="form-label">Địa chỉ</label>
+                        <label htmlFor="address" className="form-label">Địa chỉ</label>
                         <input
                             type="text"
                             className="form-control"
@@ -75,13 +75,13 @@ function Cooperate() {
                         />
                     </div>
                     <div className="mb-3">
-                        <label for="content" className="form-label">Nội dung</label>
+                        <label htmlFor="content" className="form-label">Nội dung</label>
                         <textarea
                             className="form-control"
                             id="content"
                             onChange={e => setContent(e.target.value)}
+                            defaultValue={content}
                         >
-                            {content}
                         </textarea>
                     </div>
                     <button type='button' className='send__btn'>Gửi thông tin</button>

@@ -37,20 +37,16 @@ function DetailDoctor({ getInfoDoctorById, language, dataDoctor, match }) {
             <HeaderDetailPage textDetail={`Bác sĩ ${infoDoctor.lastName} ${infoDoctor.firstName}`} />
             <div className='detail-doctor-container'>
                 <div className='detail-doctor-information'>
-                    <div className='row'>
-                        <div className='col col-2'>
-                            <img className='detail-doctor-img' src={infoDoctor.image} alt='Doctor img' />
-                        </div>
-                        <div className='col col-5 detail-doctor-position'>
-                            <h2 className='detail-doctor-intro'>
-                                {LANGUAGES.VI === language ? nameVi : nameEn}
-                            </h2>
-                            <p className='detail-doctor-description'>
-                                {infoDoctor && infoDoctor.Markdown && infoDoctor.Markdown.description}
-                            </p>
-                        </div>
-                        <div className='col col-5 detail-doctor-position'>
-                        </div>
+                    <div className='detail-doctor-img-wrapper'>
+                        <img className='detail-doctor-img' src={infoDoctor.image} alt='Doctor img' />
+                    </div>
+                    <div className='detail-doctor-position'>
+                        <h2 className='detail-doctor-intro'>
+                            {LANGUAGES.VI === language ? nameVi : nameEn}
+                        </h2>
+                        <p className='detail-doctor-description'>
+                            {infoDoctor && infoDoctor.Markdown && infoDoctor.Markdown.description}
+                        </p>
                     </div>
                 </div>
                 <div className='detail-doctor-schedule'>

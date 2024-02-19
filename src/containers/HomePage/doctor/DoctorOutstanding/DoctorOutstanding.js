@@ -14,8 +14,6 @@ function DoctorOutstanding() {
     const listDoctors = useSelector(state => state.doctor.allDoctors);
     const dispatch = useDispatch();
 
-    console.log(listDoctors);
-
     useEffect(() => {
         if (listDoctors.length === 0) {
             dispatch(getAllDoctors());

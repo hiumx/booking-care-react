@@ -203,6 +203,50 @@ export const handbook = {
     ]
 }
 
+export const healthyFacilities = {
+    title: 'Cơ sở ý tế',
+    textButton: 'XÊM THÊM',
+    isBackgroundColor: true,
+    autoPlay: true,
+    content: [
+        {
+            id: 1,
+            imgLink: 'https://cdn.bookingcare.vn/fo/2018/06/18/083122lo-go-viet-duc.jpg',
+            description: ''
+        },
+        {
+            id: 1,
+            imgLink: 'https://cdn.bookingcare.vn/fo/2018/06/18/083122lo-go-viet-duc.jpg',
+            description: ''
+        },
+        {
+            id: 1,
+            imgLink: 'https://cdn.bookingcare.vn/fo/2018/06/18/083122lo-go-viet-duc.jpg',
+            description: ''
+        },
+        {
+            id: 1,
+            imgLink: 'https://cdn.bookingcare.vn/fo/2018/06/18/083122lo-go-viet-duc.jpg',
+            description: ''
+        },
+        {
+            id: 1,
+            imgLink: 'https://cdn.bookingcare.vn/fo/2018/06/18/083122lo-go-viet-duc.jpg',
+            description: ''
+        },
+        {
+            id: 1,
+            imgLink: 'https://cdn.bookingcare.vn/fo/2018/06/18/083122lo-go-viet-duc.jpg',
+            description: ''
+        },
+        {
+            id: 1,
+            imgLink: 'https://cdn.bookingcare.vn/fo/2018/06/18/083122lo-go-viet-duc.jpg',
+            description: ''
+        },
+    ]
+}
+
 export const doctorsAndMedicalFacilities = {
     title: 'Dành cho bác sĩ và cơ sở y tế',
     multipleBtn: true,
@@ -231,27 +275,7 @@ export const doctorsAndMedicalFacilities = {
             id: 4,
             textLink: 'Review khám tổng quát tại Phòng khám Vigor Health: Bảng giá chi tiết',
             description: ''
-        },
-        {
-            id: 5,
-            imgLink: 'https://img1.kienthucvui.vn/uploads/2019/10/10/anh-bia-tinh-yeu-dep_105704407.jpg',
-            description: ''
-        },
-        {
-            id: 6,
-            imgLink: 'https://thuthuatphanmem.vn/uploads/2018/09/11/hinh-anh-dep-6_044127357.jpg',
-            description: ''
-        },
-        {
-            id: 7,
-            imgLink: 'https://thuthuatphanmem.vn/uploads/2018/09/11/hinh-anh-dep-6_044127357.jpg',
-            description: ''
-        },
-        {
-            id: 8,
-            imgLink: 'https://thuthuatphanmem.vn/uploads/2018/09/11/hinh-anh-dep-6_044127357.jpg',
-            description: ''
-        },
+        }
     ]
 }
 

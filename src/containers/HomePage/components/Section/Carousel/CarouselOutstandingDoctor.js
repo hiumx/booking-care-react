@@ -10,6 +10,7 @@ import './CarouselOutstandingDoctor.scss';
 import { SampleNextArrow, SamplePrevArrow } from './Custom-arrow'
 import { LANGUAGES } from '../../../../../utils';
 import { fetchTopDoctorsHomeStart } from '../../../../../store/actions';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 function CarouselOutstandingDoctor() {
     const settings = {
@@ -50,7 +51,10 @@ function CarouselOutstandingDoctor() {
             <div className='carousel-wrapper'>
                 <div className='carousel-header'>
                     <h3 className='carousel-title'><FormattedMessage id="home-page.doctor-outstanding" /></h3>
-                    <button className='carousel-more-btn'><FormattedMessage id="home-page.view-more-btn" /></button>
+                    <Link
+                        className='carousel-more-btn' to='doctor'>
+                        <FormattedMessage id="home-page.view-more-btn" />
+                    </Link>
                 </div>
 
                 <Slider {...settings}>

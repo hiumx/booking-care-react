@@ -1,3 +1,4 @@
+
 import './Carousel.scss'
 import { FormattedMessage } from 'react-intl';
 import Slider from "react-slick";
@@ -6,13 +7,12 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import { SampleNextArrow, SamplePrevArrow } from './Custom-arrow'
-import { flatMap } from 'lodash';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAllSpecialties } from '../../../../../store/actions/specialtyActions';
 import { Link, useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
-function CarouselSpecialty() {
+function CarouselHealthyFacilities() {
     const settings = {
         dots: false,
         infinite: true,
@@ -27,17 +27,17 @@ function CarouselSpecialty() {
         cssEase: 'linear',
     };
 
-    const dispatch = useDispatch();
-    const allSpecialties = useSelector(state => state.specialty.allSpecialties);
-    const history = useHistory();
+    // const dispatch = useDispatch();
+    // const allSpecialties = useSelector(state => state.specialty.allSpecialties);
+    // const history = useHistory();
 
-    useEffect(() => {
-        dispatch(fetchAllSpecialties());
-    }, []);
+    // useEffect(() => {
+    //     dispatch(fetchAllSpecialties());
+    // }, []);
 
-    const handleClickSpecialtyDetail = (id) => {
-        history.push(`/specialty/${id}`);
-    }
+    // const handleClickSpecialtyDetail = (id) => {
+    //     history.push(`/specialty/${id}`);
+    // }
 
     return (
         <div className={'carousel-container'} >
@@ -62,8 +62,5 @@ function CarouselSpecialty() {
     );
 }
 
-
-export default CarouselSpecialty;
-
-
+export default CarouselHealthyFacilities;
 

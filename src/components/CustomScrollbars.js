@@ -82,7 +82,7 @@ class CustomScrollbars extends Component {
             <div />
         );
     };
-
+    
     render() {
         const { className, disableVerticalScroll, disableHorizontalScroll, children, ...otherProps } = this.props;
         return (

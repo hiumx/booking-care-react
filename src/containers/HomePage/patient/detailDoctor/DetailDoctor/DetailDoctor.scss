@@ -4,11 +4,17 @@
 
     .detail-doctor-information {
         padding: 26px 142px 0;
+        display: flex;
+        align-items: center;
+
+        .detail-doctor-img-wrapper {
+            margin-right: 20px;
+        }
 
 
         .detail-doctor-position {
-            margin: auto 0 auto -75px;
             font-size: 13px;
+            max-width: 600px;
 
             .detail-doctor-intro {
                 font-weight: 600;
