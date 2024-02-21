@@ -1,9 +1,8 @@
 import './DetailDoctor.scss';
-import { connect } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useEffect, useState } from 'react';
 
 import * as actions from '../../../../../store/actions'
-import HeaderHome from '../../../components/header/HeaderHome';
 import InfoContact from '../../../components/Section/InfoContact';
 import FooterHome from '../../../components/FooterHome';
 import { LANGUAGES } from '../../../../../utils';
@@ -12,15 +11,24 @@ import DoctorScheduleHomePage from '../DoctorScheduleHomePage/DoctorScheduleHome
 import DoctorScheduleRelated from '../DoctorScheduleRelated/DoctorScheduleRelated';
 import MoreInfo from '../../../components/MoreInfo/MoreInfo';
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import Loading from '../../../../../components/Loading/Loading';
 
 
-function DetailDoctor({ getInfoDoctorById, language, dataDoctor, match }) {
+function DetailDoctor() {
+
     const [infoDoctor, setInfoDoctor] = useState({});
     const { id } = useParams();
 
+    const language = useSelector(state => state.app.language);
+    const dataDoctor = useSelector(state => state.doctor.dataDoctor);
+    const dispatch = useDispatch();
+
     useEffect(() => {
-        getInfoDoctorById(match.params.id)
+        dispatch(actions.getInfoDoctorById(+id));
     }, []);
+
+    console.log(infoDoctor);
 
     useEffect(() => {
         setInfoDoctor(dataDoctor)
@@ -32,58 +40,50 @@ function DetailDoctor({ getInfoDoctorById, language, dataDoctor, match }) {
         nameEn = `${infoDoctor.positionData.valueEn}, ${infoDoctor.firstName} ${infoDoctor.lastName}`
     }
 
+
     return (
         <>
             <HeaderDetailPage textDetail={`Bác sĩ ${infoDoctor.lastName} ${infoDoctor.firstName}`} />
-            <div className='detail-doctor-container'>
-                <div className='detail-doctor-information'>
-                    <div className='detail-doctor-img-wrapper'>
-                        <img className='detail-doctor-img' src={infoDoctor.image} alt='Doctor img' />
+            <Loading data={infoDoctor} >
+                <div className='detail-doctor-container'>
+                    <div className='detail-doctor-information'>
+                        <div className='detail-doctor-img-wrapper'>
+                            <LazyLoadImage className='detail-doctor-img' src={infoDoctor.image} alt='Doctor img' />
+                        </div>
+                        <div className='detail-doctor-position'>
+                            <h2 className='detail-doctor-intro'>
+                                {LANGUAGES.VI === language ? nameVi : nameEn}
+                            </h2>
+                            <p className='detail-doctor-description'>
+                                {infoDoctor && infoDoctor.Markdown && infoDoctor.Markdown.description}
+                            </p>
+                        </div>
                     </div>
-                    <div className='detail-doctor-position'>
-                        <h2 className='detail-doctor-intro'>
-                            {LANGUAGES.VI === language ? nameVi : nameEn}
-                        </h2>
-                        <p className='detail-doctor-description'>
-                            {infoDoctor && infoDoctor.Markdown && infoDoctor.Markdown.description}
-                        </p>
+                    <div className='detail-doctor-schedule'>
+                        <div className='doctor-schedule-time'>
+                            <DoctorScheduleHomePage />
+                        </div>
+                        <div className='doctor-schedule-related'>
+                            <DoctorScheduleRelated id={id} />
+                        </div>
                     </div>
-                </div>
-                <div className='detail-doctor-schedule'>
-                    <div className='doctor-schedule-time'>
-                        <DoctorScheduleHomePage />
+                    <div
+                        className='detail-doctor-overview'
+                        dangerouslySetInnerHTML={{ __html: infoDoctor && infoDoctor.Markdown && infoDoctor.Markdown.contentHTML }}
+                    >
                     </div>
-                    <div className='doctor-schedule-related'>
-                        <DoctorScheduleRelated id={id} />
-                    </div>
-                </div>
-                <div
-                    className='detail-doctor-overview'
-                    dangerouslySetInnerHTML={{ __html: infoDoctor && infoDoctor.Markdown && infoDoctor.Markdown.contentHTML }}
-                >
-                </div>
-                <div className='detail-doctor-comment'>
+                    <div className='detail-doctor-comment'>
 
+                    </div>
                 </div>
-            </div>
+            </Loading>
+
             <MoreInfo />
             <InfoContact />
             <FooterHome />
+
         </>
     );
 }
 
-const mapStateToProps = state => {
-    return {
-        language: state.app.language,
-        dataDoctor: state.doctor.dataDoctor
-    }
-}
-
-const mapDispatchToProps = dispatch => {
-    return {
-        getInfoDoctorById: (doctorId) => dispatch(actions.getInfoDoctorById(doctorId))
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(DetailDoctor);
+export default DetailDoctor;

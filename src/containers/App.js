@@ -25,6 +25,7 @@ import VerifySchedule from './HomePage/patient/detailDoctor/schedule/VerifySched
 import ScrollToTop from './HomePage/components/Section/ScrollToTop/ScrollToTop';
 
 import './App.scss';
+import AppDownload from './HomePage/site/AppDownload/AppDownload';
 
 console.warn = () => { }
 
@@ -89,6 +90,7 @@ function App({ persistor }) {
                             <Route path={path.SPECIALTY} exact component={Specialties} />
                             <Route path={path.DETAIL_SPECIALTY} component={SpecialtyDetail} />
                             <Route path={path.COOPERATE} component={Cooperate} />
+                            <Route path={path.APP} component={AppDownload} />
                         </Switch>
                         {/* </CustomScrollbars> */}
 

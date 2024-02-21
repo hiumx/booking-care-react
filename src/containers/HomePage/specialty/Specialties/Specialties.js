@@ -8,6 +8,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { useEffect } from 'react';
 import { fetchAllSpecialties } from '../../../../store/actions/specialtyActions';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import Loading from '../../../../components/Loading/Loading';
 
 function Specialties() {
 
@@ -26,19 +27,24 @@ function Specialties() {
             <div className='specialties__item__wrapper'>
                 <h5 className='specialties__title'>Khám chuyên khoa</h5>
                 <ul className='specialties__list'>
-                    {specialties.map((specialty, index) =>
-                        <li className='specialties__item' key={index}>
-                            <Link to={`specialty/${specialty.id}`} className='specialties__content'>
-                                <LazyLoadImage
-                                    src={specialty.image}
-                                    alt='hinh-anh'
-                                    width={110}
-                                    height={66}
-                                />
-                                <p className='specialties__specialty__name'>{specialty.name}</p>
-                            </Link>
-                        </li>
-                    )}
+                    <Loading data={specialties} >
+                        {
+                            specialties.map((specialty, index) =>
+                                <li className='specialties__item' key={index}>
+                                    <Link to={`specialty/${specialty.id}`} className='specialties__content'>
+                                        <LazyLoadImage
+                                            src={specialty.image}
+                                            alt='hinh-anh'
+                                            width={110}
+                                            height={66}
+                                        />
+                                        <p className='specialties__specialty__name'>{specialty.name}</p>
+                                    </Link>
+                                </li>
+                            )
+                        }
+
+                    </Loading>
                 </ul>
             </div>
             <InfoContact />

@@ -21,7 +21,7 @@ function DoctorInfo({ id }) {
     return (
         <div className='doctor__info__wrapper'>
             <div className='doctor__info__img__wrapper'>
-                <LazyLoadImage className='doctor__info__img' src={dataDoctor?.image} alt={dataDoctor?.image} loading='lazy' />
+                <LazyLoadImage className='doctor__info__img' src={dataDoctor?.image} alt={dataDoctor?.image} />
                 <Link to={`/doctor/detail-doctor/${id}`} className='doctor__more__info--link'>Xêm thêm</Link>
             </div>
             <div className='doctor__info__desc'>

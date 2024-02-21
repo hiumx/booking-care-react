@@ -11,6 +11,7 @@ export const path = {
     SPECIALTY: '/specialty',
     DETAIL_SPECIALTY: '/specialty/:id',
     COOPERATE: '/cooperate',
+    APP: '/app'
 };
 
 export const LANGUAGES = {

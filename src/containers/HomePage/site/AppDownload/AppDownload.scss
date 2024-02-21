@@ -1,0 +1,35 @@
+.download__app__wrapper {
+    margin: 126px 24% 50px;
+    border: 3px solid #ccc;
+    max-width: 1000px;
+    padding: 20px;
+
+    .download__app__img {
+
+        margin: 20px 0;
+
+        .download__app__img--google-play {
+            width: 200px;
+            margin-right: 20px;
+        }
+    
+        .download__app__img--app-store {
+            width: 180px;
+        }
+    }
+
+
+    h2 {
+        font-weight: 600;
+    }
+
+    p {
+        font-size: 17px;
+    }
+
+    a {
+        outline: none;
+        text-decoration: none;
+        color: rgba(72,196,211,1.00);;
+    }
+}

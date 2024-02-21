@@ -14,6 +14,7 @@ import DoctorScheduleHomePage from '../../patient/detailDoctor/DoctorScheduleHom
 import { getListDoctorsBySpecialtyId } from '../../../../services/specialty.service';
 import { fetchListDoctorsBySpecialtyId } from '../../../../store/actions/doctorActions';
 import { getSpecialtyById } from '../../../../store/actions/specialtyActions';
+import Loading from '../../../../components/Loading/Loading';
 
 function SpecialtyDetail() {
 
@@ -39,7 +40,7 @@ function SpecialtyDetail() {
     }, []);
 
     useEffect(() => {
-        if(specialties.length === 0) {
+        if (specialties.length === 0) {
             setSpecialty(specialtyById);
         }
     }, [specialtyById]);
@@ -57,6 +58,8 @@ function SpecialtyDetail() {
     return (
         <div className='specialty__detail__wrapper'>
             <HeaderHome />
+            <Loading data={listDoctorsId}>
+                
             <div className='specialty__detail__content'>
                 <div className='specialty__detail__info'>
                     <h4 className='specialty__detail__title'>{specialty?.name}</h4>
@@ -97,6 +100,8 @@ function SpecialtyDetail() {
                     </div>
                 </div>
             </div>
+            </Loading>
+
             <MoreInfo />
             <InfoContact />
             <FooterHome />
