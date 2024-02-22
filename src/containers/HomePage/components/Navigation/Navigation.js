@@ -21,7 +21,7 @@ function Navigation({ isOpenNav, setIsOpenNav }) {
                 </div>
                 <ul className='navigation__list'>
                     <li className='navigation__item'>
-                        <Link to='/home' className='navigation__item--link'>Trang chủ</Link>
+                        <Link to='/' className='navigation__item--link'>Trang chủ</Link>
                     </li>
                     <li className='navigation__item'>
                         <Link to='#' className='navigation__item--link'>Cẩm nang</Link>

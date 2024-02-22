@@ -8,6 +8,7 @@ import Navigation from "../components/Navigation/Navigation";
 import { doctorsAndMedicalFacilities } from "../components/Section/Carousel/carousel-data";
 import './HomePage.scss';
 import { useEffect } from "react";
+import GoToTopButton from "../components/Section/GoToTopButton/GoToTopButton";
 
 function HomePage() {
 
@@ -26,7 +27,7 @@ function HomePage() {
             <InfoContact />
             <FooterHome />
 
-            
+            <GoToTopButton />
         </div>
     );
 }

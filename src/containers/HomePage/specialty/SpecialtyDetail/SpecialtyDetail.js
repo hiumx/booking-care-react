@@ -15,6 +15,7 @@ import { getListDoctorsBySpecialtyId } from '../../../../services/specialty.serv
 import { fetchListDoctorsBySpecialtyId } from '../../../../store/actions/doctorActions';
 import { getSpecialtyById } from '../../../../store/actions/specialtyActions';
 import Loading from '../../../../components/Loading/Loading';
+import GoToTopButton from '../../components/Section/GoToTopButton/GoToTopButton';
 
 function SpecialtyDetail() {
 
@@ -105,6 +106,8 @@ function SpecialtyDetail() {
             <MoreInfo />
             <InfoContact />
             <FooterHome />
+
+            <GoToTopButton />
         </div>
     )
 }

@@ -9,6 +9,7 @@ import { useEffect } from 'react';
 import { fetchAllSpecialties } from '../../../../store/actions/specialtyActions';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import Loading from '../../../../components/Loading/Loading';
+import GoToTopButton from '../../components/Section/GoToTopButton/GoToTopButton';
 
 function Specialties() {
 
@@ -49,6 +50,8 @@ function Specialties() {
             </div>
             <InfoContact />
             <FooterHome />
+
+            <GoToTopButton />
         </div>
     )
 }

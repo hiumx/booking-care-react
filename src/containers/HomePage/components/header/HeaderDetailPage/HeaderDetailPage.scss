@@ -5,12 +5,14 @@
     position: fixed;
     top: 0;
     left: 0;
-    .header-detail-page-content { 
-        height: 100%;      
+
+    .header-detail-page-content {
+        height: 100%;
         padding: 0px 142px;
         display: flex;
         align-items: center;
         justify-content: space-between;
+
         .header-detail-back {
             padding: 4px;
             fill: #fff;
@@ -20,8 +22,14 @@
 
 
             .header-detail-back-icon {
-                width: 20px;
+
+                width: 28px;
                 margin-right: 16px;
+                padding: 4px;
+
+                &:hover {
+                    opacity: 0.8;
+                }
             }
 
             .header-detail-page-context {
@@ -29,49 +37,48 @@
                 color: #fff;
                 font-weight: 600;
                 font-size: 15px;
-                
+
             }
 
-            &:hover {
-                opacity: 0.8;
-            }
+
         }
+
         .header-detail-nav-help {
             display: flex;
-            
-            .header-detail-help {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
+            align-items: center;
+
+            .header-detail-help, 
+            .header-detail-appointment {
                 cursor: pointer;
+                text-align: center;
+                text-decoration: none;
 
                 &:hover {
                     opacity: 0.8;
                 }
-                .header-detail-help-icon{
-                    width: 16px;
-                    height: 16px;
+
+                .header-detail-help-icon {
+                    width: 14px;
                     fill: #fff;
                 }
-
                 .header-detail-help-text {
                     margin: 0;
                     font-size: 11px;
                     color: #fff;
                 }
-            }
-            .header-detail-navbar-icon {
-                width: 28px;
-                height: 28px;
-                padding: 4px;
-                fill: #fff;
-                margin-left: 14px;
-                cursor: pointer;
 
-                &:hover {
-                    opacity: 0.8;
+            }
+
+
+            .header-detail-appointment {
+                margin-right: 16px;
+                
+                .header-detail-appointment-icon {
+                    width: 20px;
+                    fill: #fff;
                 }
             }
+
         }
     }
 }

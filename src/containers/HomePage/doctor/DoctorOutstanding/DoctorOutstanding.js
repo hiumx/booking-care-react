@@ -9,6 +9,7 @@ import { getAllDoctors } from '../../../../store/actions';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import Loading from '../../../../components/Loading/Loading';
+import GoToTopButton from '../../components/Section/GoToTopButton/GoToTopButton';
 
 function DoctorOutstanding() {
 
@@ -44,6 +45,8 @@ function DoctorOutstanding() {
             </div>
             <InfoContact />
             <FooterHome />
+
+            <GoToTopButton />
         </div>
     )
 }

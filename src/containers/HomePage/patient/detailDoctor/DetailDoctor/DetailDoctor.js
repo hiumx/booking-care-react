@@ -13,6 +13,7 @@ import MoreInfo from '../../../components/MoreInfo/MoreInfo';
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import Loading from '../../../../../components/Loading/Loading';
+import GoToTopButton from '../../../components/Section/GoToTopButton/GoToTopButton';
 
 
 function DetailDoctor() {
@@ -48,7 +49,7 @@ function DetailDoctor() {
                 <div className='detail-doctor-container'>
                     <div className='detail-doctor-information'>
                         <div className='detail-doctor-img-wrapper'>
-                            <LazyLoadImage className='detail-doctor-img' src={infoDoctor.image} alt='Doctor img' />
+                            <LazyLoadImage className='detail-doctor-img' src={infoDoctor.image} alt='doctor-img' />
                         </div>
                         <div className='detail-doctor-position'>
                             <h2 className='detail-doctor-intro'>
@@ -82,6 +83,7 @@ function DetailDoctor() {
             <InfoContact />
             <FooterHome />
 
+            <GoToTopButton />
         </>
     );
 }

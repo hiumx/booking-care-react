@@ -34,10 +34,7 @@
             align-items: center;
             justify-content: center;
             margin: 0 130px 0 6px;
-
-
-
-
+            
             .header-logo {
                 width: 160px;
                 height: 40px;
@@ -47,6 +44,7 @@
 
         .header-help-language {
             width: 25%;
+            height: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -54,10 +52,14 @@
             flex: 1;
             margin-right: -72px;
 
+
             .header-help {
+                height: 100%;
                 display: flex;
                 align-items: center;
                 margin-right: 18px;
+                text-decoration: none;
+                color: #969495;
 
                 .header-help-icon {
                     width: 16px;
@@ -146,6 +148,11 @@
             }
         }
     }
+
+    .header__box__shadow {
+        box-shadow: 0px 1px 1px #0000002e;
+    }
+
 }
 
 .header-desc {

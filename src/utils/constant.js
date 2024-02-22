@@ -1,6 +1,5 @@
 export const path = {
-    HOME: '/',
-    HOMEPAGE: '/home',
+    HOMEPAGE: '/',
     LOGIN: '/login',
     LOG_OUT: '/logout',
     SYSTEM: '/system',
@@ -11,7 +10,9 @@ export const path = {
     SPECIALTY: '/specialty',
     DETAIL_SPECIALTY: '/specialty/:id',
     COOPERATE: '/cooperate',
-    APP: '/app'
+    APP: '/app',
+    HELP: '/help',
+    APPOINTMENT: '/appointment'
 };
 
 export const LANGUAGES = {
