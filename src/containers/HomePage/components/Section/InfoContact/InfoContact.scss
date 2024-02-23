@@ -55,13 +55,17 @@
         }
     
         .faq {
-            a {
+            .faq--link {
                 display: block;
                 color: #45c3d2;
                 font-size: 14px;
                 text-decoration: none;
                 padding: 2px 0;
                 margin: 2px 0;
+
+                &:hover {
+                    color: #0a58ca;
+                }
             }
         }
     

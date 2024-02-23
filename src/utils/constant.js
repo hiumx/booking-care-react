@@ -12,7 +12,8 @@ export const path = {
     COOPERATE: '/cooperate',
     APP: '/app',
     HELP: '/help',
-    APPOINTMENT: '/appointment'
+    APPOINTMENT: '/appointment',
+    HEALTH_ENTERPRISE: '/health-enterprise'
 };
 
 export const LANGUAGES = {

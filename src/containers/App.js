@@ -25,29 +25,11 @@ import AppDownload from './HomePage/site/AppDownload/AppDownload';
 import HelpPage from './HomePage/patient/HelpPage/HelpPage';
 import GoToTop from './HomePage/components/Section/GoToTop/GoToTop';
 import Appointment from './HomePage/patient/Appointment/Appointment';
+import HealthEnterPrise from './HomePage/patient/HealthEnterPrise/HealthEnterPrise';
 
 console.warn = () => { }
 
-function App({ persistor }) {
-
-    
-
-    // useEffect(() => {
-    //     handlePersistorState();
-    // }, []);
-
-    // const handlePersistorState = () => {
-    //     let { bootstrapped } = persistor.getState();
-    //     if (bootstrapped) {
-    //         if (persistor.props.onBeforeLift) {
-    //             Promise.resolve(persistor.props.onBeforeLift())
-    //                 .then(() => persistor.setState({ bootstrapped: true }))
-    //                 .catch(() => persistor.setState({ bootstrapped: true }));
-    //         } else {
-    //             persistor.setState({ bootstrapped: true });
-    //         }
-    //     }
-    // };
+function App() {
 
     return (
         <>
@@ -70,6 +52,7 @@ function App({ persistor }) {
                             <Route path={path.APP} component={AppDownload} />
                             <Route path={path.HELP} component={HelpPage} />
                             <Route path={path.APPOINTMENT} component={Appointment} />
+                            <Route path={path.HEALTH_ENTERPRISE} component={HealthEnterPrise} />
                         </Switch>
                         {/* </CustomScrollbars> */}
 

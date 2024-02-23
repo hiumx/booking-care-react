@@ -17,7 +17,7 @@ function AppDownload() {
                 </div>
                 <p>Trong trường hợp thiết bị của bạn thực sự không được chúng tôi hỗ trợ 1 ứng dụng riêng, xin đừng phiền lòng.</p>
                 <p>Website của chúng tôi
-                    <a href='http://localhost:3000/home'> https://bookingcare.vn </a>
+                    <a href='http://localhost:3000'> https://bookingcare.vn </a>
                     hỗ trợ rất tốt hầu hết các thiết bị di động hiện nay. Gần như bạn có thể sử dụng toàn bộ những tính năng tiên tiến nhất của BookingCare tại địa chỉ đó.</p>
                 <p>Trân trọng,
                     <br />

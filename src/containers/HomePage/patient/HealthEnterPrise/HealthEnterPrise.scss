@@ -1,0 +1,146 @@
+.health-enterprise__wrapper {
+    .health-enterprise__content {
+        padding: 58px 142px 0;
+
+        .health-enterprise__desc {
+
+            .health-enterprise__detail {
+
+                border: 2px solid #eee;
+
+                .health-enterprise__detail__img {
+                    width: 100%;
+                }
+
+                .health-enterprise__detail__text {
+                    padding: 14px;
+
+                    h4 {
+                        font-weight: 600;
+                        margin-bottom: 14px;
+                    }
+
+                    p {
+                        margin-bottom: 7px;
+                    }
+                }
+
+                .health-enterprise__btn__wrapper {
+                    text-align: center;
+
+                    .health-enterprise__btn {
+                        width: 80%;
+                        background-color: #FFC419;
+                        border: none;
+                        outline: none;
+                        border-radius: 7px;
+                        margin: 10px 0;
+
+
+                        .health-enterprise__btn--link {
+                            text-decoration: none;
+                            color: #fff;
+                            text-transform: uppercase;
+                            font-size: 20px;
+                            font-weight: 600;
+                            display: block;
+                            width: 100%;
+                            padding: 9px 0;
+                        }
+                    }
+                }
+
+            }
+
+            .health-enterprise__benefits {
+                border: 2px solid #eee;
+                border-top: none;
+
+                .health-enterprise__benefits--list {
+                    list-style: none;
+                    margin: 0;
+                    padding: 14px;
+
+                    .health-enterprise__benefits--item {
+                        display: flex;
+                        align-items: center;
+                        padding: 13px 0;
+
+                        .health_enterprise__benefits__wrapper__img {
+                            width: 50px;
+                            height: 50px;
+                            background-color: #eee;
+                            border-radius: 50%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+
+                            .health-enterprise__benefits--img {
+                                width: 60%;
+                                height: 60%;
+                            }
+                        }
+
+                        .health-enterprise__benefits--detail {
+                            margin: 0 0 0 20px;
+                            padding: 0;
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .health-enterprise__medical__package {
+            box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+            border-radius: 10px;
+            padding: 16px 20px 4px 16px;
+            margin: 20px 0 14px 0;
+
+            h4 {
+                font-weight: 600;
+            }
+
+            .heath-enterprise__package--list {
+                display: flex;
+                align-items: center;
+                list-style: none;
+                margin-top: 20px;
+
+                .heath-enterprise__package--item {
+
+                    .heath-enterprise__package--item--link {
+                        text-decoration: none;
+                        color: #000;
+                    }
+
+                    .heath-enterprise__package__wrapper__img {
+                        text-align: center;
+
+                        .heath-enterprise__package--img {
+                            width: 100px;
+                            height: 100px;
+                            border-radius: 50%;
+                        }
+                    }
+
+                    p {
+                        width: 80%;
+                        margin: auto;
+                        margin-top: 14px;
+                        font-size: 16px;
+                        margin-top: 12px;
+                        text-align: center;
+                    }
+                }
+
+                :hover {
+                    p {
+                        color: #45c3d2;
+                    }
+                }
+            }
+        }
+
+    }
+}

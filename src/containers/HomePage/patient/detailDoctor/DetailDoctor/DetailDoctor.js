@@ -14,6 +14,7 @@ import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import Loading from '../../../../../components/Loading/Loading';
 import GoToTopButton from '../../../components/Section/GoToTopButton/GoToTopButton';
+import _ from 'lodash';
 
 
 function DetailDoctor() {
@@ -26,10 +27,9 @@ function DetailDoctor() {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(actions.getInfoDoctorById(+id));
+        if(_.isEmpty(dataDoctor))
+            dispatch(actions.getInfoDoctorById(+id));
     }, []);
-
-    console.log(infoDoctor);
 
     useEffect(() => {
         setInfoDoctor(dataDoctor)

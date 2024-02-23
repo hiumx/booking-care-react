@@ -28,14 +28,14 @@ function InfoContact() {
                         </div>
                     </div>
                     <div className='col col-3 faq'>
-                        <Link to='/cooperate'>Liên hệ hợp tác</Link>
-                        <Link to='/'>Gói chuyển đổi số doanh nghiệp</Link>
-                        <Link to='/'>Tuyển dụng</Link>
-                        <Link to='/'>Câu hỏi thường gặp</Link>
-                        <Link to='/'>Điều khoản sử dụng</Link>
-                        <Link to='/'>Chính sách Bảo mật</Link>
-                        <Link to='/'>Quy trình hỗ trợ giải quyết khiếu nại</Link>
-                        <Link to='/'>Quy chế hoạt động</Link>
+                        <Link className='faq--link' to='/cooperate'>Liên hệ hợp tác</Link>
+                        <Link className='faq--link' to='/'>Gói chuyển đổi số doanh nghiệp</Link>
+                        <Link className='faq--link' to='/'>Tuyển dụng</Link>
+                        <Link className='faq--link' to='/'>Câu hỏi thường gặp</Link>
+                        <Link className='faq--link' to='/'>Điều khoản sử dụng</Link>
+                        <Link className='faq--link' to='/'>Chính sách Bảo mật</Link>
+                        <Link className='faq--link' to='/'>Quy trình hỗ trợ giải quyết khiếu nại</Link>
+                        <Link className='faq--link' to='/'>Quy chế hoạt động</Link>
                     </div>
                     <div className='col col-3 headquarters'>
                         <div className='about-headquarter'>

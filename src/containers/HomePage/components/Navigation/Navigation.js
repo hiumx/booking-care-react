@@ -30,7 +30,7 @@ function Navigation({ isOpenNav, setIsOpenNav }) {
                         <Link to='/cooperate' className='navigation__item--link'>Liên hệ hợp tác</Link>
                     </li>
                     <li className='navigation__item'>
-                        <Link to='#' className='navigation__item--link'>Sức khỏe doanh nghiệp</Link>
+                        <Link to='/health-enterprise' className='navigation__item--link'>Sức khỏe doanh nghiệp</Link>
                     </li>
                     <li className='navigation__item'>
                         <Link to='#' className='navigation__item--link'>Gói chuyển đổi số doanh nghiệp</Link>

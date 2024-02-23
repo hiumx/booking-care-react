@@ -40,6 +40,10 @@
                 margin: 10px;
                 cursor: pointer;
 
+                &:hover {
+                    opacity: 0.8;
+                }
+
                 .help__contact__messenger--img,
                 .help__contact__phone--img,
                 .help__contact__email--img {
@@ -63,7 +67,7 @@
                     top: 17px;
                     right: 82px;
                     border-radius: 8px;
-
+                    cursor: pointer;
                     &::after {
                         position: absolute;
                         content: "";
@@ -73,6 +77,10 @@
                         border-right: 12px solid transparent;
                         border-top: 12px solid transparent;
                         border-bottom: 12px solid transparent;
+                    }
+
+                    &:hover {
+                        opacity: 0.8;
                     }
                 }
             }
