@@ -1,0 +1,164 @@
+.medical__service__wrapper {
+
+    --first-item-color: #5ACFC9;
+    --second-item-color: #8AD879;
+    --third-item-color: #FA9F42;
+    --fourth-item-color: #F3533A;
+
+    border: 1px solid;
+
+
+    .package__wrapper {
+        .package__title {
+            text-align: center;            
+            padding: 10px 0;
+
+            h3 {
+                color: #fff;
+                margin: 0;
+                font-weight: 600;
+                text-transform: uppercase;
+            }
+        }
+
+        .package__detail {
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+            .package__name {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 20px 0 4px 0;
+
+                .package__name__icon {
+                    width: 20px;
+                }
+                
+                h3 {
+                    margin: 0;
+                    padding-left: 8px;
+                    font-size: 22px;
+                    font-weight: bold;
+                }
+            }
+
+            .package__characteristic__desc {
+                min-height: 42px;
+            }
+            
+        }
+
+        .package__characteristic {
+            background-color: #f7f7f7;
+            padding: 8px 0 20px;
+
+            .package__characteristic__list {
+                padding: 10px;
+                list-style: none;
+                .package__characteristic__item {
+                    display: flex;
+
+                    .package__characteristic__icon__wrapper {
+                        .package__characteristic__icon {
+                            width: 14px;
+                        }
+                    }
+
+                    .package__characteristic__desc {
+                        padding-left: 4px;
+                    }
+                }
+            }
+
+            .package__contact__btn__wrapper {
+                text-align: center;
+                .package__contact__btn {
+                    border: none;
+                    outline: none;
+                    border-radius: 10px;
+                    padding: 10px 62px;
+
+                    .package__contact__btn__link {
+                        width: 100%;
+                        display: block;
+                        text-decoration: none;
+                        color: #fff;
+                        font-size: 20px;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+
+    // First color
+    .background__firstColor {
+        background-color: var(--first-item-color);
+    }
+
+    .fill__firstColor {
+        fill: var(--first-item-color);
+    }
+
+    .text__firstColor {
+        color: var(--first-item-color);
+    }
+
+     // Second color
+    .background__secondColor {
+        background-color: var(--second-item-color);
+    }
+
+    .fill__secondColor {
+        fill: var(--second-item-color);
+    }
+
+    .text__secondColor {
+        color: var(--second-item-color);
+    }
+
+     // Third color
+    .background__thirdColor {
+        background-color: var(--third-item-color);
+    }
+
+    .fill__thirdColor {
+        fill: var(--third-item-color);
+    }
+
+    .text__thirdColor {
+        color: var(--third-item-color);
+    }
+
+     // Fourth color
+    .background__fourthColor {
+        background-color: var(--fourth-item-color);
+    }
+
+    .fill__fourthColor {
+        fill: var(--fourth-item-color);
+    }
+
+    .text__fourthColor {
+        color: var(--fourth-item-color);
+    }
+
+}
+
+.border__color__firstColor {
+    border-color: var(--first-item-color);
+}
+
+.border__color__secondColor {
+    border-color: var(--second-item-color);
+}
+
+.border__color__thirdColor {
+    border-color: var(--third-item-color);
+}
+
+.border__color__fourthColor {
+    border-color: var(--fourth-item-color);
+}

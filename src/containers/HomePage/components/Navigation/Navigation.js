@@ -33,7 +33,7 @@ function Navigation({ isOpenNav, setIsOpenNav }) {
                         <Link to='/health-enterprise' className='navigation__item--link'>Sức khỏe doanh nghiệp</Link>
                     </li>
                     <li className='navigation__item'>
-                        <Link to='#' className='navigation__item--link'>Gói chuyển đổi số doanh nghiệp</Link>
+                        <Link to='/digital-conversion-package' className='navigation__item--link'>Gói chuyển đổi số doanh nghiệp</Link>
                     </li>
                     <li className='navigation__item'>
                         <Link to='#' className='navigation__item--link'>Tuyển dụng</Link>

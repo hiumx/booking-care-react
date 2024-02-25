@@ -25,7 +25,8 @@ import AppDownload from './HomePage/site/AppDownload/AppDownload';
 import HelpPage from './HomePage/patient/HelpPage/HelpPage';
 import GoToTop from './HomePage/components/Section/GoToTop/GoToTop';
 import Appointment from './HomePage/patient/Appointment/Appointment';
-import HealthEnterPrise from './HomePage/patient/HealthEnterPrise/HealthEnterPrise';
+import HealthEnterPrise from './HomePage/enterprise/HealthEnterPrise/HealthEnterPrise';
+import DigitalConversionPackage from './HomePage/enterprise/DigitalConversionPackage/DigitalConversionPackage';
 
 console.warn = () => { }
 
@@ -53,6 +54,7 @@ function App() {
                             <Route path={path.HELP} component={HelpPage} />
                             <Route path={path.APPOINTMENT} component={Appointment} />
                             <Route path={path.HEALTH_ENTERPRISE} component={HealthEnterPrise} />
+                            <Route path={path.DIGITAL_CONVERSION_PACKAGE} component={DigitalConversionPackage} />
                         </Switch>
                         {/* </CustomScrollbars> */}
 

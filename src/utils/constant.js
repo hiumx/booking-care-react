@@ -13,7 +13,8 @@ export const path = {
     APP: '/app',
     HELP: '/help',
     APPOINTMENT: '/appointment',
-    HEALTH_ENTERPRISE: '/health-enterprise'
+    HEALTH_ENTERPRISE: '/health-enterprise',
+    DIGITAL_CONVERSION_PACKAGE: '/digital-conversion-package'
 };
 
 export const LANGUAGES = {

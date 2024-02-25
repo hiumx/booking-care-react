@@ -13,16 +13,36 @@
                 }
 
                 .health-enterprise__detail__text {
-                    padding: 14px;
+                    padding: 14px 14px 0 14px;
+
+                    .enterprise__detail__text__desc {
+                        max-height: 96px;
+                        overflow: hidden;
+
+                        p {
+                            margin-bottom: 7px;
+                        }
+                    }
+
+                    .enterprise__detail__show_all__desc {
+                        max-height: none;
+                    }
+
+                    .health-enterprise__more__desc {
+                        margin-top: 4px;
+                        color: #288ad6;
+                        cursor: pointer;
+
+                        &:hover {
+                            color: #0a58ca;
+                        }
+                    }
 
                     h4 {
                         font-weight: 600;
                         margin-bottom: 14px;
                     }
 
-                    p {
-                        margin-bottom: 7px;
-                    }
                 }
 
                 .health-enterprise__btn__wrapper {

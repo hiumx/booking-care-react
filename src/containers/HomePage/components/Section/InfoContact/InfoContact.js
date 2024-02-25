@@ -29,7 +29,7 @@ function InfoContact() {
                     </div>
                     <div className='col col-3 faq'>
                         <Link className='faq--link' to='/cooperate'>Liên hệ hợp tác</Link>
-                        <Link className='faq--link' to='/'>Gói chuyển đổi số doanh nghiệp</Link>
+                        <Link className='faq--link' to='/digital-conversion-package'>Gói chuyển đổi số doanh nghiệp</Link>
                         <Link className='faq--link' to='/'>Tuyển dụng</Link>
                         <Link className='faq--link' to='/'>Câu hỏi thường gặp</Link>
                         <Link className='faq--link' to='/'>Điều khoản sử dụng</Link>

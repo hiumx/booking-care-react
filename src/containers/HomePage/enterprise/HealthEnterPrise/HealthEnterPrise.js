@@ -4,8 +4,11 @@ import FooterHome from '../../components/FooterHome';
 import InfoContact from '../../components/Section/InfoContact';
 import HeaderDetailPage from '../../components/header/HeaderDetailPage';
 import './HealthEnterPrise.scss';
+import { useState } from 'react';
 
 function HealthEnterPrise() {
+    const [isMoreDesc, setIsMoreDesc] = useState(false);
+
     return (
         <div className='health-enterprise__wrapper'>
             <HeaderDetailPage textDetail='Sức khỏe Doanh nghiệp' />
@@ -18,9 +21,17 @@ function HealthEnterPrise() {
                         />
                         <div className='health-enterprise__detail__text'>
                             <h4>Sức khỏe Doanh nghiệp</h4>
-                            <p>Nhiều nghiên cứu chỉ ra rằng những phúc lợi liên quan đến sức khỏe là thứ được nhiều người lao động coi trọng nhất. Việc đầu tư vào chăm sóc sức khỏe cho nhân viên có thể cải thiện lợi thế cạnh tranh của doanh nghiệp về nhân sự. </p>
-                            <p>Việc đầu tư vào chăm sóc sức khỏe cho nhân viên giúp doanh nghiệp cải thiện lợi thế cạnh tranh của doanh nghiệp về nhân sự, bao gồm gia tăng mong muốn gắn bó và hiệu suất làm việc của nhân viên, đồng thời quảng bá hình ảnh doanh nghiệp trong mắt những ứng viên tiềm năng. </p>
-                            <p>Chăm sóc sức khỏe nguồn nhân lực cần quan tâm tới cả thể chất và tinh thần cho nhân viên. Điều này không chỉ thể hiện trách nhiệm, sự quan tâm của doanh nghiệp mà còn góp phần vì sự phát triển của công ty bởi nhân viên khỏe, công ty mạnh. Nhằm đáp ứng yêu cầu riêng của từng doanh nghiệp, BookingCare ra mắt dịch vụ gói khám sức khỏe doanh nghiệp hỗ trợ các công ty chăm sóc sức khỏe nhân viên của mình.</p>
+                            <div className={isMoreDesc ? 'enterprise__detail__text__desc enterprise__detail__show_all__desc' : 'enterprise__detail__text__desc'}>
+                                <p>Nhiều nghiên cứu chỉ ra rằng những phúc lợi liên quan đến sức khỏe là thứ được nhiều người lao động coi trọng nhất. Việc đầu tư vào chăm sóc sức khỏe cho nhân viên có thể cải thiện lợi thế cạnh tranh của doanh nghiệp về nhân sự. </p>
+                                <p>Việc đầu tư vào chăm sóc sức khỏe cho nhân viên giúp doanh nghiệp cải thiện lợi thế cạnh tranh của doanh nghiệp về nhân sự, bao gồm gia tăng mong muốn gắn bó và hiệu suất làm việc của nhân viên, đồng thời quảng bá hình ảnh doanh nghiệp trong mắt những ứng viên tiềm năng. </p>
+                                <p>Chăm sóc sức khỏe nguồn nhân lực cần quan tâm tới cả thể chất và tinh thần cho nhân viên. Điều này không chỉ thể hiện trách nhiệm, sự quan tâm của doanh nghiệp mà còn góp phần vì sự phát triển của công ty bởi nhân viên khỏe, công ty mạnh. Nhằm đáp ứng yêu cầu riêng của từng doanh nghiệp, BookingCare ra mắt dịch vụ gói khám sức khỏe doanh nghiệp hỗ trợ các công ty chăm sóc sức khỏe nhân viên của mình.</p>
+                            </div>
+                            <p
+                                className='health-enterprise__more__desc'
+                                onClick={() => setIsMoreDesc(!isMoreDesc)}
+                            >
+                                {!isMoreDesc ? 'Xem thêm' : 'Ẩn bớt'}
+                            </p>
                         </div>
                         <div className='health-enterprise__btn__wrapper'>
                             <button className='health-enterprise__btn'>

@@ -1,0 +1,163 @@
+.digital__conversion__wrapper {
+    .digital__conversion__content {
+        .digital__conversion__banner {
+            width: 100%;
+            height: 570px;
+            color: #fff;
+            background-image: url('https://bookingcare.vn/assets/anh/bookingcare_bg.jpg');
+            background-attachment: fixed;
+            padding: 106px 100px 10px;
+
+            .banner__desc {
+                margin-top: 52px;
+
+                .banner__desc__title {
+                    font-weight: 600;
+                    line-height: 50px;
+                }
+
+                .banner__desc__detail,
+                .banner__desc__detail_second {
+                    font-weight: 500;
+                    font-size: 15px;
+                    color: #ddd;
+                    margin: 10px 0 18px;
+                    line-height: 24px;
+                }
+
+                .banner__desc__detail_second {
+                    margin: 18px 0;
+                }
+
+                .banner__desc__btn {
+                    background-color: #fff04b;
+                    border: none;
+                    outline: none;
+
+                    .banner__desc__btn--link {
+                        display: block;
+                        width: 100%;
+                        padding: 8px 10px;
+                        font-size: 16px;
+                        font-weight: 600;
+                        text-decoration: none;
+                        color: #000;
+                        text-transform: uppercase;
+                    }
+
+                    &:hover {
+                        background-color: #f9a870;
+                    }
+                }
+
+                .banner__desc__faq--link {
+                    color: #FFF04B;
+                    text-decoration: none;
+                    display: block;
+                    margin-top: 34px;
+                }
+
+            }
+
+            .banner__sub__img {
+                width: 86%;
+            }
+        }
+
+        .benefit__digital__conversion {
+            padding: 30px 100px 10px;
+            background-color: #f3f3f3;
+
+            .benefit__digital__title {
+                color: #006e6f;
+                font-weight: 600;
+                font-size: 30px;
+            }
+
+            .benefit__digital__list {
+                list-style: none;
+                margin: 34px 0 10px;
+                padding: 0;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-wrap: wrap;
+
+                .benefit__digital__item {
+                    width: 30%;
+                    height: 230px;
+                    margin: 20px 0;
+                    border: 1px solid #ccc;
+                    padding: 20px 14px;
+                    text-align: center;
+
+                    .benefit__feature__wrapper {
+
+                        .benefit__feature__img {
+                            width: 60px;
+                            height: 60px;
+                        }
+
+                        .benefit__feature__title {
+                            max-width: 240px;
+                            width: 100%;
+                            color: #006e6f;
+                            font-size: 15px;
+                            font-weight: bold;
+                            text-transform: uppercase;
+                            margin: 6px auto;
+                        }
+
+                        .benefit__feature__desc {
+                            color: #777;
+                        }
+                    }
+                }
+            }
+
+            .benefit__digital__btn__wrapper {
+                text-align: center;
+
+                .benefit__digital__btn {
+                    background-color: #fff04b;
+                    border: none;
+                    outline: none;
+
+                    .benefit__digital__btn--link {
+                        display: block;
+                        width: 100%;
+                        padding: 8px 10px;
+                        font-size: 16px;
+                        font-weight: 600;
+                        text-decoration: none;
+                        color: #000;
+                        text-transform: uppercase;
+                    }
+
+                    &:hover {
+                        background-color: #f9a870;
+                    }
+                }
+            }
+        }
+
+
+    }
+}
+
+.medical__service__provider {
+    padding: 30px 100px 10px;
+
+    .medical__service__title {
+        color: #006e6f;
+        font-weight: 600;
+        font-size: 30px;
+        text-align: center;
+        margin-bottom: 34px;
+    }
+
+    .medical__service__list {
+        list-style: none;
+
+    }
+}

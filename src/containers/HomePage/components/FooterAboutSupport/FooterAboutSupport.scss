@@ -1,0 +1,56 @@
+.footer__support__wrapper {
+    width: 100%;
+    padding: 40px 0;
+    background-color: #333;
+    text-align: center;
+
+    .footer__support__fly__icon__wrapper {
+        margin-bottom: 20px;
+        .footer__support__fly__icon {
+            width: 28px;
+            fill: #fff;
+        }
+
+    }
+
+    h2 {
+        color: #49bce2;
+        font-weight: 600;
+        margin-bottom: 30px;
+    }
+
+    p {
+        font-size: 16xpx;
+        color: #fff;
+    }
+
+    .footer__support__info__contact {
+        display: flex;
+        justify-content: space-between;
+        width: 60%;
+        margin: 30px auto;
+
+        div:first-child {
+            flex: 1;
+        }
+
+        div:nth-child(2) {
+            flex: 1;
+        }
+
+        .footer__support__info__contact__item {
+            display: flex;
+            .footer__support__icon {
+                width: 20px;
+                fill: #fff;
+                margin-right: 4px;
+            }
+
+            a {
+                text-decoration: none;
+                color: #49bce2;
+            }
+        }
+        
+    }
+}
