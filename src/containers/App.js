@@ -27,6 +27,7 @@ import GoToTop from './HomePage/components/Section/GoToTop/GoToTop';
 import Appointment from './HomePage/patient/Appointment/Appointment';
 import HealthEnterPrise from './HomePage/enterprise/HealthEnterPrise/HealthEnterPrise';
 import DigitalConversionPackage from './HomePage/enterprise/DigitalConversionPackage/DigitalConversionPackage';
+import DigitalConversionContact from './HomePage/enterprise/DigitalConversionContact/DigitalConversionContact';
 
 console.warn = () => { }
 
@@ -55,6 +56,7 @@ function App() {
                             <Route path={path.APPOINTMENT} component={Appointment} />
                             <Route path={path.HEALTH_ENTERPRISE} component={HealthEnterPrise} />
                             <Route path={path.DIGITAL_CONVERSION_PACKAGE} component={DigitalConversionPackage} />
+                            <Route path={path.COOPERATE_DIGITAL_CONVERSION} component={DigitalConversionContact} />
                         </Switch>
                         {/* </CustomScrollbars> */}
 

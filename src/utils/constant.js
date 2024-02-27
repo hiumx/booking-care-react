@@ -14,7 +14,8 @@ export const path = {
     HELP: '/help',
     APPOINTMENT: '/appointment',
     HEALTH_ENTERPRISE: '/health-enterprise',
-    DIGITAL_CONVERSION_PACKAGE: '/digital-conversion-package'
+    DIGITAL_CONVERSION_PACKAGE: '/digital-conversion-package',
+    COOPERATE_DIGITAL_CONVERSION: '/cooperate-digital-conversion',
 };
 
 export const LANGUAGES = {

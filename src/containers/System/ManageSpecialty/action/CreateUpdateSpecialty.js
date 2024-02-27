@@ -39,6 +39,7 @@ function CreateUpdateSpecialty() {
         const file = e.target.files[0];
         if (file) {
             const base64Img = await CommonUtils.getBase64(file);
+            console.log(base64Img);
             setImage(base64Img);
         }
     }

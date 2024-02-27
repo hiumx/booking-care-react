@@ -2,9 +2,7 @@
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import './PackageDigital.scss';
 
-function PackageDigital({ color, data }) {
-
-    const { title, cost, characteristicDesc, listFeatures } = data;
+function PackageDigital({ color, title, cost, characteristicDesc, listFeatures }) {
 
     return (
         <div className={`medical__service__wrapper border__color__${color}`}>
@@ -23,14 +21,14 @@ function PackageDigital({ color, data }) {
                 </div>
                 <div className='package__characteristic'>
                     <ul className='package__characteristic__list'>
-                        {listFeatures.map((feature, index) => 
-                        <li className='package__characteristic__item'>
+                        {listFeatures.length > 0 && listFeatures.map((feature, index) => 
+                        <li className='package__characteristic__item' key={index}>
                             <div className='package__characteristic__icon__wrapper'>
                                 <svg className={`package__characteristic__icon fill__${color}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                                     <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z" />
                                 </svg>
                             </div>
-                            <p className='package__characteristic__desc'>{feature}</p>
+                            <p className='package__characteristic__desc'>{feature.trim()}</p>
                         </li>
                         )}
                     </ul>

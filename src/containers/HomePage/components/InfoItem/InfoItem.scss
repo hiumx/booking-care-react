@@ -1,0 +1,30 @@
+.info__item__wrapper {
+
+    height: 230px;
+    margin: 20px 0;
+    border: 1px solid #ccc;
+    padding: 20px 14px;
+    text-align: center;
+
+    .info__item {
+        .info__item__img {
+            width: 60px;
+            height: 60px;
+        }
+    
+        .info__item__title {
+            max-width: 240px;
+            width: 100%;
+            color: #006e6f;
+            font-size: 15px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin: 6px auto;
+        }
+    
+        .info__item__desc {
+            color: #777;
+        }
+    }
+
+}

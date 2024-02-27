@@ -82,37 +82,6 @@
                 align-items: center;
                 justify-content: space-between;
                 flex-wrap: wrap;
-
-                .benefit__digital__item {
-                    width: 30%;
-                    height: 230px;
-                    margin: 20px 0;
-                    border: 1px solid #ccc;
-                    padding: 20px 14px;
-                    text-align: center;
-
-                    .benefit__feature__wrapper {
-
-                        .benefit__feature__img {
-                            width: 60px;
-                            height: 60px;
-                        }
-
-                        .benefit__feature__title {
-                            max-width: 240px;
-                            width: 100%;
-                            color: #006e6f;
-                            font-size: 15px;
-                            font-weight: bold;
-                            text-transform: uppercase;
-                            margin: 6px auto;
-                        }
-
-                        .benefit__feature__desc {
-                            color: #777;
-                        }
-                    }
-                }
             }
 
             .benefit__digital__btn__wrapper {

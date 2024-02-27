@@ -1,0 +1,38 @@
+.form__contact__wrapper {
+    margin-top: 118px;
+
+    .form__contact__content {
+        margin: 0 26%;
+
+        .form__contact__content__title {
+            font-weight: 600;
+            color: #555555;
+        }
+
+        .form__contact__content__desc {
+            color: #666666;
+        }
+
+        .form__contact__form {
+            margin: 16px 0 70px 0;
+
+            label {
+                color: #333333;
+            }
+
+            .send__btn {
+                color: #fff;
+                border: none;
+                outline: none;
+                border-radius: 6px;
+                padding: 8px 16px;
+                background-color: #FFC419;
+                font-weight: 600;
+
+                &:hover {
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
+}
