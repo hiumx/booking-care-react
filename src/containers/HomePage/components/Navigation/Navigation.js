@@ -44,7 +44,7 @@ function Navigation({ isOpenNav, setIsOpenNav }) {
                 </div>
                 <ul className='navigation__list'>
                     <li className='navigation__item'>
-                        <a href='#' className='navigation__item--link'>Dành cho bệnh nhân</a>
+                        <a href='/intended-for-patient' className='navigation__item--link'>Dành cho bệnh nhân</a>
                     </li>
                     <li className='navigation__item'>
                         <a href='#' className='navigation__item--link'>Dành cho bác sĩ</a>

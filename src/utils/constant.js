@@ -16,6 +16,7 @@ export const path = {
     HEALTH_ENTERPRISE: '/health-enterprise',
     DIGITAL_CONVERSION_PACKAGE: '/digital-conversion-package',
     COOPERATE_DIGITAL_CONVERSION: '/cooperate-digital-conversion',
+    INTENDED_FOR_PATIENT: '/intended-for-patient',
 };
 
 export const LANGUAGES = {

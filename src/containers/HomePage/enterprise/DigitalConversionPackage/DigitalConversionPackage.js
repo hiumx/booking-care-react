@@ -6,8 +6,7 @@ import FooterAboutSupport from '../../components/FooterAboutSupport/FooterAboutS
 import { useEffect, useState } from 'react';
 import { getAllBenefitsDigitalConversion, getPackagesDigitalConversionByIntendedFor } from '../../../../services/enterpriseService';
 import Loading from '../../../../components/Loading/Loading';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
-import InfoItem from '../../components/InfoItem/InfoItem';
+import ListInfo from '../../components/ListInfo/ListInfo';
 
 function DigitalConversionPackage() {
     const [listBenefits, setListBenefits] = useState([]);
@@ -23,10 +22,10 @@ function DigitalConversionPackage() {
                 setListBenefits(benefitRes.data);
             }
             if (packageRes.code === 0 && packageRes?.data?.length > 0) {
-                const listpackagesForMedicalService = packageRes.data.filter(packageItem => packageItem.intendedFor === 'B1');
-                setPackagesForMedicalService(listpackagesForMedicalService);
-                const listpackagesForProductService = packageRes.data.filter(packageItem => packageItem.intendedFor === 'B2');
-                setPackagesForMedicalProduct(listpackagesForProductService);
+                const listPackagesForMedicalService = packageRes.data.filter(packageItem => packageItem.intendedFor === 'B1');
+                setPackagesForMedicalService(listPackagesForMedicalService);
+                const listPackagesForProductService = packageRes.data.filter(packageItem => packageItem.intendedFor === 'B2');
+                setPackagesForMedicalProduct(listPackagesForProductService);
             }
         }
         fetchApi();
@@ -55,26 +54,12 @@ function DigitalConversionPackage() {
                     </div>
                 </div>
 
-                <div className='benefit__digital__conversion'>
-                    <h2 className='benefit__digital__title'>Lợi ích sử dụng Giải pháp chuyển đổi số BookingCare DX</h2>
-                    <Loading data={listBenefits} >
-                        <ul className='benefit__digital__list row'>
-                            {listBenefits.map((benefit, index) =>
-                                <li className='col-md-4' key={index}>
-                                    <InfoItem 
-                                        image={benefit.image}
-                                        title={benefit.title}
-                                        description={benefit.description}
-                                    />
-                                </li>
-                            )}
-                        </ul>
-                    </Loading>
-                    <div className='benefit__digital__btn__wrapper'>
-                        <button className='benefit__digital__btn'>
-                            <Link to='/cooperate-digital-conversion' className='benefit__digital__btn--link'>Liên hệ</Link>
-                        </button>
-                    </div>
+                <div className='digital__conversion__list__benefits__wrapper'>
+                    <ListInfo
+                        listInfo={listBenefits}
+                        contentBtn='Liên hệ'
+                        title='Lợi ích sử dụng Giải pháp chuyển đổi số BookingCare DX'
+                    />
                 </div>
 
                 <div className='medical__service__provider container'>
@@ -84,11 +69,13 @@ function DigitalConversionPackage() {
                             {packagesForMedicalService.length !== 0 && packagesForMedicalService?.map((packageItem, index) =>
                                 <li className='col-md-3' key={index}>
                                     <PackageDigital
+                                        index={index}
                                         color={packageItem.primaryColor}
                                         title={packageItem.title}
                                         cost={packageItem.cost}
                                         characteristicDesc={packageItem.description}
                                         listFeatures={packageItem.features.split(';')}
+                                        intendedFor={packageItem.intendedFor}
                                     />
                                 </li>
                             )}
@@ -102,11 +89,13 @@ function DigitalConversionPackage() {
                             {packagesForMedicalProduct.length !== 0 && packagesForMedicalProduct?.map((packageItem, index) =>
                                 <li className='col-md-3' key={index}>
                                     <PackageDigital
+                                        index={index}
                                         color={packageItem.primaryColor}
                                         title={packageItem.title}
                                         cost={packageItem.cost}
                                         characteristicDesc={packageItem.description}
                                         listFeatures={packageItem.features.split(';')}
+                                        intendedFor={packageItem.intendedFor}
                                     />
                                 </li>
                             )}
@@ -114,7 +103,13 @@ function DigitalConversionPackage() {
                     </Loading>
                 </div>
             </div>
-            <FooterAboutSupport />
+            <FooterAboutSupport
+                title='Hỗ trợ thông tin BookingCare DX'
+                description='Nếu cần thêm thông tin, vui lòng liên hệ với đội ngũ BookingCare'
+                phoneContact='0896-210-393'
+                emailContact='maixuanhieu250103@gmail.com'
+                socialContact='facebook.com/hiuxm.2501'
+            />
         </div>
     )
 }

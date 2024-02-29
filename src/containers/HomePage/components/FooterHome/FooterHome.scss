@@ -17,24 +17,22 @@
         align-items: center;
         cursor: pointer;
 
-        .footer-twitter-icon {
-            width: 34px;
-            height: 34px;
-            fill: #2553c8;
+        .footer-tiktok-icon {
+            width: 26px;
+            fill: #000;
             margin-right: 10px;
 
             &:hover {
-                fill: #506fbe;
+                opacity: 0.7;
             }
         }
 
         .footer-facebook-icon {
-            width: 34px;
-            height: 34px;
+            width: 33px;
             fill: #2553c8;
             margin-right: 10px;
 
-            &:hover {
+            &:hover {   
                 fill: #4569c4;
             }
         }

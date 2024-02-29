@@ -73,9 +73,9 @@ function Banner() {
                         </Link>
                     </li>
                     <li className='choosing-examination-item'>
-                        <Link to='/specialty' className='choosing-examination-item-link'>
+                        <Link to='/health-enterprise' className='choosing-examination-item-link'>
                             <div className='examination-image-enterprise'></div>
-                            <span className='examination-item-title'><FormattedMessage id="banner.enterprise-products" /></span>
+                            <span className='examination-item-title'><FormattedMessage id="banner.enterprise-health" /></span>
                         </Link>
                     </li>
 

@@ -64,53 +64,10 @@
             }
         }
 
-        .benefit__digital__conversion {
+        .digital__conversion__list__benefits__wrapper {
             padding: 30px 100px 10px;
             background-color: #f3f3f3;
-
-            .benefit__digital__title {
-                color: #006e6f;
-                font-weight: 600;
-                font-size: 30px;
-            }
-
-            .benefit__digital__list {
-                list-style: none;
-                margin: 34px 0 10px;
-                padding: 0;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                flex-wrap: wrap;
-            }
-
-            .benefit__digital__btn__wrapper {
-                text-align: center;
-
-                .benefit__digital__btn {
-                    background-color: #fff04b;
-                    border: none;
-                    outline: none;
-
-                    .benefit__digital__btn--link {
-                        display: block;
-                        width: 100%;
-                        padding: 8px 10px;
-                        font-size: 16px;
-                        font-weight: 600;
-                        text-decoration: none;
-                        color: #000;
-                        text-transform: uppercase;
-                    }
-
-                    &:hover {
-                        background-color: #f9a870;
-                    }
-                }
-            }
         }
-
-
     }
 }
 

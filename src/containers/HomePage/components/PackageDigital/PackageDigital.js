@@ -2,7 +2,7 @@
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import './PackageDigital.scss';
 
-function PackageDigital({ color, title, cost, characteristicDesc, listFeatures }) {
+function PackageDigital({ index, color, title, cost, characteristicDesc, listFeatures, intendedFor }) {
 
     return (
         <div className={`medical__service__wrapper border__color__${color}`}>
@@ -34,7 +34,7 @@ function PackageDigital({ color, title, cost, characteristicDesc, listFeatures }
                     </ul>
                     <div className='package__contact__btn__wrapper'>
                         <button className={`package__contact__btn background__${color}`}>
-                            <Link to='/' className='package__contact__btn__link'>Liên hệ</Link>
+                            <Link to={`/cooperate-digital-conversion?p=${intendedFor}&s=${index}`} className='package__contact__btn__link'>Liên hệ</Link>
                         </button>
                     </div>
                 </div>
