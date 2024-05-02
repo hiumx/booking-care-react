@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import './HeaderDetailPage.scss'
 import { useHistory } from "react-router-dom";
-import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import { Link, useLocation } from 'react-router-dom/cjs/react-router-dom.min';
 
 function HeaderDetailPage({ textDetail }) {
     const [isShowText, setIsShowText] = useState(false);

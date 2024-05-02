@@ -7,6 +7,7 @@ import Header from '../containers/Header/Header';
 import ManageDoctor from '../containers/System/ManageDoctor';
 import DoctorSchedule from '../containers/System/DoctorSchedule/DoctorSchedule';
 import ManageSpecialty from '../containers/System/ManageSpecialty/ManageSpecialty';
+import DoctorAppointment from '../containers/System/DoctorAppointment/DoctorAppointment';
 
 function System({ systemMenuPath, isLoggedIn }) {
     return (
@@ -19,6 +20,7 @@ function System({ systemMenuPath, isLoggedIn }) {
                         <Route path="/system/manage-doctor" component={ManageDoctor} />
                         <Route path="/system/user-redux" component={UserRedux} />
                         <Route path="/system/doctor-schedule" component={DoctorSchedule} />
+                        <Route path="/system/appointment-management" component={DoctorAppointment} />
                         <Route path="/system/manage-specialty" component={ManageSpecialty} />
                         <Route component={() => { return (<Redirect to={systemMenuPath} />) }} />
                     </Switch>

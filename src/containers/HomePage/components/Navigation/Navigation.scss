@@ -82,7 +82,7 @@
         display: flex;
 
         .navigation__footer__icon__wrapper {
-            padding: 20px 0 0 16px;
+            padding: 20px 0 20px 16px;
             cursor: pointer;
             .navigation__footer__icon {
                 width: 24px;
@@ -120,6 +120,10 @@
     z-index: 1;
     cursor: pointer;
     animation: fadeIn 0.3s linear forwards;
+}
+
+.noscroll {
+    overflow: hidden;
 }
 
 @keyframes fadeIn {

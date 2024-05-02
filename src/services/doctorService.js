@@ -44,3 +44,11 @@ export const getDoctorClinicDetail = (doctorId) => {
     return axios.get(`api/doctor-clinic-detail/${doctorId}`);
 }
 
+export const getAppointmentsByDate = (doctorId, date) => {
+    return axios.get(`/doctor/appointment-schedule?doctorId=${doctorId}&date=${date}`);
+}
+
+export const confirmAppointment = ({ doctorId, bookingId }) => {
+    return axios.post(`/doctor/confirm-appointment`, { doctorId, bookingId });
+}
+

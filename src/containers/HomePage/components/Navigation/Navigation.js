@@ -87,7 +87,7 @@ function Navigation({ isOpenNav, setIsOpenNav }) {
 
                 </div>
             </div>
-            <div className={isOpenNav ? 'overlay' : ''} onClick={() => setIsOpenNav(false)}></div>
+            <div className={isOpenNav ? 'overlay noscroll' : ''} onClick={() => setIsOpenNav(false)}></div>
         </>
     )
 }

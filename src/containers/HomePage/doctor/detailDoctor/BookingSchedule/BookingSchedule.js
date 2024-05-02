@@ -64,7 +64,7 @@ function BookingSchedule() {
         const fetchClinicData = async () => {
             const res = await getDoctorClinicDetail(doctorId);
             if (res && res.code === 0) {
-                const {  paymentData, priceData } = res.data;
+                const { paymentData, priceData } = res.data;
                 setPriceExamine(priceData);
             }
         }
@@ -83,7 +83,7 @@ function BookingSchedule() {
             // const dateObj = new Date(date);
             // dateObj.setHours(dateObj.getHours() - 7);
             // console.log(dateObj); 
-            const dateString = moment(new Date()).format('dddd - DD/MM/YYYY').trim();
+            const dateString = moment(new Date(date)).format('dddd - DD/MM/YYYY').trim();
             const dateStandard = dateString.charAt(0).toUpperCase() + dateString.slice(1);
             setDateExamine(dateStandard);
         } else if (language === 'en') {
@@ -98,6 +98,8 @@ function BookingSchedule() {
         nameEn = `${doctorInfo.positionData.valueEn}, ${doctorInfo.firstName} ${doctorInfo.lastName}`
     }
 
+    console.log(dateExamine);
+
     // const handleChangeProvince = (e) => {
     //     setProvincePatient(e.target.value);
     //     const listDistrictOfProvince = listProvince.find(province => province.code === +e.target.value).districts;
@@ -105,48 +107,51 @@ function BookingSchedule() {
     // }
 
     const validatePatientInput = () => {
-        if(checkIsEmpty(namePatient)) {
+        if (checkIsEmpty(namePatient)) {
             setErrorMessage('Vui lòng nhập tên người bệnh!');
             return false;
-        } 
-         if (checkIsEmpty(genderPatient)) {
+        }
+        if (checkIsEmpty(genderPatient)) {
             setErrorMessage('Vui chọn giới tính người bệnh!');
             return false;
-        } 
-         if (checkIsEmpty(emailPatient)) {
+        }
+        if (checkIsEmpty(emailPatient)) {
             setErrorMessage('Vui nhập email liên hệ!');
             return false;
-        } 
-         if (!checkEmailValid(emailPatient)) {
+        }
+        if (!checkEmailValid(emailPatient)) {
             setErrorMessage('Email không hợp lệ!');
             return false;
-        } 
-         if (checkIsEmpty(phoneNumberPatient)) {
+        }
+        if (checkIsEmpty(phoneNumberPatient)) {
             setErrorMessage('Vui lòng nhập số điện thoại!');
             return false;
-        } 
-         if (!checkPhoneNumber(phoneNumberPatient)) {
+        }
+        if (!checkPhoneNumber(phoneNumberPatient)) {
             setErrorMessage('Số điện thoại không hợp lệ!');
             return false;
-        } 
-         if (checkIsEmpty(dobPatient)) {
+        }
+        if (checkIsEmpty(dobPatient)) {
             setErrorMessage('Vui lòng nhập ngày/tháng/năm sinh!');
             return false;
-        } 
-         if (checkIsEmpty(addressPatient)) {
+        }
+        if (checkIsEmpty(addressPatient)) {
             setErrorMessage('Vui lòng nhập đia chỉ!');
             return false;
-        } 
-         if (checkIsEmpty(reasonPatient)) {
+        }
+        if (checkIsEmpty(reasonPatient)) {
             setErrorMessage('Vui lòng nhập lí do khám bệnh!');
             return false;
-        } 
+        }
         return true;
 
     }
 
     const handleClickConfirmAppointment = async () => {
-        if(validatePatientInput()) {
+        if (validatePatientInput()) {
+            const dateSpread = dateExamine.split('-')[1]?.trim().split('/');
+            const dateFormat = `${dateSpread[2]}-${dateSpread[1]}-${dateSpread[0]}`;
+
             const res = await bookingSchedule({
                 doctorId,
                 patientName: namePatient,
@@ -159,35 +164,18 @@ function BookingSchedule() {
                 objectExamine: priceSuggestActive,
                 methodPaymentId: methodPayment,
                 priceId: priceExamine.keyMap,
-                dateAppointment: date,
+                dateAppointment: dateFormat,
                 timeType,
                 doctorName: nameVi,
                 timeSpecific: time
             });
-            if(res && res.code === 0) {
+            if (res && res.code === 0) {
                 setErrorMessage('');
                 setSuccessMessage('Đăng kí thông tin thành công, vui lòng xác nhận thông tin tại email để hoàn tất đăng kí.');
             } else if (res && res.code === 1) {
                 setErrorMessage('Lịch hẹn khám bệnh đã được đăng kí!');
                 setSuccessMessage('');
             }
-            console.log({
-                doctorId,
-                patientName: namePatient,
-                patientGender: genderPatient,
-                patientEmail: emailPatient,
-                patientPhone: phoneNumberPatient,
-                patientDob: dobPatient,
-                patientAddress: addressPatient,
-                patientReason: reasonPatient,
-                objectExamine: priceSuggestActive,
-                methodPaymentId: methodPayment,
-                priceId: priceExamine.keyMap,
-                dateAppointment: date,
-                timeType,
-                doctorName: nameVi,
-                timeSpecific: time
-            });
         }
     }
 
@@ -218,7 +206,7 @@ function BookingSchedule() {
                             <span>Giá tư vấn 15 phút</span>
                             <p className='price__suggest__detail'>{language === 'vi' ? `${priceExamine.valueVi}đ` : `${priceExamine.valueEn}$`}</p>
                         </label>
-                        <label
+                        {/* <label
                             className={priceSuggestActive === '2' ? 'price__suggest__item active' : 'price__suggest__item'}
                             onClick={() => {
                                 setPriceSuggestActive('2');
@@ -228,7 +216,7 @@ function BookingSchedule() {
                             <input type='radio' ref={secondInputSuggestPrice} name='price__suggest__select' />
                             <span>Giá tư vấn 30 phút</span>
                             <p className='price__suggest__detail'>500.000đ</p>
-                        </label>
+                        </label> */}
                     </div>
                     <div className='form__patient__checkbox__wrapper'>
                         <label className='form__patient__checkbox__item'>
@@ -305,7 +293,7 @@ function BookingSchedule() {
                         <div className='form-control form__patient__wrapper__input'>
                             <span>
                                 <svg className='form__patient__icon' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                    <path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z" />
+                                    <path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z" />
                                 </svg>
                             </span>
                             <input
@@ -340,7 +328,7 @@ function BookingSchedule() {
                                 </svg>
                             </span>
                             <input
-                                type='text'
+                                type='date'
                                 className='form__patient__input'
                                 placeholder='Ngày/tháng/năm sinh (bắt buộc)'
                                 onChange={e => setDobPatient(e.target.value)}
