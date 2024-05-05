@@ -27,8 +27,7 @@ function DetailDoctor() {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        if(_.isEmpty(dataDoctor))
-            dispatch(actions.getInfoDoctorById(+id));
+        dispatch(actions.getInfoDoctorById(+id));
     }, []);
 
     useEffect(() => {
